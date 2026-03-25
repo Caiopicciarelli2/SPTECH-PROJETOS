@@ -1,0 +1,194 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&display=swap');
+
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+/*Navbar*/
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000000;
+    color: white;
+    height: 8vh;
+    z-index: 1000;
+
+}
+
+.nav-list {
+    list-style: none;
+    display: flex;
+    cursor: pointer;
+    padding-left: 5vh;
+    padding-top: 1vh;
+}
+
+.nav-logo{
+    padding-right: 40vh;
+}
+
+.nav-login{
+    padding-left: 60vh;
+}
+
+ul li a {
+    text-decoration: none;
+    color: white;
+    font-family: "Atkinson Hyperlegible Next", serif;
+    font-size: 3vh;
+    padding-left: 5vh;
+    
+}
+
+ul li a:hover {
+    color: #f2f2f2;
+}
+
+/*Navbar*/
+
+/*Login*/
+
+
+main {
+    background-color: rgb(255, 255, 255);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90%;
+}
+
+.Container-login {
+    background-color: #fdfdfd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    width: 90%;
+}
+
+.Container-login img{
+    height: 80vh;
+    width: 100%;
+}
+
+body, html {
+    height: 100%;
+    margin: 0;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.Container-login {
+    background-color: #fdfdfd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 500px;
+}
+
+.Container-login img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.content-login {
+    width: 100%;
+}
+
+.content-login h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+    text-align: center;
+    font-family: "Atkinson Hyperlegible Next", serif;
+}
+
+.input-login {
+    margin-bottom: 15px;
+    font-family: "Atkinson Hyperlegible Next", serif;
+}
+
+.input-login label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    font-family: "Atkinson Hyperlegible Next", serif;
+}
+
+.input-login input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.input-login button {
+    width: 100%;
+    padding: 10px;
+    background-color: #000000;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: "Atkinson Hyperlegible Next", serif;
+}
+
+.ViewPassword{
+    position: relative;
+    bottom: 1vh;
+    border: none;
+    background-color: white;
+    left: 29vh;
+}
+
+.input-login button:hover {
+    background-color: #333333;
+}
+
+.link-login {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+}
+
+.link-login a {
+    color: #000000;
+    text-decoration: none;
+    font-family: "Atkinson Hyperlegible Next", serif;
+}
+
+.link-login a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+
+/*Login*/

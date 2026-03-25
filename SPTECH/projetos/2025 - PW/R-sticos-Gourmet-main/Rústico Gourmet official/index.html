@@ -1,0 +1,1054 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+        integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
+    <link rel="stylesheet" type="text/css" href="/assets/css/modals.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://kit.fontawesome.com/fec80ce284.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="/assets/midia/weblogo.png" />
+    <title>Rústicos gourmet</title>
+</head>
+
+<body>
+
+    <!--Inicio da Navbar-->
+
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <img class="logo" src="/assets/midia/logo.png" alt="" width="325" height="300">
+            </a>
+
+            <ul class="navbar-nav ml-auto">
+
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#">
+                        <h1 class="text-nav">HOME</h1>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#div1">
+                        <h1 class="text-nav">CARDÁPIO</h1>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" aria-current="page" href="#footer_content">
+                        <h1 class="text-nav">CONTATO</h1>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="icons">
+                        <a class="bi bi-geo-alt-fill map-icon" href="#div8">
+                        </a>
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="bi bi-cart cart-icon" id="carrinho">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!--Fim da Navbar-->
+
+
+
+    <!--Inicio do Carrosel-->
+
+    <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+
+        <div class="carousel-indicators">
+
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active"
+                aria-current="true" aria-label="Slide 1"></button>
+
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1"
+                aria-label="Slide 2"></button>
+
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2"
+                aria-label="Slide 3"></button>
+
+        </div>
+
+        <div class="carousel-inner">
+
+            <div class="carousel-item active">
+
+                <img src="/assets/midia/IMGRústico1.png" class="d-block w-100" alt="..." height="780px" width="700">
+
+            </div>
+
+            <div class="carousel-item">
+
+                <img src="/assets/midia/IMGRústico2.png" class="d-block w-100" alt="..." height="780px" width="700">
+
+            </div>
+
+            <div class="carousel-item">
+
+                <img src="/assets/midia/IMGRústico3.png" class="d-block w-100" alt="..." height="780px" width="700">
+
+            </div>
+
+        </div>
+
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="prev">
+
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+
+            <span class="visually-hidden">Previous</span>
+
+        </button>
+
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"
+            data-bs-slide="next">
+
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+
+            <span class="visually-hidden">Next</span>
+
+        </button>
+
+    </div>
+
+    <!--Fim do Carrosel-->
+
+    <!--começo aside carrinho-->
+    <aside>
+        <div id="carrinho-div">
+            <h1 class="h1aside">Seus Pedidos</h1>
+            <button id="fechar-carrinho">
+                <i class="fa-solid fa-arrow-right"></i>
+            </button>
+            <div class="pedido" id="pedido">
+                <div class="pedido-item" id="pedidonv">
+                    <div class="pedido-nome" id="nome-lanche"></div>
+                    <div class="pedido-valor" id="preco-lanche"></div>
+                    <div class="quantpedidocart" id="quantpedidocart"></div>
+                </div>
+                <button class="btnremover" id="btn-fechar">
+                    <i></i>
+                </button>
+                <h1 id="sempedidos">Sem Pedidos</h1>
+            </div>
+            <div class="container-carrinho" id="totalfinalizar">
+                <div class="divisão">
+                </div>
+                <div class="pedidocontent">
+                    <div class="pedido-total">
+                        <span class="totalp">
+                            TOTAL
+                        </span>
+                        <span class="pricep" id="pricep">
+                            R$00.00
+                        </span>
+                    </div>
+                    <div class="pedido-finalizar">
+                        <button class="btnfinalizar" id="btnfinalizarcompra">
+                            <h1 class="btntext">
+                                Finalizar a compra
+                            </h1>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </aside>
+
+    <!--Fechou Aside-->
+
+    <!--Modal-->
+
+    <dialog id="sem-pedidos">
+        <div class="containermodal-sp">
+            <div class="modalcontent-sp">
+                <h1 class="h1modal-sp">Sem Pedidos 😐</h1>
+                <p class="pmodal-sp">Não há nenhum pedido ainda no seu carrinho, vá ao cardápio e adcione algum
+                    lanche para o carrinho aparecer.</p>
+                <button class="btncancel-sp" id="btncancel-sp">Voltar ao Site</button>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="compra-finalizada">
+        <div class="containermodal-cf">
+            <div class="modalcontent-cf">
+                <h1 class="h1modal-cf">Pedido Concluido 😎</h1>
+                <p class="pmodal-cf">Seu pedido foi computado e concluido com sucesso, aguarde em sua residencia até que
+                    cheguemos e entregue seu pedido. </p>
+                <button class="btnVS-cf" id="btnVS-cf">Voltar ao Site</button>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="dialog-1">
+        <div class="containermodal-1">
+            <div class="modalcontent-1">
+                <div class="imgmodal-1">
+                    <img src="/assets/midia/Lanche1.jpg" alt="">  
+                </div>
+                <div class="quantmodal-1">
+                    <h1 class="h1modal-1">Burgão Texano</h1>
+                    <p class="pmodal-1">O Burgão texano vem com dois hamburgers saborosos.</p>
+                    <div class="divmodal-1"></div>
+                    <h5 class="h5pmodal-1">Preço</h5>
+                    <h2 class="pricemodal-1">R$27,00</h2>
+                    <div class="arquant-1">
+                        <button class="qtmenos-1">-</button>
+                        <h2 class="qt-1" id="quantidade-1">1</h2>
+                        <button class="qtmais-1">+</button>
+                    </div>
+                    <button class="btnadd-1" id="btnadd-1">Adcionar ao carrinho</button>
+                    <button class="btncancel-1" id="btncancel-1">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="dialog-2">
+        <div class="containermodal-2">
+            <div class="modalcontent-2">
+                <div class="imgmodal-2">
+                    <img src="/assets/midia/Lanche2.png" alt="" width="470px">
+                </div>
+                <div class="quantmodal-2">
+                    <h1 class="h1modal-2">Blackout</h1>
+                    <p class="pmodal-2">A Ovelha negra da familia, Blackout.</p>
+                    <div class="divmodal-2"></div>
+                    <h5 class="h5pmodal-2">Preço</h5>
+                    <h2 class="pricemodal-2">R$24,00</h2>
+                    <div class="arquant-2">
+                        <button class="qtmenos-2">-</button>
+                        <h2 class="qt-2" id="quantidade-2">1</h2>
+                        <button class="qtmais-2">+</button>
+                    </div>
+                    <button class="btnadd-2" id="btnadd-2">Adcionar ao carrinho</button>
+                    <button class="btncancel-2" id="btncancel-2">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="dialog-3">
+        <div class="containermodal-3">
+            <div class="modalcontent-3">
+                <div class="imgmodal-3">
+                    <img src="/assets/midia/Lanche3.png" alt="" width="435px">
+                </div>
+                <div class="quantmodal-3">
+                    <h1 class="h1modal-3">Tatuzito</h1>
+                    <p class="pmodal-3">Tatuzito é gente boa, elite, não erra.</p>
+                    <div class="divmodal-3"></div>
+                    <h5 class="h5pmodal-3">Preço</h5>
+                    <h2 class="pricemodal-3">R$28,00</h2>
+                    <div class="arquant-3">
+                        <button class="qtmenos-3">-</button>
+                        <h2 class="qt-3" id="quantidade-3">1</h2>
+                        <button class="qtmais-3">+</button>
+                    </div>
+                    <button class="btnadd-3" id="btnadd-3">Adcionar ao carrinho</button>
+                    <button class="btncancel-3" id="btncancel-3">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="dialog-4">
+        <div class="containermodal-4">
+            <div class="modalcontent-4">
+                <div class="imgmodal-4">
+                    <img src="/assets/midia/lanche4.webp" alt="" width="400">
+                </div>
+                <div class="quantmodal-4">
+                    <h1 class="h1modal-4">Real Natty</h1>
+                    <p class="pmodal-4">Totalmente vegano, é o primo chato da familia Rústicos.</p>
+                    <div class="divmodal-4"></div>
+                    <h5 class="h5pmodal-4">Preço</h5>
+                    <h2 class="pricemodal-4">R$25,00</h2>
+                    <div class="arquant-4">
+                        <button class="qtmenos-4">-</button>
+                        <h2 class="qt-4" id="quantidade-4">1</h2>
+                        <button class="qtmais-4">+</button>
+                    </div>
+                    <button class="btnadd-4" id="btnadd-4">Adcionar ao carrinho</button>
+                    <button class="btncancel-4" id="btncancel-4">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="dialog-5">
+        <div class="containermodal-5">
+            <div class="modalcontent-5">
+                <div class="imgmodal-5">
+                    <img src="/assets/midia/Lanche5.png" alt="" width="400" height="450px">
+                </div>
+                <div class="quantmodal-5">
+                    <h1 class="h1modal-5">Lactose men</h1>
+                    <p class="pmodal-5">O nosso heroi, Lactose-man, muuuuuito queijo.</p>
+                    <div class="divmodal-5"></div>
+                    <h5 class="h5pmodal-5">Preço</h5>
+                    <h2 class="pricemodal-5">R$26,00</h2>
+                    <div class="arquant-5">
+                        <button class="qtmenos-5">-</button>
+                        <h2 class="qt-5" id="quantidade-5">1</h2>
+                        <button class="qtmais-5">+</button>
+                    </div>
+                    <button class="btnadd-5" id="btnadd-5">Adcionar ao carrinho</button>
+                    <button class="btncancel-5" id="btncancel-5">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="dialog-6">
+        <div class="containermodal-6">
+            <div class="modalcontent-6">
+                <div class="imgmodal-6">
+                    <img src="/assets/midia/Lanche6.png" alt="" width="500" height="420">
+                </div>
+                <div class="quantmodal-6">
+                    <h1 class="h1modal-6">Alabama's</h1>
+                    <p class="pmodal-6">Esse aqui é "Alabamas's" feelings, com um.</p>
+                    <div class="divmodal-6"></div>
+                    <h5 class="h5pmodal-6">Preço</h5>
+                    <h2 class="pricemodal-6">R$28,00</h2>
+                    <div class="arquant-6">
+                        <button class="qtmenos-6">-</button>
+                        <h2 class="qt-6" id="quantidade-6">1</h2>
+                        <button class="qtmais-6">+</button>
+                    </div>
+                    <button class="btnadd-6" id="btnadd-6">Adcionar ao carrinho</button>
+                    <button class="btncancel-6" id="btncancel-6">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="dialog-7">
+        <div class="containermodal-7">
+            <div class="modalcontent-7">
+                <div class="imgmodal-7">
+                    <img src="/assets/midia/Acompanhante1.png" alt="" width="380">
+                </div>
+                <div class="quantmodal-7">
+                    <h1 class="h1modal-7">Batata/Ched</h1>
+                    <p class="pmodal-7">Batata frita cobertas com queijo cheddar derretido.</p>
+                    <div class="divmodal-7"></div>
+                    <h5 class="h5pmodal-7">Preço</h5>
+                    <h2 class="pricemodal-7">R$18,00</h2>
+                    <div class="arquant-7">
+                        <button class="qtmenos-7">-</button>
+                        <h2 class="qt-7" id="quantidade-7">1</h2>
+                        <button class="qtmais-7">+</button>
+                    </div>
+                    <button class="btnadd-7" id="btnadd-7">Adcionar ao carrinho</button>
+                    <button class="btncancel-7" id="btncancel-7">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="dialog-8">
+        <div class="containermodal-8">
+            <div class="modalcontent-8">
+                <div class="imgmodal-8">
+                    <img src="/assets/midia/coca-bebidas.png" class="imgmodal-8-1" alt="" width="100px">
+                    <img src="/assets/midia/sprit-bebeidas.jpg" class="imgmodal-8-2" alt="" width="100px">
+                    <img src="/assets/midia/agua-bebidas.png" class="imgmodal-8-3" alt="" width="120px">
+
+
+                </div>
+                <div class="quantmodal-8">
+                    <h1 class="h1modal-8">Bebidas</h1>
+                    <p class="pmodal-8">Bebidas Refrescantes, quentes, alcoólicas ou não.</p>
+                    <div class="divmodal-8"></div>
+                    <h5 class="h5pmodal-8">Preço</h5>
+                    <h2 class="pricemodal-8" id="pricemodal-8">R$0.00</h2>
+                    <div class="divmodal-8-2"></div>
+                    <h2 class="pricemodal-8-2">R$0.00</h2>
+                    <div class="divmodal-8-3"></div>
+                    <h2 class="pricemodal-8-3">R$0.00</h2>
+                    <div class="divmodal-8-4"></div>
+                    <h2 class="h2totalpm-8">TOTAL</h2>
+                    <h2 class="totalpm-8" id="totalpm-8">R$0.00</h2>
+                    <div class="addcancelmodal-8">
+                        <button class="btnadd-8" id="btnadd-8">Adcionar ao carrinho</button>
+                        <button class="btncancel-8" id="btncancel-8">Cancelar</button>
+                    </div>
+                    <h2 class="cocapm">COCA</h2>
+                    <h2 class="spritepm">SPRITE</h2>
+                    <h2 class="aguapm">AGUA</h2>
+                </div>
+                <div class="arquant-123">
+                    <div class="arquant-8">
+                        <button class="qtmenos-8">-</button>
+                        <h2 class="qt-8" id="quantidade-8">0</h2>
+                        <button class="qtmais-8">+</button>
+                    </div>
+                    <div class="arquant-8-2">
+                        <button class="qtmenos-8-2">-</button>
+                        <h2 class="qt-8-2" id="quantidade-8-2">0</h2>
+                        <button class="qtmais-8-2">+</button>
+                    </div>
+                    <div class="arquant-8-3">
+                        <button class="qtmenos-8-3">-</button>
+                        <h2 class="qt-8-3" id="quantidade-8-3">0</h2>
+                        <button class="qtmais-8-3">+</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="dialog-9">
+        <div class="containermodal-9">
+            <div class="modalcontent-9">
+                <div class="imgmodal-9">
+                    <img src="/assets/midia/acompanhante3.png" alt="" width="400">
+                </div>
+                <div class="quantmodal-9">
+                    <h1 class="h1modal-9">Batata Rústica</h1>
+                    <p class="pmodal-9">Batata rústica são cortadas em pedaços irregulares.</p>
+                    <div class="divmodal-9"></div>
+                    <h5 class="h5pmodal-9">Preço</h5>
+                    <h2 class="pricemodal-9">R$21,00</h2>
+                    <div class="arquant-9">
+                        <button class="qtmenos-9">-</button>
+                        <h2 class="qt-9" id="quantidade-9">1</h2>
+                        <button class="qtmais-9">+</button>
+                    </div>
+                    <button class="btnadd-9" id="btnadd-9">Adcionar ao carrinho</button>
+                    <button class="btncancel-9" id="btncancel-9">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="dialog-10">
+        <div class="containermodal-10">
+            <div class="modalcontent-10">
+                <div class="imgmodal-10">
+                    <img src="/assets/midia/Sobremesas1.png" alt="" width="450">
+                </div>
+                <div class="quantmodal-10">
+                    <h1 class="h1modal-10">Churros</h1>
+                    <p class="pmodal-10">Descubra a perfeição do doce com os nossos churros.</p>
+                    <div class="divmodal-10"></div>
+                    <h5 class="h5pmodal-10">Preço</h5>
+                    <h2 class="pricemodal-10">R$7,00</h2>
+                    <div class="arquant-10">
+                        <button class="qtmenos-10">-</button>
+                        <h2 class="qt-10" id="quantidade-10">1</h2>
+                        <button class="qtmais-10">+</button>
+                    </div>
+                    <button class="btnadd-10" id="btnadd-10">Adcionar ao carrinho</button>
+                    <button class="btncancel-10" id="btncancel-10">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="dialog-11">
+        <div class="containermodal-11">
+            <div class="modalcontent-11">
+                <div class="imgmodal-11">
+                    <img src="/assets/midia/Sobremesas2.png" alt="" width="435" height="400">
+                </div>
+                <div class="quantmodal-11">
+                    <h1 class="h1modal-11">Sorvete</h1>
+                    <p class="pmodal-11">Refresque-se com a cremosidade dos nossos sorvetes.</p>
+                    <div class="divmodal-11"></div>
+                    <h5 class="h5pmodal-11">Preço</h5>
+                    <h2 class="pricemodal-11">R$13.00</h2>
+                    <div class="arquant-11">
+                        <button class="qtmenos-11">-</button>
+                        <h2 class="qt-11" id="quantidade-11">1</h2>
+                        <button class="qtmais-11">+</button>
+                    </div>
+                    <button class="btnadd-11" id="btnadd-11">Adcionar ao carrinho</button>
+                    <button class="btncancel-11" id="btncancel-11">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+
+    <dialog id="dialog-12">
+        <div class="containermodal-12">
+            <div class="modalcontent-12">
+                <div class="imgmodal-12">
+                    <img src="/assets/midia/Sobremesas3.png" alt="" width="400">
+                </div>
+                <div class="quantmodal-12">
+                    <h1 class="h1modal-12">Açai</h1>
+                    <p class="pmodal-12">Desfrute da deliciosa e explosão de sabores tropicais.</p>
+                    <div class="divmodal-12"></div>
+                    <h5 class="h5pmodal-12">Preço</h5>
+                    <h2 class="pricemodal-12">R$15.00</h2>
+                    <div class="arquant-12">
+                        <button class="qtmenos-12">-</button>
+                        <h2 class="qt-12" id="quantidade-12">1</h2>
+                        <button class="qtmais-12">+</button>
+                    </div>
+                    <button class="btnadd-12" id="btnadd-12">Adcionar ao carrinho</button>
+                    <button class="btncancel-12" id="btncancel-12">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </dialog>
+    <!--modal-->
+
+
+    <!--Cards- Cardapio-->
+
+
+
+    <div class="d1" id="div1">
+
+        <div class="container-1">
+
+            <h1 class="text-center" id="text-center">
+                CARDÁPIO
+            </h1>
+
+            <div class="row">
+                <h1 class="text-lanches">
+                    LANCHES
+                </h1>
+
+                <div class="col-md-3 mx-auto">
+
+                    <div class="card-1">
+
+                        <img src="/assets/midia/Lanche1.jpg" class="card-img-top btexas" alt="..." height="300px "
+                            width="250">
+                        <button class="btncart" id="btncartBT">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                        <div class="card-body">
+
+                            <h1 class="prices">
+                                R$27.00
+                            </h1>
+
+                            <h1 class="card-titulo">
+                                Burgão Texano
+                            </h1>
+
+                            <p class="card-text">
+                                O Burgão Texano: Sabor robusto! Diretamente da cultura texana, nosso hambúrguer
+                                duplo oferece o dobro de sabor e autenticidade, com duas camadas suculentas de carne de
+                                hambúrguer.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-3 mx-auto">
+
+                    <div class="card-2">
+
+                        <img src="/assets/midia/Lanche2.png" class="card-img-top blackout" alt="..." height="300px"
+                            width="250">
+                        <button class="btncart" id="btncartBL">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                        <div class="card-body">
+
+                            <h1 class="prices">
+                                R$24.00
+                            </h1>
+
+                            <h1 class="card-titulo">
+                                Blackout
+                            </h1>
+
+                            <p class="card-text">
+                                O Blackout: Uma explosão de sabor misterioso! Nosso hambúrguer é envolto em um
+                                intrigante pão e queijo preto, criando um visual deslumbrante e um sabor único.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-3 mx-auto">
+
+                    <div class="card-3">
+
+                        <img src="/assets/midia/Lanche3.png" class="card-img-top tatu" alt="..." height="300px"
+                            width="250">
+                        <button class="btncart" id="btncartTA">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                        <div class="card-body">
+
+                            <h1 class="prices">
+                                R$28.00
+                            </h1>
+
+                            <h1 class="card-titulo">
+                                Tatuzito
+                            </h1>
+
+                            <p class="card-text">
+                                O Tatuzito: Um abraço de sabor! Nosso hambúrguer é uma explosão de perfeição, recheado
+                                com camadas generosas de cheddar derretido e bacon crocante.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <div class="d2" id="div2">
+
+        <div class="container-1">
+
+            <div class="row">
+
+                <div class="col-md-3 mx-auto">
+
+                    <div class="card-4">
+
+                        <img src="/assets/midia/lanche4.webp" class="card-img-top rnatty" alt="..." height="300px"
+                            width="250">
+                        <button class="btncart" id="btncartRN">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                        <div class="card-body">
+
+                            <h1 class="prices">
+                                R$25.00
+                            </h1>
+
+                            <h1 class="card-titulo">
+                                Real Natty
+                            </h1>
+
+                            <p class="card-text">
+                                O Real Natty: sabor vegano autêntico! Uma obra-prima de sabor e ética, nosso
+                                hambúrguer totalmente vegano é a escolha perfeita para os amantes de plantas.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-3 mx-auto">
+
+                    <div class="card-5">
+
+                        <img src="/assets/midia/Lanche5.png" class="card-img-top lactose" alt="..." height="300px"
+                            width="250">
+                        <button class="btncart" id="btncartLA">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                        <div class="card-body">
+
+                            <h1 class="prices">
+                                R$26.00
+                            </h1>
+
+                            <h1 class="card-titulo">
+                                Lactose-man
+                            </h1>
+
+                            <p class="card-text">
+                                O Hambúrguer Lactose-Man: sabor sem preocupações! Um lanche preparado para
+                                aqueles que são intolerantes à lactose. Um sabor autêntico que não deixa ninguém de fora
+                                da festa.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-3 mx-auto">
+
+
+                    <img src="/assets/midia/Lanche6.png" class="card-img-top alabama" alt="..." height="300px"
+                        width="250">
+                    <div class="card-6">
+                        <button class="btncart" id="btncartAL">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                        <div class="card-body">
+
+                            <h1 class="prices">
+                                R$28.00
+                            </h1>
+
+                            <h1 class="card-titulo">
+                                Alabama's
+                            </h1>
+
+                            <p class="card-text">
+                                O Alabama's: Um sabor genuinamente rústico! Nosso hambúrguer é feito com carne de
+                                bovinos criados no coração do Alabama. Delicie-se com o melhor em cada pedaço!
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Fim dos cards-cardápio-->
+
+    <div class="divisão-b"> </div>
+
+
+
+    <!--Acompanhamentos-->
+
+    <div class="d3" id="div3 mt-4">
+
+        <div class="container-2">
+
+            <div class="row">
+
+                <h1 class="text-acompanhamentos">
+                    ACOMPANHAMENTOS
+                </h1>
+
+                <div class="col-md-4 mt-4">
+
+                    <div class="card-4">
+
+                        <img src="/assets/midia/Acompanhante1.png" class="card-img-top b-cheddar" alt="..."
+                            height="300px" width="250">
+
+                        <button class="btncart" id="btncartBC">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                        <div class="card-body">
+
+                            <h1 class="prices">
+                                R$18.00
+                            </h1>
+
+                            <h1 class="card-titulo">
+                                Batata com Cheddar
+                            </h1>
+
+                            <p class="card-text">
+                                Batata frita com bacon crocante, acompanhada do queijo Cheddar mais cremoso da região.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-4 mt-4">
+
+                    <div class="card-5">
+
+                        <img src="/assets/midia/Acompanhante2.png" class="card-img-top bebidas" alt="..." height="300px"
+                            width="250">
+
+                        <button class="btncart" id="btncartBE">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                        <div class="card-body">
+
+                            <h1 class="prices">
+
+                            </h1>
+
+                            <h1 class="card-titulo">
+                                Bebidas
+                            </h1>
+
+                            <p class="card-text">
+                                Refresque-se com nossas irresistíveis bebidas! Temos a bebida perfeita para acompanhar o
+                                sabor dos nossos incríveis
+                                hambúrgueres.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="col-md-4 mt-4">
+
+                    <div class="card-7">
+
+                        <img src="/assets/midia/acompanhante3.png" class="card-img-top b-rustica" alt="..."
+                            height="300px" width="250">
+
+                        <button class="btncart" id="btncartBR">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                        <div class="card-body">
+
+                            <h1 class="prices">
+                                R$21.00
+                            </h1>
+
+                            <h1 class="card-titulo">
+                                Batata Rústica
+                            </h1>
+
+                            <p class="card-text">
+                                Batatas rústicas, cortadas em pedaços irregulares e assadas até ficarem douradas
+                                . A especialidade de casa.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+
+
+            </div>
+        </div>
+    </div>
+
+    <!--Fim dos acompanhamentos-->
+
+    <div class="divisão-b3s">
+
+    </div>
+
+    <!--Sobremesas-->
+
+    <div class="d5" id="div5">
+
+        <div class="container-3">
+
+            <div class="row">
+
+                <h1 class="text-sobremesas">
+                    SOBREMESAS
+                </h1>
+
+                <div class="col-md-3 mx-auto">
+                    <div class="card-8">
+
+                        <img src="/assets/midia/Sobremesas1.png" class="card-img-top churros" alt="..." height="300px"
+                            width="250">
+
+                        <button class="btncart" id="btncartCH">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                        <div class="card-body">
+
+                            <h1 class="prices">
+                                R$07.00
+                            </h1>
+
+                            <h1 class="card-titulo">
+                                Churros
+                            </h1>
+
+                            <p class="card-text">
+                                Descubra a perfeição do doce com os nossos churros. Uma explosão de sabores em cada
+                                mordida.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-3 mx-auto">
+
+                    <div class="card-9">
+
+                        <img src="/assets/midia/Sobremesas2.png" class="card-img-top sorvete" alt="..." height="300px"
+                            width="250">
+
+                        <button class="btncart" id="btncartSO">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                        <div class="card-body">
+
+                            <h1 class="prices">
+                                R$13.00
+                            </h1>
+
+                            <h1 class="card-titulo">
+                                Sorvete
+                            </h1>
+
+                            <p class="card-text">
+                                Sorvetes que derretem corações! Explore a doçura gelada dos nossos sabores artesanais.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+                <div class="col-md-3 mx-auto">
+                    <div class="card-10">
+
+                        <img src="/assets/midia/Sobremesas3.png" class="card-img-top acai" alt="..." height="300px"
+                            width="250">
+
+                        <button class="btncart" id="btncartAÇ">
+                            <i class="fa-solid fa-plus"></i>
+                        </button>
+
+                        <div class="card-body">
+
+                            <h1 class="prices">
+                                R$15.00
+                            </h1>
+
+                            <h1 class="card-titulo">
+                                Açai
+                            </h1>
+
+                            <p class="card-text">
+                                Desfrute da deliciosa e saudável explosão de sabores tropicais com
+                                nosso açaí.
+                            </p>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!--Fim do cardapio-->
+
+    <!--Nos encontre-->
+
+    <div class="d8" id="div8">
+
+        <div class="container-8">
+
+            <div class="mappart">
+                <h1 class="maptitulo">VENHA NOS ENCONTRAR</h1>
+                <iframe class="map"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3655.8229821797804!2d-46.6832285244907!3d-23.610680663406374!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce50b018e36309%3A0xf81065452fd9ec63!2sR%C3%BAstico%20Restaurante!5e0!3m2!1spt-BR!2sbr!4v1695043673336!5m2!1spt-BR!2sbr"
+                    allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+
+    <!--Fim de nos encontre-->
+
+    <!--Midias Sociais-->
+
+    <footer>
+        <div id="footer_content">
+            <div id="footer_contacts">
+                <a class="ah1" href="#">
+                    <h1 href="#div1">RÚSTICO GOURMET</h1>
+                </a>
+                <p class="p1titulo">Sabores Rústicos, Gourmet de Verdade!</p>
+
+                <div id="footer_social_media">
+                    <a href="https://instagram.com/rusticogourmet.sp?igshid=NGVhN2U2NjQ0Yg==" class="footer-link"
+                        id="instagram">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+
+                    <a href="https://wa.me/+5511963717030" class="footer-link" id="whatsapp">
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </a>
+
+                    <a href="https://twitter.com/RusticoGourmet" class="footer-link" id="twitter">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+
+                    <a href Hypertext Reference="mailto:rusticogourmet.sp@gmail.com" class="footer-link" id="email">
+                        <i class="fa-regular fa-envelope"></i>
+                    </a>
+
+                </div>
+            </div>
+
+            <!--Final de Midias Sociais-->
+
+            <!--Quem somos?-->
+
+            <ul class="footer-list">
+                <li>
+                    <h3 class="h3missao">Missão</h3>
+                </li>
+                <li>
+                    <a class="footer-link">Somos uma equipe unida de chefs e entusiastas da culinária apaixonados
+                        por
+                        criar hambúrgueres gourmet autênticos.</a>
+                </li>
+            </ul>
+
+            <ul class="footer-list">
+                <li>
+                    <h3 class="h3equipe">Equipe</h3>
+                </li>
+                <li>
+                    <a class="footer-link">Somos uma equipe coesa, apaixonada por criar hambúrgueres gourmet
+                        autênticos
+                        e memoráveis com um toque rústico.</a>
+                </li>
+            </ul>
+        </div>
+
+        <!--Final de Quem somos?-->
+
+        <!--Copyritght-->
+
+        <div id="footer_copyright">
+            &#169
+            2023 todos os direitos reservados.
+        </div>
+    </footer>
+
+    <!--Fim de copyright-->
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+        integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+        crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+        integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+        crossorigin="anonymous"></script>
+        
+    <script src="/assets/js/script.js"></script>
+
+</body>
+
+</html>

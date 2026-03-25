@@ -1,0 +1,23 @@
+adicionar:
+
+
+.btn-popup-close{
+  display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 2vh;
+    width: 2vw;
+    background-color: transparent;
+    border-radius: 1.8vh;
+    text-decoration: none;
+    font-family: var(--font-titulo);
+    font-size: 1.2vw;
+    border: none;
+    cursor: pointer;
+    padding-left: 23vh;
+}
+
+<button class="btn-popup-close" id="btn-popup-close">
+<i class="fa-solid fa-xmark" style="color: #ff0000;"></i>
+</button>
+

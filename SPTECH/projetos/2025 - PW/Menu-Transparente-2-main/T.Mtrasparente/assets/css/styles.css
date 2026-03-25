@@ -1,0 +1,72 @@
+*{
+	padding: 0px;
+	margin: 0px;
+	font-family: arial;
+}
+.wrapper {
+	background: url('/assets/img/pexels-andrea-piacquadio-3769138\ \(1\).jpg');
+	background-size: cover;
+	width: 100%;
+	height: 100vh;
+}
+nav {
+	background: #669ae9;
+	opacity: .7;
+}
+nav:after{
+	content: '';
+	display: block;
+	clear: both;
+}
+nav h2 {
+	color: #ffffff;
+	float: left;
+	padding: 20px;
+	margin-left: 90px;
+}
+.links {
+	margin-right: 200px;
+	float: right;
+}
+.links li {
+	display: inline-block;
+	list-style: none;
+	position: relative;
+
+}
+.links li a{
+	display: inline-block;
+	color: #ffffff;
+	padding: 30px;
+	text-decoration: none;
+}
+.links li:hover{
+	background: #555;
+}
+.links li:hover .dropdown{
+	display: block;
+}
+.dropdown {
+	background: #695f5f;
+	position: absolute;
+	display: none;
+	top: 57px;
+	left: 0px;
+	width: 150px;
+}
+.dropdown li{
+	border: 2px solid #695f5f;
+	display: block;
+	color: #fff;
+}
+.dropdown-link:hover .dropdown-2{
+	display: block;
+}
+.dropdown-2 {
+	background: #695f5f;
+	position: absolute;
+	display: none;
+	top: 0px;
+	left: 148px;
+	width: 150px;
+}

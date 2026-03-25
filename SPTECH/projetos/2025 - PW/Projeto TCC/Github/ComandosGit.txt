@@ -1,0 +1,31 @@
+Comandos git hub cantina ( subir mudanças )
+
+git add . ( Faz: Git add . salva o que eu mudei ( . = salvar tudo que eu mudei,
+se eu quiser salvar algo especifico coloca no lugar do ponto o nome (exemplo: git add index.html))
+
+git commit -m "teste" ( commit = salvar no meu pc as mudanças que foram selecionadas pelo comando acima,
+ -m = texto tiulo da mudança ( exemlp: git commit -m "botao novo" ))
+
+git push origin main ( todas as mudanças que foram feitas e salvadas, subiram pro projeto no git )
+
+git pull origin main ( salva na pasta as atualizações das outras pessoas ( fazer sempre primeiro
+pra mexer no codigo atualizado ))
+
+NAO MUDAR NADA SEM ANTES DAR O PULL (Baixar atualizações do arquivo )
+Caso voce fizer burrada:
+
+Commit normal + pull com rebase
+Se suas mudanças locais estão prontas para ser commitadas:
+
+bash
+Copiar código
+git add .
+git commit -m "Minhas mudanças"
+git pull --rebase
+Explicação:
+
+(git pull --rebase: aplica suas mudanças por cima das do remoto, como se tivesse começado agora.)
+
+Se conflitar os arquivos por mudanças sem o pull inicial, usar pull --rebase, ele vai indicar o que você vai usar 
+no seu commit, depois de você ajeitar os conflitos de arquivo, rode um:
+"git rebase --continue"
