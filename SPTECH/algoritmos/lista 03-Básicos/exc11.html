@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 03 - Operações Aritméticas, variáveis, innerHTML</title>
+    <link rel="stylesheet" href="style01.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-titulo">
+            <h1>Lista 03 - JS | Parte 2 - Variáveis e innerHTML</h1>
+            <h2>Exc 11: Tabuada Interativa</h2>
+        </div>
+        <div class="container-info-2">
+            <label for="">Digite o número para calcular a tabuada:</label>
+            <input type="text" id="numTabuada">
+        </div>
+        <div class="container-buttons">
+            <button onclick="tabuada ()">
+                Ver Tabuada
+            </button>
+        </div>
+        <div class="container-resultado">
+            <h1 id="resultado" style="text-align: center;"></h1>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function tabuada() {
+
+        let numero = Number(numTabuada.value);
+
+        let numX1 = Number(numero * 1);
+        let numX2 = Number(numero * 2);
+        let numX3 = Number(numero * 3);
+        let numX4 = Number(numero * 4);
+        let numX5 = Number(numero * 5);
+        let numX6 = Number(numero * 6);
+        let numX7 = Number(numero * 7);
+        let numX8 = Number(numero * 8);
+        let numX9 = Number(numero * 9);
+
+        resultado.innerHTML =
+        `
+           Tabuada do ${numero}:<br>
+           ${numero} x 1 = ${numX1} |
+           ${numero} x 2 = ${numX2} |
+           ${numero} x 3 = ${numX3} |
+           ${numero} x 4 = ${numX4} |
+           ${numero} x 5 = ${numX5} |
+           ${numero} x 6 = ${numX6} |
+           ${numero} x 7 = ${numX7} |
+           ${numero} x 8 = ${numX8} |
+           ${numero} x 9 = ${numX9}.
+        `
+    }
+
+</script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 03 - Operações Aritméticas, variáveis, innerHTML</title>
+    <link rel="stylesheet" href="style01.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-titulo">
+            <h1>Lista 03 - JS | Parte 1 - Operações Aritméticas</h1>
+            <h2>Exc 01: Aposentadoria: Quanto Falta?</h2>
+        </div>
+        <div class="container-info-1">
+            <label for="">Qual sua idade:</label>
+            <input type="text" id="idadeUser">
+        </div>
+        <div class="container-buttons">
+            <button onclick="aposentadoriaHomem ()">
+                Aposentadoria Homem
+            </button>
+            <button onclick="aposentadoriaMulher ()">
+                Aposentadoria Mulher
+            </button>
+        </div>
+        <div class="container-resultado">
+            <h1 id="resultado"></h1>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function aposentadoriaHomem() {
+        let idade = Number(idadeUser.value);
+        let resultadoCalc = ( 70 - idade );
+
+        resultado.innerHTML =
+        `
+            Considerando que um homem se aposenta aos 70 anos, faltam ${resultadoCalc} anos
+            para a aposentadoria.
+        `
+
+        // como o exercicio não pede, não fiz uma verificação com if e else de idade > 70, para mandar uma mensagem diferente, até para não quebrar a regra de só usar o que aprendemos na sala de aula
+    }
+
+    function aposentadoriaMulher() {
+        let idade = Number(idadeUser.value);
+        let resultadoCalc = ( 60 - idade );
+
+        resultado.innerHTML =
+        `
+            Considerando que uma mulher se aposenta aos 60 anos, faltam ${resultadoCalc} anos
+            para a aposentadoria.
+        `
+
+        // como o exercicio não pede, não fiz uma verificação com if e else de idade > 70, para mandar uma mensagem diferente, até para não quebrar a regra de só usar o que aprendemos na sala de aula
+    }
+</script>

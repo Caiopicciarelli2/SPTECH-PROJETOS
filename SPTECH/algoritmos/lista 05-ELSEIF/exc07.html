@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 1. Estrutura de Decisão (ELSE IF) | 7. Consumo de Calorias: Sua Dieta Está Saudável?</title>
+</head>
+<body>
+    <label for="id_qtd_pao">Quantos pães franceses você tem comido por dia:</label>
+    <input type="number" id="id_qtd_pao"> <br><br>
+
+    <label for="id_qtd_bolacha">Quantos pacotes de bolacha recheada você tem comido por dia:</label>
+    <input type="number" id="id_qtd_bolacha"> <br><br>
+
+    <label for="id_qtd_chocolate"> Quantos copos de achocolatado você tem tomado por dia:</label>
+    <input type="number" id="id_qtd_chocolate"> <br><br>
+
+    <button onclick="calcCalorias()">Verificar calorias</button>
+
+    <h1 id="mensagem"></h1> <br><br>
+
+</body>
+</html>
+
+<script>
+    function calcCalorias(){
+        let qtd_pao = Number(id_qtd_pao.value);
+        let qtd_bolacha = Number(id_qtd_bolacha.value);
+        let qtd_chocolate = Number(id_qtd_chocolate.value);
+
+        let calorias = ((qtd_pao * 50) + (qtd_bolacha * 80) + (qtd_chocolate * 70))
+
+        if(calorias < 200){
+            mensagem.innerHTML = `Parabéns, vai ficar em forma!`;
+        }else if(calorias <= 400){
+            mensagem.innerHTML = `Cuidado, vai ficar menos saudável!`;
+        }else if(calorias > 400){
+            mensagem.innerHTML = `Alerta crítico de saúde !!!`;
+        }
+    }
+</script>

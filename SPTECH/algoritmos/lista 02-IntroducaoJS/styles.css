@@ -1,0 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.titulo-atividade{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 10vh;
+    width: 100%;
+    border: 1px solid rgba(0, 0, 0, 0.171);
+    border-radius: 0.3rem;
+}
+
+.titulo-atividade h1{
+    font-family: "Roboto", sans-serif;
+}
+
+.form-atividade{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+    width: 100%;
+}
+
+.form-itens{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 80%;
+    width: 80%;
+    border: 1px solid rgba(0, 0, 0, 0.171);
+    border-radius: 0.3rem;
+    gap: 2vh;
+}
+
+.form-group-itens{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 25%;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.171);
+}
+
+.form-group-itens label{
+    font-family: "Roboto", sans-serif;
+    padding-right: 0.4rem;
+    font-size: 1.2rem;
+}
+
+.form-group-itens input{
+    padding: 0.3rem 0.2rem;
+    border-radius: 0.3rem;
+    border: 1px solid rgba(0, 0, 0, 0.171);
+}
+
+.form-group-button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    height: 25%;
+    gap: 1vh;
+}
+
+
+.buttons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2vw;
+    height: 50%;
+    width: 100%;
+}
+
+.form-group-button h6{
+    font-family: "Roboto", sans-serif;
+    font-size: 1.2rem;
+}
+
+.form-group-button button{
+    border: 1px solid rgba(0, 0, 0, 0.171);
+    border-radius: 0.3rem;
+    padding: 0.4rem 2rem;
+    cursor: pointer;
+    font-family: "Roboto", sans-serif;
+    transition: 0.3s ease;
+}
+
+.form-group-button button:hover{
+    color: white;
+    background-color: black;
+}

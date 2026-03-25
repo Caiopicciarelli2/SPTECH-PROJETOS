@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 03 - Operações Aritméticas, variáveis, innerHTML</title>
+    <link rel="stylesheet" href="style01.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-titulo">
+            <h1>Lista 03 - JS | Parte 2 - Variáveis e innerHTML</h1>
+            <h2>Exc 14: Transformações Saiyajin e Poder de Luta</h2>
+        </div>
+        <div class="container-info-3">
+            <label for="">Qual é o "KI base" do seu guerreiro:</label>
+            <input type="text" id="KI">
+        </div>
+        <div class="container-info-2">
+            <label for="">Transformar em:</label>
+        </div>
+        <div class="container-buttons">
+            <button onclick="SSJ01 ()">
+                SSJ
+            </button>
+            <button onclick="SSJ02 ()">
+                SSJ2
+            </button>
+            <button onclick="SSJ03 ()">
+                SSJ3
+            </button>
+        </div>
+        <div class="container-resultado">
+            <h1 id="resultado" style="text-align: center; margin-top: 10%; padding-bottom: 6%;"></h1>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function SSJ01() {
+        let ssj01 = Number(KI.value);
+        let upar = Number(ssj01 * 50);
+
+        resultado.innerHTML =
+        `
+            Após se transformar em SSJ, o KI desse Sayajin passa a ser de ${upar}.
+        `
+    }
+
+    function SSJ02() {
+        let ssj02 = Number(KI.value);
+        let upar = Number(ssj02 * 100);
+
+        resultado.innerHTML =
+        `
+            Após se transformar em SSJ2, o KI desse Sayajin passa a ser de ${upar}.
+        `
+    }
+
+    function SSJ03() {
+        let ssj03 = Number(KI.value);
+        let upar = Number(ssj03 * 200);
+
+        resultado.innerHTML =
+        `
+            Após se transformar em SSJ3, o KI desse Sayajin passa a ser de ${upar}.
+        `
+    }
+</script>

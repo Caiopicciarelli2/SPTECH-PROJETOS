@@ -1,0 +1,407 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content-title">
+            <h1>Lista 07 | Exercício 02 - Desafio: Adivinhe o Ranking da Competição.</h1>
+        </div>
+        <div class="main-content">
+            <div class="content-left">
+                <div class="content-row">
+                    <label for="ipt_1_lugar">1º lugar:</label>
+                    <input type="text" name="" id="ipt_1_lugar">
+                    <label for="ipt_2_lugar">2º lugar:</label>
+                    <input type="text" name="" id="ipt_2_lugar">
+                </div>
+                <div class="content-row">
+                    <label for="ipt_3_lugar">3º lugar:</label>
+                    <input type="text" name="" id="ipt_3_lugar">
+                    <label for="ipt_4_lugar">4º lugar:</label>
+                    <input type="text" name="" id="ipt_4_lugar">
+                </div>
+                <div class="content-row">
+                    <label for="ipt_5_lugar">5º lugar:</label>
+                    <input type="text" name="" id="ipt_5_lugar">
+                </div>
+                <div class="content-row-button">
+                    <button onclick="classificacao1()">
+                        Analisar
+                    </button>
+                </div>
+                <div class="content-row-resultado">
+                    <h1 id="resultado">
+
+                    </h1>
+                </div>
+            </div>
+            <div class="content-right">
+                <div class="content-row-2">
+                    <label for="ipt_meus_campeoes">Digite o nome do campẽao:</label>
+                    <input type="text" name="" id="ipt_meus_campeoes">
+                </div>
+                <div class="content-row-button2">
+                    <button onclick="adicionar()">Adicionar</button>
+                </div>
+                <div class="content-row-resultado2">
+                    <h1 id="resultado2">
+                        <span style="font-size: 1.4rem; font-weight: 600; color: rgb(107, 107, 28);">Meus
+                            Campeões:</span>
+                    </h1>
+                </div>
+                <div class="content-row-busca">
+                    <div class="busca-ipt">
+                        <input type="text" name="" id="ipt_buscar">
+                        <button type="" onclick="buscar()">Buscar</button>
+                    </div>
+                    <div class="resultado3">
+                        <h2 id="resultado3"></h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    let classificacao = [
+        "Caio", "Bruno", "Guilherme", "Gustavo", "Luiz"
+    ];
+
+    function classificacao1() {
+        let primeiro = ipt_1_lugar.value;
+        let segundo = ipt_2_lugar.value;
+        let terceiro = ipt_3_lugar.value;
+        let quarto = ipt_4_lugar.value;
+        let quinto = ipt_5_lugar.value;
+        resultado.innerHTML = ``;
+
+        let acertos = 0;
+
+        if (primeiro == classificacao[0]) {
+            resultado.innerHTML =
+                `
+                <span style="color:green; font-weight:600;">
+                    Palpite para o 1º lugar: (${primeiro}), Correto!
+                </span>
+            `;
+
+            acertos++;
+        } else {
+            resultado.innerHTML =
+                `
+                <span style="color:red; font-weight: 600;">
+                    Palpite para o 1º lugar: (${primeiro}), Incorreto!
+                </span>
+            `;
+        }
+
+        if (segundo == classificacao[1]) {
+            resultado.innerHTML +=
+                `
+                <span style="color:green; font-weight:600;">
+                    Palpite para o 2º lugar: (${segundo}), Correto!<br>!
+                </span>
+            `;
+
+            acertos++;
+        } else {
+            resultado.innerHTML +=
+                `
+                <span style="color:red; font-weight: 600;">
+                    Palpite para o 2º lugar: (${segundo}), Incorreto!<br>
+                </span>
+            `;
+        }
+
+        if (terceiro == classificacao[2]) {
+            resultado.innerHTML +=
+                `
+                <span style="color:green; font-weight:600;">
+                   Palpite para o 3º lugar: (${terceiro}), Correto!
+                </span>
+            `;
+
+            acertos++;
+        } else {
+            resultado.innerHTML +=
+                `
+                <span style="color:red; font-weight: 600;">
+                    Palpite para o 3º lugar: (${terceiro}), Incorreto!
+                </span>
+            `;
+        }
+
+        if (quarto == classificacao[3]) {
+            resultado.innerHTML +=
+                `
+                <span style="color:green; font-weight:600;">
+                   Palpite para o 4º lugar: (${quarto}), Correto!<br>
+                </span>
+            `;
+
+            acertos++;
+        } else {
+            resultado.innerHTML +=
+                `
+                <span style="color:red; font-weight: 600;">
+                    Palpite para o 4º lugar: (${quarto}), Incorreto!<br>
+                </span>
+            `;
+        }
+
+        if (quinto == classificacao[4]) {
+            resultado.innerHTML +=
+                `
+                <span style="color:green; font-weight:600;">
+                   Palpite para o 5º lugar: (${quinto}), Correto!<br><br>
+                </span>
+            `;
+
+            acertos++;
+        } else {
+            resultado.innerHTML +=
+                `
+                <span style="color:red; font-weight: 600;">
+                    Palpite para o 5º lugar: (${quinto}), Incorreto!<br><br>
+                </span>
+            `;
+        }
+
+        resultado.innerHTML += ` Vocẽ acertou ${acertos} palpite(s).<br>`;
+
+        if (acertos >= 3) {
+            resultado.innerHTML +=
+                `
+                Você conhece bem essa competição!<br><br>
+                O primeiro colocado do rank é: ${classificacao[0]} 🥇, <br>
+                O Rank é: ${classificacao}<br>
+            `;
+        } else {
+            resultado.innerHTML +=
+                `
+                Você precisa acompanhar mais essa competição!<br><br>
+                O primeiro colocado do rank é: ${classificacao[0]} 🥇, <br>
+                O Rank é: ${classificacao}<br>
+            `;
+        }
+
+        if (primeiro == "" || segundo == "" || terceiro == "" || quarto == "" || quinto == "") {
+            resultado.innerHTML = `Erro! Preencha os campos!`;
+            resultado2.innerHTML = ``;
+        }
+
+    }
+
+    let campeoes = [];
+
+    function adicionar() {
+        let adicionar_campeoes = ipt_meus_campeoes.value;
+
+        campeoes.push(adicionar_campeoes);
+
+        resultado2.innerHTML =
+            `   
+            <span style="font-size: 1.4rem; font-weight: 600; color: rgb(107, 107, 28);">Meus Campeões:</span>
+            <br><br>
+            ${campeoes}.
+        `;
+    }
+
+    function buscar() {
+        let buscar_nome = ipt_buscar.value;
+
+        if (classificacao.includes(buscar_nome) && campeoes.includes(buscar_nome)) {
+            resultado3.innerHTML =
+                `
+                O nome pesquisado está incluido na lista do sistema,<br> e na sua lista de campeões!
+            `;
+        } else if (classificacao.includes(buscar_nome)) {
+            resultado3.innerHTML = `
+                O nome pesquisado está incluido somente na lista do sistema!
+            `;
+        } else if (campeoes.includes(buscar_nome)) {
+            resultado3.innerHTML = `
+                O nome pesquisado está incluido somente na sua lista de campeões!
+            `;
+        } else {
+            resultado3.innerHTML = `
+                O nome pesquisado não está incluido nas listas!
+            `;
+        }
+
+        if(buscar_nome == ""){
+            resultado3.innerHTML = 
+            `
+                Insira um nome válido!
+            `;
+        }
+    }
+</script>
+
+<style>
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 95vh;
+        width: 100%;
+    }
+
+    .content-title h1 {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 500;
+    }
+
+    .main-content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 90%;
+        width: 95%;
+        gap: 2rem;
+    }
+
+    .content-left,
+    .content-right {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 90%;
+        width: 48%;
+        border: 1px solid rgba(0, 0, 0, 0.205);
+        border-radius: 0.3rem;
+    }
+
+    .content-right {
+        gap: 2.5rem;
+    }
+
+    .content-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 20%;
+        gap: 2vh;
+    }
+
+    .content-row-2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 3%;
+        gap: 2vh;
+    }
+
+    .content-row label {
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 500;
+    }
+
+    .content-row-button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 10%;
+        padding-left: 2vh;
+    }
+
+    .content-row-button2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 2%;
+        padding-left: 2vh;
+    }
+
+    .content-row-button button,
+    .content-row-button2 button {
+        padding: 0.5rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        border: 1px solid rgba(0, 0, 0, 0.253);
+        border-radius: 0.3rem;
+        cursor: pointer;
+        background-color: transparent;
+        width: 14%;
+    }
+
+    .content-row-resultado {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30%;
+        width: 90%;
+        border: 1px solid rgba(0, 0, 0, 0.205);
+        border-radius: 0.3rem;
+        margin-bottom: 2vh;
+    }
+
+    .content-row-resultado2 {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20%;
+        width: 90%;
+        border: 1px solid rgba(0, 0, 0, 0.205);
+        border-radius: 0.3rem;
+    }
+
+    .content-row-busca {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 40%;
+        width: 90%;
+    }
+
+    .content-row-busca h2{
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        font-size: 0.8rem;
+    }
+
+    .content-row-resultado h1,
+    .content-row-resultado2 h1 {
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        font-size: 1rem;
+    }
+
+    .busca-ipt{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 30%;
+        width: 100%;
+        gap: 0.5vw;
+        margin-top: 5vh;
+    }
+
+    .resultado3{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 70%;
+        width: 100%;
+        border: 1px solid rgba(0, 0, 0, 0.205);
+        border-radius: 0.3rem;
+    }
+</style>

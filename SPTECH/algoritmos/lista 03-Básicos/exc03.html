@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 03 - Operações Aritméticas, variáveis, innerHTML</title>
+    <link rel="stylesheet" href="style01.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-titulo">
+            <h1>Lista 03 - JS | Parte 1 - Operações Aritméticas</h1>
+            <h2>Exc 03: Economia com Bilhete Único</h2>
+        </div>
+        <div class="container-info-2">
+            <label for="">Qual é o valor da passagem integral:</label>
+            <input type="text" id="valorPassagem">
+
+            <label for="">Qual é a quantidade de viagens mensais:</label>
+            <input type="text" id="qtdViagens">
+        </div>
+        <div class="container-buttons">
+            <button onclick="calcularPassagem ()">
+                Ver economia
+            </button>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function calcularPassagem() {
+        let valor = Number(valorPassagem.value);
+        let viagens = Number(qtdViagens.value);
+        let resultadoPassagens = ( ( valor / 2 ) * viagens );
+
+        alert("Você economizará R$ " + resultadoPassagens + " por mês");
+    }
+</script>

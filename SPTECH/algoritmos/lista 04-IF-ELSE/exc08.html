@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 02 - (IF) | 8. Peso Médio no Elevador </title>
+</head>
+
+<body>
+    <label for="id_qtd_h">Quantos homens entraram no elevador:</label>
+    <input type="number" id="id_qtd_h" placeholder="Digite a quantidade">
+
+    <label for="id_valor_tirar">Quantas mulheres entraram no elevador:</label>
+    <input type="number" id="id_qtd_m" placeholder="Digite a quantidade">
+
+    <button onclick="calcPesoElevador()">
+        Analisar peso
+    </button>
+
+    <h1 id="mensagem"></h1>
+    <h2 id="mensagem2" style="color: blue;"></h2>
+
+</body>
+
+</html>
+
+<script>
+    function calcPesoElevador() {
+        let qtdH = Number(id_qtd_h.value);
+        let qtdM = Number(id_qtd_m.value);
+
+        let pesoT = (qtdH * 80) + (qtdM * 60);
+
+        mensagem.innerHTML = `Este elevador suporta 800 Kg e o peso estimado desta lotação é de ${pesoT}kg`;
+
+        if(pesoT > 800){
+            mensagem2.innerHTML = `Será necessário que alguém desça para que o elevador se movimente`;
+        }
+
+    }
+</script>

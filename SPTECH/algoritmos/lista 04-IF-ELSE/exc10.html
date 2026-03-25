@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 02 - (IF) | 10. Situação Financeira da Conta Bancária</title>
+</head>
+
+<body>
+    <label for="id_valor_saldo">Valor do saldo na conta:</label>
+    <input type="number" id="id_valor_saldo" placeholder="Digite o valor">
+
+    <button onclick="calcBanco()">
+        Verificar finanças
+    </button>
+
+    <h1 id="mensagem" style="color: black;"></h1>
+    <h2 id="mensagem2" style="color: red;"></h2>
+    <h3 id="mensagem3" style="color: green;"></h3>
+
+</body>
+
+</html>
+
+<script>
+    function calcBanco() {
+        let saldoC = Number(id_valor_saldo.value);
+
+        if(saldoC = 0){
+            mensagem.innerHTML = `Conta zerada`;
+        }
+        if(saldoC < 0){
+            mensagem2.innerHTML = `Está devendo!`;
+        }
+        if(saldoC > 0){
+            mensagem3.innerHTML = `Saldo positivo! sorriso`;
+        }
+
+    }
+</script>

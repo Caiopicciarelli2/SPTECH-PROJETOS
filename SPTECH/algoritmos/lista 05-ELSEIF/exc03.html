@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 1. Estrutura de Decisão (ELSE IF) | 3. Sensação Térmica: Como o Corpo Humano Percebe a Temperatura</title>
+</head>
+<body>
+    <label for="id_valor_temp">Digite uma temperatura em ºC:</label>
+    <input type="number" id="id_valor_temp">
+
+    <button onclick="calcTemp()">Analise da Temperatura</button>
+
+    <div>
+        <h1 id="mensagem">
+
+        </h1>
+    </div>
+</body>
+</html>
+
+<script>
+    function calcTemp(){
+        let temp = Number(id_valor_temp.value);
+
+        if(temp < 14){
+            mensagem.innerHTML = `Congelante.`;
+        }else if(temp <= 21){
+            mensagem.innerHTML = `Com Frio.`;
+        }else if(temp <= 24){
+            mensagem.innerHTML = `Confortável.`;
+        }else if(temp <= 31){
+            mensagem.innerHTML = `Com Calor.`;
+        }else if(temp > 31){
+            mensagem.innerHTML = `Calor escaldante`;
+        }
+    }
+</script>

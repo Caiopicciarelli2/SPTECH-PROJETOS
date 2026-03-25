@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Parte 1 | Lista 02 - Introdução ao JavaScrip | exc 05
+    </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="titulo-atividade">
+        <h1>Exercicio 05, opinião da mãe e da avó. </h1>
+    </div>
+
+    <div class="form-atividade">
+        <div class="form-itens">
+            <div class="form-group-itens">
+                <label for="notaEstudante">Nota da escola:</label>
+                <input type="text" id="notaEstudante" placeholder="Digite a nota">
+            </div>
+
+            <div class="form-group-button">
+                <div class="h6s">
+                    <h6 id="resultadoOpiniao" style="padding-top: 5rem;"></h6>
+                </div>
+                <div class="buttons">
+                    <button onclick="exercicio05()">Opinião da vó</button>
+                    <button onclick="exercicio0502()">Opinião da mãe</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function exercicio05() {
+        let nota = notaEstudante.value;
+        resultadoOpiniao.innerHTML = "Muito bem, que neto inteligente, porque tirou " + nota + ".";
+
+    };
+
+    function exercicio0502() {
+        let nota = notaEstudante.value;
+
+        resultadoOpiniao.innerHTML = "Não fez mais que tua obrigação com essa nota " + nota + ".";
+    };
+</script>

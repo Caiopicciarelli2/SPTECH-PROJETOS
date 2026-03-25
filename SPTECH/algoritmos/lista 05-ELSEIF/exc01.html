@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 1. Estrutura de Decisão (ELSE IF) | 1. Altura e Esportes: Descubra Sua Vantagem Competitiva</title>
+</head>
+<body>
+    <label for="id_altura_user">Digite sua altura em Metros:</label>
+    <input type="number" id="id_altura_user">
+
+    <button onclick="calcEstatura()">Analisar Estatura</button>
+
+    <div>
+        <h1 id="mensagem">
+
+        </h1>
+    </div>
+</body>
+</html>
+
+<script>
+    function calcEstatura(){
+        let altura = Number(id_altura_user.value);
+
+        if(altura <= 1.65){
+            mensagem.innerHTML = `Você pode ser piloto de corrida.`;
+        }else if(altura <= 1.80){
+            mensagem.innerHTML = `Você pode ser jogador de futebol.`;
+        }else if(altura > 1.80){
+            mensagem.innerHTML = `Você pode ser jogador de vôlei ou basquete.`;
+        }
+    }
+</script>

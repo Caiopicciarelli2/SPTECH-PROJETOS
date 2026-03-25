@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 01 - (IF) | 1. Idade para a Festa</title>
+</head>
+<body>
+    <label for="id_idade">Qual sua idade:</label>
+    <input type="number" id="id_idade" placeholder="Digite sua idade">
+
+    <button onclick="irFesta()">Ir para a festa</button>
+    
+</body>
+</html>
+
+<script>
+    function irFesta(){
+        let idade = Number(id_idade.value);
+
+        if(idade < 18){
+            alert(`Pedir permissão pro responsável`);
+        }else{
+            alert(`#partiuFesta`);
+        }
+    }
+</script>

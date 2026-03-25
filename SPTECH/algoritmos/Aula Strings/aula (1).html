@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--Tratamentos de string-->
+    <input type="text" id="ipt_texto">
+    <button onclick="validar()">Validar frase</button>
+</body>
+</html>
+
+<script>
+    function validar(){
+        let frase = ipt_texto.value;
+        // função startsWith, ve se no começo do texto contém
+        // x string, tem que ser exatamente a string colocada ( Bob != bob )
+        let contem_bob_inicio = frase.startsWith("Bob");
+        console.log(`O texto começa com Bob? ${contem_bob_inicio}`);
+
+        // função endsWith, ve se no final do texto contém
+        // x string, tem que ser exatamente a string colocada ( Bob != bob )
+
+        let contem_bob_fim = frase.endsWith("Bob");
+        console.log(`O texto termina com Bob? ${contem_bob_fim}`);
+
+        // função que trata string sem receber o espaço das PONTAS, começo e fim
+        // por exemplo, cpf.
+        let frase_sem_espacos = frase.trim();
+        console.log(`Exeplo cpf inserido: ${frase}`);
+        console.log(`Exeplo cpf tratado: ${frase_sem_espacos}`);
+
+        // calcula o tamanho da frase por caracter
+        // .length 
+        // length não é function, é comportamento
+        let tamanho_frase = frase.length;
+        console.log(`O tamanho da frase é: ${tamanho_frase}`);
+
+        // matriz, indice em [], começando por 0 sempre!
+        // primeira letra da frase
+        let primeira_letra_frase = frase[0];
+        console.log(`Primeira letra da casa: ${primeira_letra_frase}`);
+
+        // procurar frase e trocar 
+        let procurar = "-";
+        frase.replace(procurar, ".");
+        frase.replace("-", ".");
+
+        // ultima letra, ou ultimo indice é sempre o numero de caracteres da frase
+        // -1, porque o indice começa com 0, ent a última é sempre -1
+        let ultimaletra = frase[tamanho_frase - 1];
+
+
+        // indice da onde a string aparece na frase pela primeira vez
+        let indice_oi = frase.indexOf("oi");
+        console.log(`A palavra "oi" foi encontrada na posição: ${indice_oi}`);
+
+        //contains sistema boleano que checa se tem x string 
+
+        // caixa alta
+        let caixa_alta = frase.toUpperCase();
+        console.log(`Frase gritando: ${caixa_alta}`);
+        // caixa baixa
+        let caixa_baixa = frase.toLowerCase();
+        console.log(`Frase em minusculo: ${caixa_baixa}`);
+
+
+    }
+</script>

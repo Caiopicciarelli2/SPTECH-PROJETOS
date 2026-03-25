@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Parte 1 | Lista 02 - Introdução ao JavaScrip | exc 01
+    </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="titulo-atividade">
+        <h1>Exercicio 01, cadastro de local e nascimento </h1>
+    </div>
+
+    <div class="form-atividade">
+        <div class="form-itens">
+            <div class="form-group-itens">
+                <label for="cidadeNatal">Cidade Natal:</label>
+                <input type="text" id="cidadeNatal" placeholder="Digite sua cidade">
+            </div>
+
+            <div class="form-group-itens">
+                <label for="anoNascimento">Ano de nascimento:</label>
+                <input type="text" id="anoNascimento" placeholder="Digite o ano">
+            </div>
+
+            <div class="form-group-button">
+                <h6 id="resultadoCadastro"></h6>
+                <button onclick="exercicio01()">Cadastrar</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function exercicio01() {
+        let cidNatal = cidadeNatal.value;
+        let anoNasc = anoNascimento.value;
+
+        resultadoCadastro.innerHTML = "Você nasceu na cidade de " + cidNatal + " em " + anoNasc + ".";
+    }
+</script>

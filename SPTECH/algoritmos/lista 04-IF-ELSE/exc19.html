@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 4 (IF/ELSE) | 19. Crie um programa o qual: </title>
+</head>
+
+<body>
+    <label for="id_temp_a">Informe a temperatura do ambiente:</label>
+    <input type="number" id="id_temp_a" placeholder="Digite a temp.">
+
+    <button onclick="calcTemp()">
+        Verificar clima
+    </button>
+
+    <div id="imagem">
+
+    </div>
+    <div id="imagem2">
+
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function calcTemp() {
+        let temp = Number(id_temp_a.value);
+
+        if(temp < 10){
+            imagem.innerHTML = `<img src="./images/alimentobom.jfif" alt="">`;
+        }else{  
+            imagem2.innerHTML = `<img src="./images/alimentoruim.jfif" alt="">`;
+        }   
+    }
+</script>

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>operadores HTML</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="title-container">
+        <h1>Operadores Matemáticos</h1>
+    </div>
+
+    <!-- ( * ) - Multiplicação  -->
+    <!-- ( / ) - Divisão  -->
+    <!-- ( % ) - Resto -->
+    <!-- ( + ) - Soma -->
+    <!-- ( - ) - Subtração -->
+    <!-- ( ** ) - potência -->
+
+    <div class="itens-container">
+        <input type="text" id="id_num_01">
+        <span> -, +, * e / </span>
+        <input type="text" id="id_num_02">
+
+        <button onclick="calcular2()">
+        Calcular
+        </button>
+    </div>
+    
+
+</body>
+
+</html>
+
+<script>
+
+    function calcular() {
+        alert("A subtração é: " + ( Number(id_num_01.value )  - Number(id_num_02.value)));
+        alert("A Soma é: " + (  Number(id_num_01.value )  + Number(id_num_02.value)));
+    }
+
+    // ou melhor 
+
+    function calcular2(){
+        let num_01_digitado = Number(id_num_01.value);
+        let num_02_digitado = Number(id_num_02.value);
+
+        alert("A subtração é: " + ( num_01_digitado  - num_02_digitado ));
+        alert("A soma é: " + ( num_01_digitado  + num_02_digitado ));
+        alert("A multiplicação é: " + ( num_01_digitado * num_02_digitado ));
+        alert("A divisão é: " + ( num_01_digitado / num_02_digitado ));
+    } 
+
+</script>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 1. Estrutura de Decisão (ELSE IF) | 6. Times Paulistas: O Canto da Sua Torcida!?</title>
+</head>
+<body>
+    <label for="id_time_c">Qual dos seguintes times de São Paulo você torce: São Paulo, Corinthains, Santos e Palmeiras</label>
+    <input type="text" id="id_time_c">
+
+    <button onclick="timeC()">Fale sobre esse time</button>
+
+    <div id="div_fundo" style="background-color: black;">
+        <h1 id="mensagem" style="color: white;">
+
+        </h1>
+    </div>
+    <div id="div_fundo_2" style="background-color: green;">
+        <h1 id="mensagem2" style="color: white;">
+            
+        </h1>
+    </div>
+    <div id="div_fundo_3" style="background-color: black;">
+        <h1 id="mensagem3" style="color: red;">
+            
+        </h1>
+    </div>
+    <div id="div_fundo_4" style="background-color: white;">
+        <h1 id="mensagem4" style="color: black;">
+            
+        </h1>
+    </div>
+
+</body>
+</html>
+
+<script>
+    function timeC(){
+        let time = (id_time_c.value);
+
+        if(time == 'Corinthians'){
+            mensagem.innerHTML = `Salve o Corinthians`;
+            mensagem2.innerHTML = ``;
+            mensagem3.innerHTML = ``;
+            mensagem4.innerHTML = ``;
+        }else if(time == 'Palmeiras'){
+            mensagem2.innerHTML = `Salve o alviverde imponente`;
+            mensagem.innerHTML = ``;
+            mensagem3.innerHTML = ``;
+            mensagem4.innerHTML = ``;
+        }else if(time == 'São Paulo'){
+            mensagem3.innerHTML = `Salve o Tricolor paulista`;
+            mensagem.innerHTML = ``;
+            mensagem2.innerHTML = ``;
+            mensagem4.innerHTML = ``;
+        }else if(time == 'Santos'){
+            mensagem4.innerHTML = `Agora quem dá a bola é o Santos`;
+            mensagem.innerHTML = ``;
+            mensagem2.innerHTML = ``;
+            mensagem3.innerHTML = ``;
+        }
+    }
+</script>

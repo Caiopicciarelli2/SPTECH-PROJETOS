@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 03 - Operações Aritméticas, variáveis, innerHTML</title>
+    <link rel="stylesheet" href="style01.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-titulo">
+            <h1>Lista 03 - JS | Parte 1 - Operações Aritméticas</h1>
+            <h2>Exc 05: Cálculo da Média na SPTech</h2>
+        </div>
+        <div class="container-info-3">
+            <label for="">Qual é o nome do aluno:</label>
+            <input type="text" id="nomeAluno">
+
+            <label for="">Qual foi a nota na avaliação "Continuada":</label>
+            <input type="text" id="notaCont">
+
+            <label for="">Qual foi a nota na avaliação "Pesquisa e Inovação":</label>
+            <input type="text" id="notaPI">
+        </div>
+        <div class="container-buttons">
+            <button onclick="calcularMedia ()">
+                Calcular média
+            </button>
+        </div>
+        <div class="container-resultado">
+            <h1 id="resultado"></h1>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function calcularMedia() {
+        let nota01 = Number(notaCont.value);
+        let nota02 = Number(notaPI.value);
+        let nome = nomeAluno.value;
+        let resultadoCalc = ((nota01 * 0.4) + (nota02 * 0.6));
+
+        resultado.innerHTML =
+        `
+            A média de ${nome} será de ${resultadoCalc}.
+        `
+    }
+</script>

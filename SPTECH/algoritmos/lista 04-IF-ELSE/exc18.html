@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 4 (IF/ELSE) | 18. Crie um programa o qual:  </title>
+</head>
+
+<body>
+    <label for="id_nota_1">Nota 01:</label>
+    <input type="number" id="id_nota_1" placeholder="Digite o valor">
+
+    <label for="id_nota_2">Nota 02:</label>
+    <input type="number" id="id_nota_2" placeholder="Digite o valor">
+
+    <button onclick="calcSituacao()">
+        Verificar Situação
+    </button>
+
+    <h1 id="mensagem"></h1>
+
+</body>
+
+</html>
+
+<script>
+    function calcSituacao() {
+        let nota1 = Number(id_nota_1.value);
+        let nota2 = Number(id_nota_2.value);
+
+        let media = (nota1 + nota2) / 2;
+
+        if(media >= 6){
+            alert(`Parabéns, aprovado!`)
+        }else{
+            alert(`Tente outra vez...`)
+        }
+    }
+</script>

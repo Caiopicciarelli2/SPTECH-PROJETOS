@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 03 - Operações Aritméticas, variáveis, innerHTML</title>
+    <link rel="stylesheet" href="style01.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-titulo">
+            <h1>Lista 03 - JS | Parte 2 - Variáveis e innerHTML </h1>
+            <h2>Exc 08: Banco Virtual: Depósitos e Retiradas</h2>
+        </div>
+        <div class="container-info-3">
+            <label for="">Digite o valor:</label>
+            <input type="text" id="valorDR">
+        </div>
+        <div class="container-buttons">
+            <button onclick="depositarDinheiro ()">
+                Depositar
+            </button>
+            <button onclick="retirarDinheiro ()">
+                Retirar
+            </button>
+        </div>
+        <div class="container-resultado">
+            <h1 id="resultado"></h1>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    let saldo = 0;
+
+    function depositarDinheiro() {
+        let valorDinheiro = Number(valorDR.value);
+        saldo += valorDinheiro;
+
+        alert(
+        `
+            Depósito de R$${valorDinheiro} efetuado! Saldo atual: R$${saldo}.
+        `)
+    }
+
+    function retirarDinheiro() {
+        let valorDinheiro = Number(valorDR.value);
+        saldo -= valorDinheiro;
+
+        alert(
+        `
+            Retirada de R$${valorDinheiro} efetuada! Saldo atual: R$${saldo}.
+        `)
+    }
+</script>

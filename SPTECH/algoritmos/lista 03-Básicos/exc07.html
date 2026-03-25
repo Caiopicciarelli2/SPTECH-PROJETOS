@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 03 - Operações Aritméticas, variáveis, innerHTML</title>
+    <link rel="stylesheet" href="style01.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-titulo">
+            <h1>Lista 03 - JS | Parte 2 - Variáveis e innerHTML </h1>
+            <h2>Exc 07: Simulador de Transações Bancárias</h2>
+        </div>
+        <div class="container-info-4">
+
+        </div>
+        <div class="container-buttons">
+            <button onclick="receberDinheiro ()">
+                Receber R$ 100,00
+            </button>
+            <button onclick="pagarDinheiro ()">
+                Pagar R$ 50,00
+            </button>
+        </div>
+        <div class="container-resultado">
+            <h1 id="resultado"></h1>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    let saldo = 0;
+
+    function receberDinheiro () {
+        saldo += 100;
+        resultado.innerHTML =
+        `
+           Transferência de R$100 recebida! Saldo atual: R$${saldo}.
+        `
+    }
+
+    function pagarDinheiro () {
+        saldo -= 50;
+        resultado.innerHTML =
+        `
+          Pagamento de R$50 efetuado! Saldo atual: R$${saldo}
+        `
+    }
+</script>

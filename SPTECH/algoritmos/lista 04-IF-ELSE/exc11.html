@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 3 (IF/ELSE) | 11. Crie um programa o qual: </title>
+</head>
+
+<body>
+    <label for="id_qtd_f">Quantidade de filhos:</label>
+    <input type="number" id="id_qtd_f" placeholder="Digite a quantidade ">
+
+    <button onclick="calcQtdF()">
+        Verificar finanças
+    </button>
+
+    <h1 id="mensagem"></h1>
+    <h2 id="mensagem2"></h2>
+    <h3 id="mensagem3"></h3>
+    <h4 id="mensagem4"></h4>
+
+</body>
+
+</html>
+
+<script>
+    function calcQtdF() {
+        let qtdF = Number(id_qtd_f.value);
+
+        if(qtdF >= 1){
+            mensagem.innerHTML = "Não tem TV <br>";
+        }
+        if(qtdF >= 2){
+            mensagem2.innerHTML = "Não tem internet <br>";
+        }
+        if(qtdF >= 3){
+            mensagem3.innerHTML = "Não tem video game";
+        }
+        if(qtdF >= 4){
+            mensagem4.innerHTML = "Não tem Netflix";
+        }
+
+    }
+</script>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 03 - Operações Aritméticas, variáveis, innerHTML</title>
+    <link rel="stylesheet" href="style01.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-titulo">
+            <h1>Lista 03 - JS | Parte 2 - Variáveis e innerHTML</h1>
+            <h2>Exc 10: Analisador de Resultados Eleitorais</h2>
+        </div>
+        <div class="container-info-3">
+            <label for="">Quantidade de votos no candidato A:</label>
+            <input type="text" id="candidatoA">
+
+            <label for="">Quantidade de votos no candidato B:</label>
+            <input type="text" id="candidatoB">
+
+            <label for="">Quantidade de votos brancos:</label>
+            <input type="text" id="votosBrancos">
+
+            <label for="">Quantidade de votos nulos:</label>
+            <input type="text" id="votosNulos">
+        </div>
+        <div class="container-buttons">
+            <button onclick="calcVotos ()">
+                Resultado Eleição
+            </button>
+        </div>
+        <div class="container-resultado">
+            <h1 id="resultado" style="text-align: center;"></h1>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function calcVotos() {
+        let votosA = Number(candidatoA.value);
+        let votosB = Number(candidatoB.value);
+        let votosBra = Number(votosBrancos.value);
+        let votosNul = Number(votosNulos.value);
+
+        let totalVotos = Number(votosA + votosB + votosBra + votosNul);
+
+        let votosInv = Number(votosBra + votosNul);
+
+        let porcentInva = Number((votosInv / totalVotos) * 100);
+
+        let porcentA = Number((votosA / totalVotos) * 100);
+
+        let porcentB = Number((votosB / totalVotos) * 100);
+
+        resultado.innerHTML =
+        `
+           Total de votos: ${totalVotos},<br>
+           candidato A: ${porcentA.toFixed(2)}% (${votosA.toFixed(2)} votos), candidato B: ${porcentB.toFixed(2)}% (${votosB.toFixed(2)} votos), votos "inválidos" ${porcentInva.toFixed(2)}% (${votosInv.toFixed(2)}).
+        `
+    }
+
+    // tava saindo o número com 9 casas decimais, e como são várias frações naturalmente ele costuma ficar com as 9 casas, então para deixar o resultado mais "limpo", pesquisei como só mostrar 2 casas decimais.
+
+</script>

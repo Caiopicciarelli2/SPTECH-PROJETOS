@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 03 - Operações Aritméticas, variáveis, innerHTML</title>
+    <link rel="stylesheet" href="style01.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-titulo">
+            <h1>Lista 03 - JS | Parte 2 - Variáveis e innerHTML</h1>
+            <h2>Exc 13: Cálculo de Gastos com Transporte</h2>
+        </div>
+        <div class="container-info-3">
+            <label for="">Qual é o valor da passagem integral:</label>
+            <input type="text" id="valorPassagem">
+
+            <label for="">Qual é a quantidade de viagens mensais:</label>
+            <input type="text" id="qtdViagens">
+
+            <label for="">Qual é a distância de sua casa até o trabalho em KM:</label>
+            <input type="text" id="distancia">
+        </div>
+        <div class="container-buttons">
+            <button onclick="calcularVT ()">
+                Calcular VT
+            </button>
+        </div>
+        <div class="container-resultado">
+            <h1 id="resultado" style="text-align: center;"></h1>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function calcularVT() {
+        let valor = Number(valorPassagem.value);
+        let viagens = Number(qtdViagens.value);
+        let KM = Number(distancia.value);
+
+        let valorUber = Number((viagens * 0.1) * (0.75 * KM));
+        let valorOnibus = Number((viagens * 0.9) * valor);
+        let valorTotal = Number(valorUber + valorOnibus);
+
+        resultado.innerHTML =
+        `
+            "Você vai gastar R$ ${valorTotal.toFixed(2)} por mês com transporte, R$ ${valorUber.toFixed(2)} com uber e R$ ${valorOnibus.toFixed(2)} com ônibus."
+        `
+        
+        // tava saindo o número com 9 casas decimais, e como são várias frações naturalmente ele costuma ficar com as 9 casas, então para deixar o resultado mais "limpo", pesquisei como só mostrar 2 casas decimais.
+    }
+</script>

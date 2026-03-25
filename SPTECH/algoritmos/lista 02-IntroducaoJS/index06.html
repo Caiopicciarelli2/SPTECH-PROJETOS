@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Parte 1 | Lista 02 - Introdução ao JavaScrip | exc 06
+    </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="titulo-atividade">
+        <h1>Exercicio 06, Farol. </h1>
+    </div>
+
+    <div class="form-atividade">
+        <div class="form-itens">
+            <div class="form-group-button" id="buttons">
+                <div class="buttons">
+                    <button id="btnPare" onclick="exercicio0601()">
+                        Pare
+                    </button>
+                    <button id="btnPense" onclick="exercicio0602()">
+                        Pense
+                    </button>
+                    <button id="btnPare" onclick="exercicio0603()">
+                        Siga
+                    </button>
+                </div>
+                <div class="h6s">
+                    <h6 id="resultadoSemaforo"></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function exercicio0601() {
+        resultadoSemaforo.innerHTML = "Pare e aguarde!";
+
+    };
+
+    function exercicio0602() {
+        resultadoSemaforo.innerHTML = "Pense se pode seguir ou se deve parar!";
+    };
+
+    function exercicio0603() {
+        resultadoSemaforo.innerHTML = "Pode seguir adiante";
+    };
+</script>

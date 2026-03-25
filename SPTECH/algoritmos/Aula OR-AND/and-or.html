@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <label for="ipt_idade">Digite sua idade:</label>
+    <input type="number" id="ipt_idade"> <br>
+    <label for="ipt_qtd_pets">Digite a quantidade de pets que vocẽ tem:</label>
+    <input type="number" id="ipt_qtd_pets"> <br>
+
+    <button onclick="analisar()">Analisar</button>
+
+    <div id="div_resultado">
+
+    </div>
+    
+</body>
+</html>
+
+<script>
+    // Se o cliente é maior de idade E possui mais de 3 pets, pode pegar crédito.
+    function analisar(){
+        let idade = Number(ipt_idade.value);
+        let qtd_pets = Number(ipt_qtd_pets.value);
+
+        // if padrão 
+
+        if(idade >= 18){
+            if(qtd_pets >= 3){
+                div_resultado.innerHTML = `Vocẽ tem direito a créditos.`;
+            }else{
+                div_resultado.innerHTML = `Vocẽ tem que ter 3 pets ou mais, para solicitar crédito`;
+            }
+        }else {
+            div_resultado.innerHTML = `Vocẽ não tem 18 anos ou mais, para solicitar crédito`;
+        }
+
+        // Usando E ou OU em if/else
+
+        if(idade >= 18 && qtd_pets >= 3){
+            div_resultado.innerHTML = `Vocẽ tem direito a créditos.`;
+        }// as duas condições precisam ser verdadeiras
+        else if(qtd_pets < 3){
+            div_resultado.innerHTML = `Vocẽ tem que ter 3 pets ou mais, para solicitar crédito`;
+        }else if(idade >= 18){
+            div_resultado.innerHTML = `Vocẽ não tem 18 anos ou mais, para solicitar crédito`;
+        }   
+
+        if(idade < 18 || qtd_pets < 3){
+            div_resultado.innerHTML = `Vocẽ tem direito a créditos.`;
+        }// uma condição verdadeira e já realiza o IF
+
+
+        // sistemas bolianos de true e false
+        // usuarioBloqueado = false
+        // !usuarioBloqueado != false Logo, == true 
+
+        if(!usuarioBloqueado){
+            // avisa erro
+        }
+    }
+</script>

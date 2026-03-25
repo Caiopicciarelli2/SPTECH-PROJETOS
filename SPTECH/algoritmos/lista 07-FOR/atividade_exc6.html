@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 7 - Laços de Repetição (for) | 1. Parte 1</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-title">
+            <h1>Lista 7 - Laços de Repetição (for) | exc 6.</h1>
+        </div>
+        <div class="content">
+            <div class="content-row">
+                <div class="content-row-ipt">
+                    <label for="qtd_cafe">Informe quantas xícaras de café com leite você já bebeu:</label>
+                    <input type="number" id="qtd_cafe">
+                </div>
+                <div class="content-row-btn">
+                    <button onclick="cafe()">Ver a quantidade</button>
+                </div>
+                <div class="content-row-resultado">
+                    <h6 id="resultado"></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function cafe() {
+        let cafe = Number(qtd_cafe.value);
+        resultado.innerHTML = ``;
+
+        if ((cafe == 0 || cafe < 0)) {
+            resultado.innerHTML =
+                `
+                Complete os campos de forma correta.
+            `;
+        } else {
+            for (let i = 1; i <= cafe; i++) {
+                resultado.innerHTML += 
+                `  
+                    <img src="./cafe.jpeg" alt"" style="height:50px">
+                `;
+                resultado.innerHTML += 
+                `  
+                    <img src="./cafe.jpeg" alt"" style="height:50px">
+                `;
+                resultado.innerHTML += 
+                `  
+                    <img src="leite.jpeg" alt"capa" style="height:50px">
+                `;
+            }
+        }
+    }
+</script>
+
+<style>
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 95vh;
+        width: 100%;
+        gap: 2vh;
+    }
+
+    .container-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 5%;
+        width: 100%;
+    }
+
+    .container-title h1 {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.6rem;
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 87%;
+        width: 90%;
+        border: 1px solid rgba(0, 0, 0, 0.171);
+        border-radius: 0.3rem;
+    }
+
+    .content-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 95%;
+        width: 90%;
+        gap: 1rem;
+    }
+
+    .content-row-ipt {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20%;
+        width: 100%;
+        gap: 1rem;
+    }
+</style>

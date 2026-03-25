@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 4 (IF/ELSE) | 20. Crie um programa o qual: </title>
+</head>
+
+<body>
+    <label for="id_qtd_h">Quantos homens entraram no elevador:</label>
+    <input type="number" id="id_qtd_h" placeholder="Digite a quantidade">
+
+    <label for="id_valor_tirar">Quantas mulheres entraram no elevador:</label>
+    <input type="number" id="id_qtd_m" placeholder="Digite a quantidade">
+
+    <button onclick="calcPesoElevador()">
+        Analisar peso
+    </button>
+
+    <h1 id="mensagem" style="color: green;"></h1>
+    <h2 id="mensagem2" style="color: red;"></h2>
+
+</body>
+
+</html>
+
+<script>
+    function calcPesoElevador() {
+        let qtdH = Number(id_qtd_h.value);
+        let qtdM = Number(id_qtd_m.value);
+
+        let pesoT = (qtdH * 90) + (qtdM * 70);
+
+        if(pesoT < 500){
+            mensagem.innerHTML = `Elevador vai se mover, pois está com ${pesoT}kg` 
+        }else{
+            let pesoM = pesoT - 500;
+
+            mensagem2.innerHTML = `Alguém precisa descer. Precisa perder ${pesoM}kg para mover o elevador` 
+        }
+
+    }
+</script>

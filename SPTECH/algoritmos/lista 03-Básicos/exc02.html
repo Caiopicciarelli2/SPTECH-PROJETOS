@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 03 - Operações Aritméticas, variáveis, innerHTML</title>
+    <link rel="stylesheet" href="style01.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-titulo">
+            <h1>Lista 03 - JS | Parte 1 - Operações Aritméticas</h1>
+            <h2>Exc 02: Dividindo a Pizza!</h2>
+        </div>
+        <div class="container-info-2">
+            <label for="">Qual é o valor da pizza:</label>
+            <input type="text" id="valorPizza">
+
+            <label for="">Qual é a quantidade de amigos:</label>
+            <input type="text" id="qtdAmigos">
+        </div>
+        <div class="container-buttons">
+            <button onclick="calcularPizza ()">
+                #LovePizza
+            </button>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function calcularPizza() {
+        let valor = Number(valorPizza.value);
+        let amigos = Number(qtdAmigos.value);
+        let resultadoPizza = ( valor / amigos );
+
+        alert("Cada um dos " + amigos + " amigos vai pagar R$ " + resultadoPizza + ",00 ");
+    }
+</script>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <input type="text" id="id_nota_01">
+    <input type="text" id="id_nota_02">
+
+    <button onclick="calcular()">
+        Calcular
+    </button>
+
+    <p id="id_resultado">
+
+    </p>
+
+
+</body>
+
+</html>
+
+<script>
+
+    // jeito certo 
+
+    function calcular () {
+        let nota_01 = Number(id_nota_01.value);
+        let nota_02 = Number(id_nota_02.value);
+        let media = ( nota_01 + nota_02 ) / 2;
+
+        id_resultado.innerHTML = 
+        `
+            Sua média de nota é: ${media}
+        `
+
+        // ou, a de cima é melhor se for usar o let média em outros lugares
+
+        // id_resultado.innerHTML = 
+        // `
+        //   Sua média é: ${( nota_01 + nota_02 ) / 2}
+        // `
+    }
+
+    function teste(){
+        // as váriaveis LET so funcionam na própria função {}, se quiser usar ela em outras funções,
+        // não funciona
+    }
+
+    // var funciona em outras funções
+
+</script>

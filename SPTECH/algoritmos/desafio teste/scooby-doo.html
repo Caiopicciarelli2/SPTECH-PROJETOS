@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=], initial-scale=1.0" />
+  <title>Scooby Doo</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <div class="container-scooby">
+    <div class="container-titulo">
+      <h1>
+        Teste 2 —
+        <span style="color: rgb(128, 65, 24);">
+          Scooby-Doo
+        </span>
+      </h1>
+      <img src="./imagens/scooby-doo.jpg" alt="">
+    </div>
+    <div class="content-scooby">
+      <div class="content-sub">
+        <p>
+          <span style="font-size: 1.2rem; font-weight: 500;">
+            A Mistério S.A. decidiu criar um teste para descobrir com qual membro da equipe você mais se parece.
+            <br>
+            <br>
+          </span>
+          O programa deverá analisar características como:
+          <span style="font-weight: 500;">Coragem, Inteligência, Curiosidade e Fome.</span>
+          Com base nesses valores, o sistema deverá identificar se o usuário se
+          parece mais com:
+          <br>
+           <span style="color: orange; font-weight: 500;">Velma (Perfil analítico e inteligente),</span>
+           <span style="color: rgb(27, 134, 196); font-weight: 500;">Fred (Perfil líder e estratégico),</span>
+           <span style="color: rgb(135, 5, 175); font-weight: 500;">Daphne (Perfil aventureiro e elegante),</span>
+           <span style="color: rgb(69, 112, 3); font-weight: 500;">Salsicha ou </span>
+           <span style="color: rgb(128, 65, 24); font-weight: 500;">Scooby-Doo (Perfil medroso, mas leal e divertido).</span>
+        </p>
+      </div>
+      <div class="content-form">
+        <div class="content-form-group">
+          <div class="content-form-group-left">
+            <label for="id_inteligencia">Qual seu nível de inteligência? de 0 a 10:</label>
+            <input type="number" id="id_inteligencia"/>
+          </div>
+          <div class="content-form-group-right">
+            <label for="id_coragem">Qual seu nível de coragem? de 0 a 10:</label>
+            <input type="number" id="id_coragem"/>
+          </div>
+        </div>
+        <div class="content-form-group">
+          <div class="content-form-group-left">
+            <label for="id_curiosidade">Qual seu nível de curiosidade? de 0 a 10:</label>
+            <input type="number" id="id_curiosidade"/>
+          </div>
+          <div class="content-form-group-right">
+            <label for="id_fome">Qual seu nível de fome? de 0 a 10 :</label>
+            <input type="number" id="id_fome"/>
+          </div>
+        </div>
+        <div class="content-form-group-button">
+          <button onclick="misterio()">Mistério!</button>
+        </div>
+      </div>
+      <div class="content-form-resultado">
+        <div id="resposta">
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
+<script>
+  function misterio() {
+    let inteligencia = Number(id_inteligencia.value);
+    let coragem = Number(id_coragem.value);
+    let curiosidade = Number(id_curiosidade.value);
+    let fome = Number(id_fome.value);
+    resposta.innerHTML = "";
+
+    if (
+      inteligencia > coragem &&
+      inteligencia > curiosidade &&
+      inteligencia > fome
+    ) {
+      resposta.innerHTML = `<h1 style="color: orange;">Você se parece mais com a Velma!<br> (Perfil inteligente e analítico).</h1>
+      <img src="./imagens/velma-dinkley.gif" alt="">`;
+    } else if (
+      coragem > inteligencia &&
+      coragem > curiosidade &&
+      coragem > fome
+    ) {
+      resposta.innerHTML = `<h1 style="color: rgb(27, 134, 196); font-weight: 500;">Você se parece mais com o Fred!<br> (Perfil líder e estratégico).</h1>
+      <img src="./imagens/scooby-doo-what.gif" alt="">
+      `;
+    } else if (
+      curiosidade > inteligencia &&
+      curiosidade > coragem &&
+      curiosidade > fome
+    ) {
+      resposta.innerHTML = `<h1 style="color: rgb(135, 5, 175); font-weight: 500;">Você se parece mais com a Daphne!<br> (Perfil aventureiro e elegante).</h1>
+      <img src="./imagens/scooby-doo-the-sword-and-the-scoob-scooby-doo.gif" alt="">`;
+    } else if (fome > coragem && fome > inteligencia && fome > curiosidade) {
+      resposta.innerHTML = `<h1 style="color: rgb(69, 112, 3); font-weight: 500;">Você se parece mais com o Salsicha ou o Scooby-Doo! <br>(Perfil medroso, mas leal e divertido).</h1>
+      <img src="./imagens/6784ba43e084d8bf643f382762b7bab4.gif" alt="">`;
+    } else {
+      resposta.innerHTML = `<h1 style="color: rgb(128, 65, 24); font-weight: 500;">Scooby-doo-by-doo!</h1>`;
+    }
+  }
+</script>

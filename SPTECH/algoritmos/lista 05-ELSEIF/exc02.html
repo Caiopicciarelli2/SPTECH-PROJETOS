@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 1. Estrutura de Decisão (ELSE IF) | 2. Classe Social em Tuvalu: Em Qual Você se Encaixa?</title>
+</head>
+<body>
+    <label for="id_valor_mensal">Digite a renda familiar mensal:</label>
+    <input type="number" id="id_valor_mensal">
+
+    <button onclick="calcRenda()">Analisar Renda</button>
+
+    <div>
+        <h1 id="mensagem">
+
+        </h1>
+    </div>
+</body>
+</html>
+
+<script>
+    function calcRenda(){
+        let renda = Number(id_valor_mensal.value);
+
+        if(renda <= 250){
+            mensagem.innerHTML = `Classe E.`;
+        }else if(renda <= 900){
+            mensagem.innerHTML = `Classe D.`;
+        }else if(renda <= 2500){
+            mensagem.innerHTML = `Classe C`;
+        }else if(renda <= 9500){
+            mensagem.innerHTML = `Classe B`;
+        }else if(renda > 9500){
+            mensagem.innerHTML = `Classe A`;
+        }
+    }
+</script>

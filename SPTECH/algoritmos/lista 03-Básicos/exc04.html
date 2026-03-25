@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 03 - Operações Aritméticas, variáveis, innerHTML</title>
+    <link rel="stylesheet" href="style01.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-titulo">
+            <h1>Lista 03 - JS | Parte 1 - Operações Aritméticas</h1>
+            <h2>Exc 04: O Ki dos Sayajins!</h2>
+        </div>
+        <div class="container-info-2">
+            <label for="">Qual é o nome do guerreiro:</label>
+            <input type="text" id="nomeG">
+
+            <label for="">Quanto é o valor do seu ki normal:</label>
+            <input type="text" id="kiNormal">
+        </div>
+        <div class="container-buttons">
+            <button onclick="calcularKi ()">
+                Ver ki em cada forma
+            </button>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function calcularKi() {
+        let valor = Number(kiNormal.value);
+        let nome = nomeG.value;
+        let resultadoKi01 = ( valor * 50 );
+        let resultadoKi02 = ( valor * 100 );
+
+        alert("O ki de " + nome + " na forma Super Sayajin é KI = " + resultadoKi01);
+        alert("O ki de " + nome + " na forma Super Sayajin 2 é KI = " + resultadoKi02);
+    }
+</script>

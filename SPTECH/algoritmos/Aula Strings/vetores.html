@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <label for="">Digite o nome da fruta:</label>
+    <input type="text" name="" id="ipt_fruta">
+
+    <button onclick="exibir()">
+        Exibir
+    </button>
+    <button onclick="adicionar()">
+        Adicionar Fruta
+    </button>
+
+    <div id="resultado">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    // variavel global, as duas funções podem acessar
+    let frutas = [
+        "Melão",
+        "Maça",
+        "Maracuja",
+        "Melancia",
+        "Banana",
+        "Kiwi"
+    ];
+
+    function adicionar() {
+        let fruta = ipt_fruta.value;
+        // push, adiciona um valor num vetor;
+        if(fruta == ""){
+            alert( `Deu erro pai`);
+            resultado.innerHTML = ``;
+        }else{
+            frutas.push(fruta);
+            exibir();
+        }
+    }
+
+    function exibir() {
+        let tamanho = frutas.length;
+        let primeira_fruta = frutas[0];
+        let ultima_fruta = frutas[tamanho - 1];
+
+        resultado.innerHTML =
+            `
+            Sua lista tem ${tamanho} frutas. <br>
+            A primeira fruta é ${primeira_fruta}. <br>
+            A última fruta é ${ultima_fruta}. <br>
+            <br>Frutas: ${frutas}. <br>
+        `;
+    }
+</script>

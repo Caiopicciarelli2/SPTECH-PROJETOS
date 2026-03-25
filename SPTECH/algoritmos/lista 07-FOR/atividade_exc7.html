@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 7 - Laços de Repetição (for) | 1. Parte 1</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-title">
+            <h1>Lista 7 - Laços de Repetição (for) | Exc 7.</h1>
+        </div>
+        <div class="content">
+            <div class="content-row">
+                <div class="content-row-ipt">
+                    <label for="qtd_deposito">Digite a quantidade de depósitos:</label>
+                    <input type="text" id="qtd_deposito">
+                </div>
+                <div class="content-row-ipt">
+                    <label for="valor_deposito">Digite a capacidade do carro:</label>
+                    <input type="text" id="valor_deposito">
+                </div>
+                <div class="content-row-btn">
+                    <button onclick="deposito()">Acompanhar grana</button>
+                </div>
+                <div class="content-row-resultado">
+                    <h6 id="resultado"></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function deposito() {
+        let qtd_Dep = Number(qtd_deposito.value);
+        let valor_Dep = Number(valor_deposito.value);
+
+        if ((qtd_Dep == 0 || valor_Dep == 0) || (qtd_Dep < 0 || valor_Dep < 0)) {
+            resultado.innerHTML =
+                `
+                Complete os campos de forma correta.
+            `;
+        } else {
+            for (let i = 1; i <= qtd_Dep; i++) {
+                resultado.innerHTML +=
+                `
+                    ${i}º Mês: R$ ${valor_Dep * i}.   
+                `;
+            }
+        }
+    }
+</script>
+
+<style>
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 95vh;
+        width: 100%;
+        gap: 2vh;
+    }
+
+    .container-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 5%;
+        width: 100%;
+    }
+
+    .container-title h1 {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.6rem;
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 87%;
+        width: 90%;
+        border: 1px solid rgba(0, 0, 0, 0.171);
+        border-radius: 0.3rem;
+    }
+
+    .content-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 95%;
+        width: 90%;
+        gap: 1rem;
+    }
+
+    .content-row-ipt {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20%;
+        width: 100%;
+        gap: 1rem;
+    }
+</style>

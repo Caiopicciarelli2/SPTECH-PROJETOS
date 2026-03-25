@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 4 (IF/ELSE) | 16. Mercado </title>
+</head>
+
+<body>
+    <label for="id_qtd_c">Quantidade de chocolates comprados:</label>
+    <input type="number" id="id_qtd_c" placeholder="Digite a quantidade">
+
+    <button onclick="calcMercado()">
+        Compra
+    </button>
+
+    <h1 id="mensagem"></h1>
+
+</body>
+
+</html>
+
+<script>
+    function calcMercado() {
+        let qtdC = Number(id_qtd_c.value);
+        let valorC = 3;
+        let total = 0;
+
+        if(qtdC > 12){
+            valorC = 2.50;
+            total = (valorC * qtdC);
+
+            mensagem.innerHTML = `O valor da sua compra foi de R$${total}`;
+        }else{
+            total = (valorC * qtdC);
+            mensagem.innerHTML = `O valor da sua compra foi de R$${total}`;
+        }
+    }
+</script>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        Parte 1 | Lista 02 - Introdução ao JavaScrip | exc 04
+    </title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+
+    <div class="titulo-atividade">
+        <h1>Exercicio 04, onde eu moro?</h1>
+    </div>
+
+    <div class="form-atividade">
+        <div class="form-itens">
+            <div class="form-group-itens">
+                <label for="ruaPessoa">Nome da Rua, Bairro ou Vila</label>
+                <input type="text" id="ruaPessoa" placeholder="Digite o nome">
+            </div>
+
+            <div class="form-group-itens">
+                <label for="numeroCasa">Número da casa:</label>
+                <input type="text" id="numeroCasa" placeholder="Digite o número">
+            </div>
+
+            <div class="form-group-button">
+                <h6 id="resultadoRua"></h6>
+                <button onclick="exercicio04()">Onde eu moro?</button>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function exercicio04() {
+        let rua = ruaPessoa.value;
+        let numero = numeroCasa.value;
+
+        resultadoRua.innerHTML = "Seu logradouro é " + rua + ", O número do seu logradouro é " + numero + ".";
+    }
+</script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <input type="text" name="" id="ipt_sala">
+    <button onclick="exibir()">Exibir Resumo</button>
+
+    <div id="resultado">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function exibir(){
+        let sala = ipt_sala.value;
+
+        // let contemCco = sala.includes("CCO");
+        // let indiceCco = sala.indexOf("CCO");
+        // let teste = sala.substring(2,5); // começa no índice 2, e termina no índice 5.
+
+        // resultado.innerHTML = 
+        // `   
+        //     Contém CCO: ${contemCco}. <br>
+        //     Onde aparece: ${indiceCco}. <br>
+        // `;
+
+        // if(contemCco){
+        //     // exibe contem
+        // }else{
+        //     // nao exibe
+        // }
+
+        // indice começa no 0, se o resultado for -1 = não contém.
+
+
+        // desafio
+
+        //1ADSA 20252
+        //012345678910
+
+        let curso = sala.substring(1,4);
+        let turma = sala.substring(4,5);
+        let inicio = sala.substring(6,10);
+        let semestre = sala.substring(0,1);
+
+        resultado.innerHTML = `Você é do curso ${curso}, da turma ${turma}, e iniciou em ${inicio}.
+        Você está no semestre ${semestre}.`;
+    }
+</script>

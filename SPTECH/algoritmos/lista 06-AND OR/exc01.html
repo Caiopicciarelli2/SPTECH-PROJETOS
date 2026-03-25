@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 1 | 1. Sistema de Avaliação de Atendimento: Dê Sua Nota! </title>
+</head>
+<body>
+    <div class="box-form">
+        <div class="form-row-title">
+            <h1>Avaliação de Atendimento!</h1>
+        </div>
+        <div class="form-row">
+            <label for="inpt_nota_aluno">Nota do atendimento:</label>
+            <input type="number" id="inpt_nota_aluno">
+        </div>
+        <div class="form-row-button">
+            <button onclick="avaliar_atendimento()">Avaliar Atendimento</button>
+        </div>
+        <div class="form-resultado">
+            <h3 id="resultado"></h3>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function avaliar_atendimento(){
+        let nota = Number(inpt_nota_aluno.value);
+
+        if(nota <= 0 || nota > 10){
+            resultado.innerHTML = `Nota inválida, a nota precisa estar entre 0 á 10.`;
+        }else if(nota < 5){
+            resultado.innerHTML = `Não aprovado!`;
+        }else if(nota <= 6){
+            resultado.innerHTML = `Neutro!`;
+        }else{
+            resultado.innerHTML = `Aprovado!`;
+        }
+    }
+</script>
+
+<style>
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 90vh;
+        width: 99%;
+    }
+
+    .box-form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 60vh;
+        width: 80%;
+        border: 1px solid rgba(0, 0, 0, 0.253);
+        border-radius: 0.3rem;
+        padding: 1.2rem;
+    }
+
+    .form-row-title{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        height: 30%;
+        width: 100%;
+    }
+
+    .form-row-title h1{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1.6rem;
+    }
+
+    .form-row{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 20%;
+        width: 100%;
+        gap: 0.3rem;
+    }
+
+    .form-row label{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .form-row input{
+        padding: 0.3rem;
+        border: 1px solid rgba(0, 0, 0, 0.248);
+        border-radius: 0.3rem;
+    }
+
+    .form-row-button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20%;
+        width: 100%;
+    }
+
+    .form-row-button button{
+        padding: 0.5rem;
+        border-radius: 0.3rem;
+        border: 1px solid rgba(0, 0, 0, 0.250);
+        background-color: transparent;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .form-row-button button:hover{
+        background-color: black;
+        color: white;
+    }
+
+    .form-resultado{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40%;
+        width: 100%;
+    }
+
+    .form-resultado h3{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font: 1rem; 
+    }
+</style>

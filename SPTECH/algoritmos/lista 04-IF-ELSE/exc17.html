@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 4 (IF/ELSE) | 17. Crie um programa o qual: </title>
+</head>
+
+<body>
+    <label for="id_freq_aluno">Frequência do aluno:</label>
+    <input type="number" id="id_freq_aluno" placeholder="Digite a Frequência">
+
+    <button onclick="calcFreq()">
+        Analisar frequência
+    </button>
+
+    <div id="imagem">
+
+    </div>
+    <div id="imagem2">
+
+    </div>
+    
+
+</body>
+
+</html>
+
+<script>
+    function calcFreq() {
+        let freq = Number(id_freq_aluno.value);
+
+        if(freq < 50){
+            imagem.innerHTML = `<img src="./images/turista.jfif" alt="">`;
+        }else{  
+            imagem2.innerHTML = `<img src="./images/aluno.jfif" alt="">`;
+        }   
+    }
+</script>

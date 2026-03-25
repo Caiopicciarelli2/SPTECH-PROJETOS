@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 03 - Operações Aritméticas, variáveis, innerHTML</title>
+    <link rel="stylesheet" href="style01.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-titulo">
+            <h1>Lista 03 - JS | Parte 2 - Variáveis e innerHTML </h1>
+            <h2>Exc 09: Calculadora das Fases do Sono</h2>
+        </div>
+        <div class="container-info-3">
+            <label for="">Digite quantas horas você dormiu:</label>
+            <input type="text" id="horasDormir">
+        </div>
+        <div class="container-buttons">
+            <button onclick="sonoCalc ()">
+                Calcular Sono
+            </button>
+        </div>
+        <div class="container-resultado">
+            <h1 id="resultado" style="text-align: center;"></h1>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+    function sonoCalc () {
+        let hora = Number(horasDormir.value);
+        let fase01 = Number( hora * 0.05 );
+        let fase02 = Number( hora * 0.45 );
+        let fase03 = Number( hora * 0.3 );
+        let fase04 = Number( hora * 0.2 );
+
+        resultado.innerHTML =
+        `
+           Ao dormir ${hora} horas, você dormiu: <br>
+           ${fase01} horas na fase 01, ${fase02} horas na fase 02,
+           ${fase03} horas na fase 03, ${fase04} horas na fase 04.
+        `
+    }
+</script>

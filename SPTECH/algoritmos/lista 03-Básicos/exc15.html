@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 03 - Operações Aritméticas, variáveis, innerHTML</title>
+    <link rel="stylesheet" href="style01.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-titulo">
+            <h1>Lista 03 - JS | Parte 2 - Variáveis e innerHTML</h1>
+            <h2>Exc 14: Calculadora de IMC</h2>
+        </div>
+        <div class="container-info-3">
+            <label for="">Digite seu peso em kilogramas:</label>
+            <input type="text" id="peso">
+
+            <label for="">Digite sua altura em metros:</label>
+            <input type="text" id="altura">
+        </div>
+        <div class="container-buttons">
+            <button onclick="IMC ()">
+                Cacular IMC
+            </button>
+        </div>
+        <div class="container-resultado">
+            <h1 id="resultado" style="text-align: center;"></h1>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function IMC() {
+        let KG = Number(peso.value);
+        let M = Number(altura.value);
+        let IMC = Number(KG / (M**2))
+
+        resultado.innerHTML =
+        `
+           Seu IMC é de: ${IMC.toFixed(2)}
+        `
+
+        // tava saindo o número com 9 casas decimais, e como são várias frações naturalmente ele costuma ficar com as 9 casas, então para deixar o resultado mais "limpo", pesquisei como só mostrar 2 casas decimais.
+    }
+</script>

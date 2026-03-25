@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 03 - Operações Aritméticas, variáveis, innerHTML</title>
+    <link rel="stylesheet" href="style01.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-titulo">
+            <h1>Lista 03 - JS | Parte 1 - Operações Aritméticas</h1>
+            <h2>Exc 06: Calculadora Básica</h2>
+        </div>
+        <div class="container-info-3">
+            <label for="">Digite o 1 número:</label>
+            <input type="text" id="num01">
+
+            <label for="">Digite o 2 número:</label>
+            <input type="text" id="num02">
+        </div>
+        <div class="container-buttons">
+            <button onclick="calculadoraSoma ()">
+                Calcular Adição
+            </button>
+            <button onclick="calculadoraSub ()">
+                Calcular Subtração
+            </button>
+            <button onclick="calculadoraMulti ()">
+                Calcular Multiplicação
+            </button>
+            <button onclick="calculadoraDiv ()">
+                Calcular Divisão
+            </button>
+        </div>
+        <div class="container-resultado">
+            <h1 id="resultado"></h1>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function calculadoraSoma() {
+        let numero01 = Number(num01.value);
+        let numero02 = Number(num02.value);
+        let resultadoSoma = (numero01 + numero02);
+
+        resultado.innerHTML =
+        `
+           A soma entre o número "${numero01}" e o número "${numero02}" é = ${resultadoSoma}.
+        `
+    }
+
+    function calculadoraSub() {
+        let numero01 = Number(num01.value);
+        let numero02 = Number(num02.value);
+        let resultadoSub = (numero01 - numero02);
+
+        resultado.innerHTML =
+        `
+            A diferença entre o número "${numero01}" e o número "${numero02}" é = ${resultadoSub}.
+        `
+    }
+
+    function calculadoraMulti() {
+        let numero01 = Number(num01.value);
+        let numero02 = Number(num02.value);
+        let resultadoMulti = (numero01 * numero02);
+
+        resultado.innerHTML =
+        `
+            O produto entre o número "${numero01}" e o número "${numero02}" é = ${resultadoMulti}.
+        `
+    }
+
+    function calculadoraDiv() {
+        let numero01 = Number(num01.value);
+        let numero02 = Number(num02.value);
+        let resultadoDiv = (numero01 / numero02);
+
+        resultado.innerHTML =
+        `
+            A razão entre o número "${numero01}" e "${numero02}" é = ${resultadoDiv}.
+        `
+    }
+</script>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 1. Estrutura de Decisão (ELSE IF) | 4. Avaliação de Peso Infantil: Está Dentro da Faixa Saudável?</title>
+</head>
+<body>
+    <label for="id_peso_c">Digite o peso da cirança em KG:</label>
+    <input type="number" id="id_peso_c">
+
+    <button onclick="calcPeso()">Analise do peso</button>
+
+    <div>
+        <h1 id="mensagem">
+
+        </h1>
+    </div>
+</body>
+</html>
+
+<script>
+    function calcPeso(){
+        let peso = Number(id_peso_c.value);
+
+        if(peso == 18.3){
+            mensagem.innerHTML = `Peso perfeito.`;
+        }else if(peso <= 13.5){
+            mensagem.innerHTML = `Abaixo do peso.`;
+        }else if(peso <= 21.2){
+            mensagem.innerHTML = `Peso na média.`;
+        }else if(peso > 21.2){
+            mensagem.innerHTML = `Acima do peso.`;
+        }
+    }
+</script>

@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 01 - Simples Luffy</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="content">
+            <h1>
+                Desafio - Invasão de Impel Down
+            </h1>
+
+            <label for="qtd_batalhas">Quantas batalhas Luffy irá lutar?</label>
+            <input type="number" id="qtd_batalhas">
+
+            <label for="qtd_marinheiros">Com quantos marinheiros Luffy irá enfrentar?</label>
+            <input type="number" id="qtd_marinheiros">
+
+            <label for="">Quantas carnes Luffy terá disponiveis?</label>
+            <input type="number" id="qtd_carnes">
+
+            <button onclick="luffySimples()">Guerra!</button>
+        </div>
+        <div class="content-resultado">
+            <h1 id="resultado"></h1>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    // function luffySimples() {
+    //     // recebimento dos inputs 
+    //     let carnes = Number(qtd_carnes.value);
+    //     let marinheiros = Number(qtd_marinheiros.value);
+    //     let batalhas = Number(qtd_batalhas.value);
+
+    //     // variaveis de cálculo
+
+    //     let batalhas_win = 0;
+    //     let batalhas_loss = 0;
+    //     let marinheiros_derrotados = 0;
+    //     let marinheiros_restantes = 0;
+    //     let carnes_consumidas = 0;
+    //     let energia = 0;
+    //     let energia_restante = 0;
+
+    //     resultado.innerHTML = ``;
+
+    //     if ((batalhas <= 0) || (marinheiros <= 0)) {
+    //         resultado.innerHTML = `Preencha os campos corretamente!`;
+    //     } else {
+    //         for (let k = 0; k < batalhas; k++) {
+    //             energia = 100;
+    //             resultado.innerHTML +=
+    //                 `
+    //                     ${k}° Batalha Iniciada:
+    //                     Quantidade de Energia Inicial: ${energia}.
+    //                 `;
+    //             if ((energia * carnes) >= marinheiros * 5) {
+    //                 energia_restante = energia - (marinheiros * 5);
+
+    //                 resultado.innerHTML +=
+    //                     `
+    //                     Resultado: Luffy saiu vitorioso, derrotando ${marinheiros} marinheiro(s)
+    //                     ⚡ Energia Restante no Final da Batalha: ${energia_restante}.
+    //                     🥩 Carnes Restantes no Final da Batalha: 0
+    //                 `;
+    //             } else if (carnes > 0) {
+    //                 energia = 100;
+    //                 carnes_consumidas ++;
+    //                 carnes --;
+
+
+
+
+    //             } else {
+    //                 marinheiros_derrotados = (energia / 5);
+
+    //                 resultado.innerHTML +=
+    //                     `
+    //                      ${k}° Batalha Iniciada:
+    //                     Quantidade de Energia Inicial: ${energia}.
+
+    //                     Resultado: Luffy foi derrotado, derrotando ${marinheiros_derrotados} marinheiro(s).
+    //                     ⚡ Energia Restante no Final da Batalha: 0
+    //                     🥩 Carnes Restantes no Final da Batalha: 0      
+    //                 `;
+    //             }
+    //         }
+    //     }
+    // }
+
+
+    function luffySimples() {
+        let carnes = Number(qtd_carnes.value);
+        let marinheiros = Number(qtd_marinheiros.value);
+        let batalhas = Number(qtd_batalhas.value);
+
+        let energia = 100;
+
+        resultado.innerHTML = ``;
+
+        if (batalhas <= 0 || marinheiros <= 0) {
+            resultado.innerHTML = `Preencha os campos corretamente!`;
+        }
+
+        for (let i = 1; i <= batalhas; i++) {
+
+            // Verifica se pode lutar
+            if (energia <= 0 && carnes <= 0) {
+                resultado.innerHTML +=
+                `
+                    <br>🛞 Não é possível iniciar a ${i}º batalha, acabou a carne e a energia.<br>
+                `;
+            }
+
+            resultado.innerHTML += 
+            `
+                <br>----------------------------------------<br>
+
+                ${i}° Batalha Iniciada:<br>
+                Quantidade de Energia Inicial: ${energia}<br><br>
+            `;
+
+            let energia_necessaria = marinheiros * 5;
+
+            // Se energia não for suficiente, tenta usar carne
+            if (energia < energia_necessaria && carnes > 0) {
+                carnes--;
+                energia += 100;
+            }
+
+            if (energia >= energia_necessaria) {
+                energia -= energia_necessaria;
+
+                resultado.innerHTML += 
+                `
+                    Resultado: Luffy saiu vitorioso, derrotando ${marinheiros} marinheiro(s)<br>
+                    ⚡ Energia Restante no Final da Batalha: ${energia}<br>
+                    🥩 Carnes Restantes no Final da Batalha: ${carnes}<br>
+                `;
+            } else {
+                let marinheiros_derrotados = energia / 5;
+
+                resultado.innerHTML += 
+                `
+                    Resultado: Luffy foi derrotado, derrotando ${marinheiros_derrotados} marinheiro(s)<br>
+                    ⚡ Energia Restante no Final da Batalha: 0<br>
+                    🥩 Carnes Restantes no Final da Batalha: ${carnes}<br>
+                `;
+
+                energia = 0;
+            }
+        }
+    }
+
+</script>

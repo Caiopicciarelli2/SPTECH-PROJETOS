@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 02 - (IF) | 6. Análise de Financiamento Habitacional </title>
+</head>
+
+<body>
+    <label for="id_valor_renda">Valor da renda familiar:</label>
+    <input type="number" id="id_valor_renda" placeholder="Digite o valor">
+
+    <label for="id_valor_prest">Valor da prestação:</label>
+    <input type="number" id="id_valor_prest" placeholder="Digite o valor">
+
+    <button onclick="calcFinanciamento()">
+        Verificar Financiamento
+    </button>
+
+    <h1 id="mensagem"></h1>
+    <h2 id="mensagem2" style="color: red;"></h2>
+
+</body>
+
+</html>
+
+<script>
+    function calcFinanciamento() {
+        let rendaF = Number(id_valor_renda.value);
+        let prestF = Number(id_valor_prest.value);
+
+        let porcentF = ( (prestF / rendaF) * 100 )
+
+        mensagem.innerHTML = `A prestação corresponde a ${porcentF}% da renda familiar`;
+
+        if(porcentF > 30){
+            mensagem2.innerHTML = `<b>Será necessário complementar a renda familiar<b>`;
+        }
+
+    }
+</script>

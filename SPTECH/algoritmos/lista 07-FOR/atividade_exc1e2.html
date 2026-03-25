@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 7 - Laços de Repetição (for) | 1. Parte 1</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-title">
+            <h1>Lista 7 - Laços de Repetição (for) | Exc 1 e 2.</h1>
+        </div>
+        <div class="content">
+            <div class="content-row">
+                <div class="content-row-ipt">
+                    <label for="qtd_pessoas_carro">Digite o número de pesssoas:</label>
+                    <input type="number" id="qtd_pessoas_carro">
+                </div>
+                <div class="content-row-ipt">
+                    <label for="capacidade_carro">Digite a capacidade do carro:</label>
+                    <input type="number" id="capacidade_carro">
+                </div>
+                <div class="content-row-btn">
+                    <button onclick="carro()">#Partiu Carona"</button>
+                </div>
+                <div class="content-row-resultado">
+                    <h6 id="resultado"></h6>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function carro() {
+        let qtd_carro = Number(qtd_pessoas_carro.value);
+        let capacidade = Number(capacidade_carro.value);
+
+        if ((qtd_carro == 0 || capacidade == 0) || (qtd_carro < 0 || capacidade < 0)) {
+            resultado.innerHTML =
+                `
+                Complete os campos de forma correta.
+            `;
+        } else {
+            for (let i = 1; i <= qtd_carro; i++) {
+                if (i == 1) {
+                    resultado.innerHTML =
+                        `
+                    Entrou o 1º passageiro, o motorista.<br>
+                `;
+                } else if (i <= capacidade){
+                    resultado.innerHTML +=
+                        `
+                    Entrou o ${i}º passageiro.<br>
+                `;
+                } else {
+                    resultado.innerHTML +=
+                        `
+                    O ${i}º passageiro terá que esperar! O limite do carro são 5 pessoas.<br> 
+                `;
+                }
+            }
+        }
+    }
+</script>
+
+<style>
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 95vh;
+        width: 100%;
+        gap: 2vh;
+    }
+
+    .container-title {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 5%;
+        width: 100%;
+    }
+
+    .container-title h1 {
+        font-family: 'Courier New', Courier, monospace;
+        font-size: 1.6rem;
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 87%;
+        width: 90%;
+        border: 1px solid rgba(0, 0, 0, 0.171);
+        border-radius: 0.3rem;
+    }
+
+    .content-row {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 95%;
+        width: 90%;
+        gap: 1rem;
+    }
+
+    .content-row-ipt {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20%;
+        width: 100%;
+        gap: 1rem;
+    }
+</style>

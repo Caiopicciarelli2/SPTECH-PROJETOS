@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 1 | 2. Simulador de Preferências de Compras: Será que Robervaldo Gostaria?</title>
+</head>
+<body>
+    <div class="box-form">
+        <div class="form-row-title">
+            <h1>Será que Robervaldo Gostaria?!</h1>
+        </div>
+        <div class="form-group-row">
+            <div class="form-row">
+                <label for="inpt_tamanho_tela">Nota do atendimento:</label>
+                <input type="number" id="inpt_tamanho_tela">
+            </div>
+        
+            <div class="form-row-options">
+                <label for="select_cor">Selecione a cor:</label>
+                <select name="select_cor" id="select_cor">
+                    <option value="default" selected>Selecione:</option>
+                    <option value="Preto">Preto</option>
+                    <option value="Prata">Prata</option>
+                    <option value="Azul">Azul</option>
+                    <option value="Vermelho">Vermelho</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-row-button">
+            <button onclick="escolha_celular()">Será que ele gosta?</button>
+        </div>
+        <div class="form-resultado">
+            <div id="resultado">
+
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    function escolha_celular(){
+        let polegadas = Number(inpt_tamanho_tela.value);
+        let cor = select_cor.value;
+        resultado.innerHTML = ``;
+
+        if(polegadas <= 0 || cor == 'default'){
+            resultado.innerHTML = `Digite um valor válido para polegadas, e selecione uma cor!`;
+        }else if(polegadas > 6.5 && (cor == `Preto`) || polegadas > 6.5 && (cor == `Prata`)){
+            resultado.innerHTML = `<img src="./images/feliz.jfif" alt="">`;
+        }else{
+            resultado.innerHTML = `<img src="./images/triste.jfif" alt="">`;
+            console.log(cor);
+        }
+
+    }
+</script>
+
+<style>
+    body{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 90vh;
+        width: 99%;
+    }
+
+    .box-form{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 60vh;
+        width: 80%;
+        border: 1px solid rgba(0, 0, 0, 0.253);
+        border-radius: 0.3rem;
+        padding: 1.2rem;
+    }
+
+    .form-row-title{
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        height: 30%;
+        width: 100%;
+    }
+
+    .form-row-title h1{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-size: 1.6rem;
+    }
+
+    .form-group-row{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40%;
+        width: 100%;
+        gap: 0.3rem;
+    }
+
+    .form-row, .form-row-options{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 100%;
+        width: 40%;
+        gap: 0.3rem;
+    }
+
+    .form-row label, .form-row-options label{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    .form-row-options select{
+        padding: 0.3rem;
+        border: 1px solid rgba(0, 0, 0, 0.248);
+        border-radius: 0.3rem;
+    }
+
+    .form-row input{
+        padding: 0.3rem;
+        border: 1px solid rgba(0, 0, 0, 0.248);
+        border-radius: 0.3rem;
+    }
+
+    .form-row-button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 20%;
+        width: 100%;
+    }
+
+    .form-row-button button{
+        padding: 0.5rem;
+        border-radius: 0.3rem;
+        border: 1px solid rgba(0, 0, 0, 0.250);
+        background-color: transparent;
+        cursor: pointer;
+        transition: 0.3s;
+    }
+
+    .form-row-button button:hover{
+        background-color: black;
+        color: white;
+    }
+
+    .form-resultado{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 40%;
+        width: 100%;
+    }
+
+    .form-resultado h3, .form-resultado{
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font: 1rem; 
+    }
+</style>

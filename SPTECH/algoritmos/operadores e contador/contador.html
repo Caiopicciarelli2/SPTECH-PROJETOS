@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>Bora contar!</h1>
+    <button onclick="contar()">Contar!!!</button>
+
+    <h2 id="id_contagem"></h2>
+
+</body>
+</html>
+
+<script>
+
+    // let contador = 0 que era a maneira certa, porém ele não vai funcionar
+    let contador = 0;
+
+    function contar(){
+        // contador = contador + 1; ou
+        // contador++; ou
+        id_contagem.innerHTML = ++contador;
+    }
+</script>

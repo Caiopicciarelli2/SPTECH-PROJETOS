@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 3 (IF/ELSE) | 14. Criar um programa que auxilie uma Autoescola a identificar possíveis novos alunos. </title>
+</head>
+
+<body>
+    <label for="id_nome_p">Seu nome:</label>
+    <input type="text" id="id_nome_p" placeholder="Digite o nome">
+
+    <label for="id_idade_p">Sua idade:</label>
+    <input type="number" id="id_idade_p" placeholder="Digite o valor">
+
+    <button onclick="novosAlunos()">
+        Avaliar aluno
+    </button>
+
+    <h1 id="mensagem"></h1>
+
+</body>
+
+</html>
+
+<script>
+    function novosAlunos() {
+        let nome = (id_nome_p.value);
+        let idade = Number(id_idade_p.value)
+
+        if(idade >= 18){
+            mensagem.innerHTML = (`${nome}, vamos tirar a CNH?`);
+        }else{
+            mensagem.innerHTML = (`${nome}, vai jogar PlayStation`);
+        }
+    }
+</script>

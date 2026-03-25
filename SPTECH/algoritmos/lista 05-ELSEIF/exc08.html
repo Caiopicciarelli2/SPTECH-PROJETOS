@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> 1. Estrutura de Decisão (ELSE IF) | 8. Meta de Economia: Você Está no Caminho Certo?</title>
+</head>
+<body>
+    <label for="id_meta">Qual sua meta de economia:</label>
+    <input type="number" id="id_meta"> <br><br>
+
+    <label for="id_cofrinho">Quanto tem dinheiro você tem guardado:</label>
+    <input type="number" id="id_cofrinho"> <br><br>
+
+    <button onclick="calcMeta()">Analisar economia</button>
+
+    <h1 id="mensagem"></h1> <br><br>
+
+</body>
+</html>
+
+<script>
+    function calcMeta(){
+        let meta = Number(id_meta.value);
+        let cofrinho = Number(id_cofrinho.value);
+
+        let sobra = (cofrinho - meta);
+
+        let falta = (meta - cofrinho);
+
+        if(meta == cofrinho){
+            mensagem.innerHTML = `Parabéns, meta alcançada!`;
+        }else if(meta < cofrinho){
+            mensagem.innerHTML = `Meta ultrapassada em R$${sobra}`;
+        }else if(meta > cofrinho){
+            mensagem.innerHTML = `Força! Ainda em busca da meta! Falta R$${falta}`;
+        }
+    }
+</script>

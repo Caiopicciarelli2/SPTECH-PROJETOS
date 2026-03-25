@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 4 (IF/ELSE) | 21. Crie um programa o qual: </title>
+</head>
+
+<body>
+    <label for="id_meta_e">Informe sua meta de economia:</label>
+    <input type="number" id="id_meta_e" placeholder="Digite a meta">
+
+    <label for="id_eco_e">Informe suas economias:</label>
+    <input type="number" id="id_eco_e" placeholder="Digite a economia">
+
+    <button onclick="calcEconomia()">
+        Analisar economia
+    </button>
+
+    <h1 id="mensagem"></h1>
+    <h2 id="mensagem2"></h2>
+
+</body>
+
+</html>
+
+<script>
+    function calcEconomia() {
+        let meta = Number(id_meta_e.value);
+        let eco = Number(id_eco_e.value);
+
+        if(meta > eco){
+            let res = meta - eco;
+            mensagem.innerHTML = `Força! Ainda em busca da meta! Falta R$${res}`;
+        }else{
+            if(meta < eco){
+                let res = eco - meta;
+
+                mensagem.innerHTML = `Parabéns, meta alcançada!<br>
+                Meta ultrapassada em R$${res}.`;
+            }else{
+                mensagem.innerHTML = `Parabéns, meta alcançada!`;
+            }
+        }
+
+    }
+</script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 02 - (IF) | 7. Cheque Especial do Banco XPTO </title>
+</head>
+
+<body>
+    <label for="id_valor_saldo">Valor do saldo na conta:</label>
+    <input type="number" id="id_valor_saldo" placeholder="Digite o valor">
+
+    <label for="id_valor_tirar">Valor do débito:</label>
+    <input type="number" id="id_valor_tirar" placeholder="Digite o valor">
+
+    <button onclick="calcBanco()">
+        Analisar conta
+    </button>
+
+    <h1 id="mensagem"></h1>
+    <h2 id="mensagem2" style="color: red;"></h2>
+
+</body>
+
+</html>
+
+<script>
+    function calcBanco() {
+        let saldoC = Number(id_valor_saldo.value);
+        let retirarC = Number(id_valor_tirar.value);
+
+        let saldoN = (saldoC - retirarC);
+
+        mensagem.innerHTML = `O saldo atual da conta corrente é R$${saldoN}`;
+
+        if(saldoN < 0){
+            mensagem.innerHTML = ``;
+            mensagem2.innerHTML = `O saldo atual da conta corrente é R$${saldoN}`;
+        }
+
+    }
+</script>

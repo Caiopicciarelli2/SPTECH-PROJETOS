@@ -1,0 +1,138 @@
+@import url('https://fonts.googleapis.com/css2?family=Atkinson+Hyperlegible+Next:ital,wght@0,200..800;1,200..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+.container-scooby{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 95vh;
+    width: 100%;
+    gap: 1vh;
+}
+
+.container-titulo{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10%;
+    width: 100%;
+}
+
+.container-titulo h1{
+    font-family: "Roboto", sans-serif;
+    font-size: 2.5rem;
+}
+
+.container-titulo img{
+    height: 90px;
+    transform: translateY(-15%);
+}
+
+.content-scooby{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 70%;
+    width: 70%;
+    border: 1px solid rgba(0, 0, 0, 0.219);
+    border-radius: 0.3rem;
+    padding: 2rem;
+}
+
+.content-sub{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 15%;
+    width: 100%;
+}
+
+.content-sub p{
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    font-size: 0.9rem;
+}
+
+.content-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50%;
+    width: 100%;
+}
+
+.content-form-group{
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    height: 10%;
+    width: 80%;
+    margin: 0.5vh;
+    gap: 2vw;
+}
+
+.content-form-group label{
+    font-family: "Roboto", sans-serif;
+    text-align: center;
+    font-size: 1.1rem;
+}
+
+.content-form-group input{
+    padding: 0.2rem;
+    border-radius: 0.2rem;
+    border: 1px solid rgba(0, 0, 0, 0.24);
+}
+
+.content-form-group-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40%;
+    width: 80%;
+}
+
+.content-form-group-button button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 10%;
+    height: 40%;
+    border: 1px solid rgba(0, 0, 0, 0.219);
+    border-radius: 0.3rem;
+    cursor: pointer;
+    transition: 0.3s;
+    font-family: "Roboto", sans-serif;
+}
+
+.content-form-group-button button:hover{
+    background-color: rgb(128, 65, 24);
+    color: white;
+}
+
+.content-form-resultado{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50%;
+    width: 80%;
+}
+
+#resposta{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+    font-family: "Roboto", sans-serif;
+    gap: 1vw;
+}
+
+#resposta img{
+    height: 300px;
+    border-radius: 0.3rem;
+}

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content-title">
+            <h1>Lista 07 | Exercício 01 - Desafio: Adivinhe o Ranking da Competição.</h1>
+        </div>
+        <div class="content">
+            <div class="content-row">
+                <label for="ipt_1_lugar">1º lugar:</label>
+                <input type="text" name="" id="ipt_1_lugar">
+                <label for="ipt_2_lugar">2º lugar:</label>
+                <input type="text" name="" id="ipt_2_lugar">
+            </div>
+            <div class="content-row">
+                <label for="ipt_3_lugar">3º lugar:</label>
+                <input type="text" name="" id="ipt_3_lugar">
+                <label for="ipt_4_lugar">4º lugar:</label>
+                <input type="text" name="" id="ipt_4_lugar">
+            </div>
+            <div class="content-row">
+                <label for="ipt_5_lugar">5º lugar:</label>
+                <input type="text" name="" id="ipt_5_lugar">
+            </div>
+            <div class="content-row-button">
+                <button onclick="classificacao()">
+                    Analisar
+                </button>
+            </div>
+            <div class="content-row-resultado">
+                <h1 id="resultado">
+
+                </h1>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script>
+    function classificacao() {
+        let primeiro = ipt_1_lugar.value;
+        let segundo = ipt_2_lugar.value;
+        let terceiro = ipt_3_lugar.value;
+        let quarto = ipt_4_lugar.value;
+        let quinto = ipt_5_lugar.value;
+        resultado.innerHTML = ``;
+
+        let acertos = 0;
+
+        let classificacao = [
+            "Caio", "Bruno", "Guilherme", "Gustavo", "Luiz"
+        ];
+
+        if(primeiro == classificacao[0]){
+            resultado.innerHTML = `Palpite para o 1º lugar: ${primeiro} Correto!`;
+            acertos++;  
+        }else{
+            resultado.innerHTML = `Palpite para o 1º lugar: ${primeiro} Incorreto!`;
+        }
+
+        if(segundo == classificacao[1]){
+            resultado.innerHTML += ` Palpite para o 2º lugar: ${segundo} Correto!<br>`;
+            acertos++;  
+        }else{
+            resultado.innerHTML += ` Palpite para o 2º lugar: ${segundo} Incorreto!<br>`;
+        }
+
+        if(terceiro == classificacao[2]){
+            resultado.innerHTML += `Palpite para o 3º lugar: ${terceiro} Correto!`;
+            acertos++;  
+        }else{
+            resultado.innerHTML += `Palpite para o 3º lugar: ${terceiro} Incorreto!`;
+        }
+
+        if(quarto == classificacao[3]){
+            resultado.innerHTML += ` Palpite para o 4º lugar: ${quarto} Correto!<br>`;
+            acertos++;  
+        }else{
+            resultado.innerHTML += ` Palpite para o 4º lugar: ${quarto} Incorreto!<br>`;
+        }
+
+        if(quinto == classificacao[4]){
+            resultado.innerHTML += `Palpite para o 5º lugar: ${quinto} Correto!`;
+            acertos++;  
+        }else{
+            resultado.innerHTML += `Palpite para o 5º lugar: ${quinto} Incorreto!`;
+        }
+
+        resultado.innerHTML += ` Vocẽ acertou ${acertos} palpite(s).<br>`;
+
+        if(acertos >= 3){
+            resultado.innerHTML += `Você conhece bem essa competição!<br>`;
+        }else{
+            resultado.innerHTML += `Você precisa acompanhar mais essa competição!<br>`;
+        }
+    }
+</script>
+
+<style>
+    .container{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height:95vh;
+        width: 100%;
+    }
+
+    .content-title h1{
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 500;
+    }
+
+    .content{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 90%;
+        width: 90%;
+        border: 1px solid rgba(0, 0, 0, 0.205);
+        border-radius: 0.3rem;
+        gap: 1rem;
+    }
+
+    .content-row{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 20%;
+        gap: 2vh;
+    }
+
+    .content-row label{
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 500;
+    }
+
+    .content-row-button{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 10%;
+        padding-left: 2vh;
+    }
+
+    .content-row-button button{
+        padding: 0.5rem;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        border: 1px solid rgba(0, 0, 0, 0.253);
+        border-radius: 0.3rem;
+        cursor: pointer;
+        background-color: transparent;
+        width: 10%;
+    }
+
+    .content-row-resultado{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        height: 25%;
+        width: 60%;
+        border: 1px solid rgba(0, 0, 0, 0.205);
+        border-radius: 0.3rem;
+        margin-bottom: 2vh;
+    }
+
+    .content-row-resultado h1{
+        text-align: center;
+        font-family: Arial, Helvetica, sans-serif;
+        font-weight: 500;
+        font-size: 0.9rem;
+    }
+</style>

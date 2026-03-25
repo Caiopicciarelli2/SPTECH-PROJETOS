@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 03 - Operações Aritméticas, variáveis, innerHTML</title>
+    <link rel="stylesheet" href="style01.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="container-titulo">
+            <h1>Lista 03 - JS | Parte 2 - Variáveis e innerHTML</h1>
+            <h2>Exc 12: Divisão Justa da Pizza (Com Gorjeta)</h2>
+        </div>
+        <div class="container-info-3">
+            <label for="">Qual o sabor da pizza:</label>
+            <input type="text" id="saborPizza">
+
+            <label for="">Qual o preço da pizza:</label>
+            <input type="text" id="precoPizza">
+
+            <label for="">Quantidade de amigos:</label>
+            <input type="text" id="qtdAmigos">
+        </div>
+        <div class="container-buttons">
+            <button onclick="pizzaGorjeta ()">
+                Ver Valor Por Amigo
+            </button>
+        </div>
+        <div class="container-resultado">
+            <h1 id="resultado" style="text-align: center;"></h1>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    function pizzaGorjeta() {
+        let sabor = saborPizza.value;
+        let preco = Number( precoPizza.value );
+        let amigos = Number( qtdAmigos.value );
+        let gorjeta = Number( preco * 0.1 )
+        let valorAmigo = Number( ( preco + gorjeta ) / amigos );
+
+        resultado.innerHTML =
+        `
+            Cada amigo vai colaborar com R$${valorAmigo} para a pizza de ${sabor}.
+        `
+    }
+
+</script>

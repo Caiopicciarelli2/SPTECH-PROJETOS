@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 02 - (IF) | 9. Tempo Gasto com Séries </title>
+</head>
+
+<body>
+    <label for="id_serie_nome">Qual a última série (SITCOM) você assistiu:</label>
+    <input type="text" id="id_serie_nome" placeholder="Digite a série">
+
+    <label for="id_serie_ep">Quantos episódios você assistiu:</label>
+    <input type="number" id="id_serie_ep" placeholder="Digite a quantidade">
+
+    <button onclick="calcTSeries()">
+        Verificar nível
+    </button>
+
+    <h1 id="mensagem"></h1>
+    <h2 id="mensagem2" style="color: blue;"></h2>
+
+</body>
+
+</html>
+
+<script>
+    function calcTSeries() {
+        let serie = (id_serie_nome.value);
+        let eps = Number(id_serie_ep.value);
+
+        let minSerie = 22 * eps;
+
+        mensagem.innerHTML = `Vejo que você gosta da série ${serie}`;
+
+        if(minSerie > 1800){
+            mensagem2.innerHTML = `Uau, você realmente gosta dessa série!`;
+        }
+
+    }
+</script>
