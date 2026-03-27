@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 1 | 6. Múltiplos de 5</title>
+</head>
+
+<body>
+    <label for="ipt_num">Digite um número entre 20 e 100:</label>
+    <input type="number" id="ipt_num">
+    <button onclick="divisivel_5()">Adoro múltiplos de 5</button>
+
+    <div id="resultado">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function divisivel_5() {
+        let num = Number(ipt_num.value);
+        let contador = 0;
+        let contando = 0;
+        resultado.innerHTML = ``;
+
+
+        if(num >= 20 && num <= 100){
+            while(contador <= num){
+                if(contador % 5 == 0){
+                    resultado.innerHTML += `${contador}. <br>`;
+                }
+                contador++;
+            }
+                
+        }else{
+            alert("Preecha o campo de forma válida!")
+        }
+    }
+</script>

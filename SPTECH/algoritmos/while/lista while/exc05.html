@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 1 | 5. Números Misteriosos</title>
+</head>
+
+<body>
+    <button onclick="num_caba()">Números cabalísticos</button>
+
+    <div id="resultado">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function num_caba() {
+        let contador = 1;
+
+        while (contador <= 30) {
+
+            if (contador == 3 || contador == 4 || contador == 7 || contador == 10 || contador == 12) {
+                resultado.innerHTML += ``;
+            } else {
+                resultado.innerHTML +=
+                    `
+                    ${contador};<br>
+                `;
+            }
+            contador++;
+        }
+    }
+</script>

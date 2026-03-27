@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WHILE2</title>
+</head>
+
+<body style="display: flex; gap: 2vw;">
+    <div id="resultado">
+
+    </div>
+</body>
+
+</html>
+
+
+<script>
+    // alert com caixa de resposta = PROMPT
+    let numero = prompt("Tente acertar o número:");
+
+    while(numero != 42){
+        numero = prompt("Tente outro:");
+    }
+
+    // esse if não faz sentido, porque ele só sai do while, quando numero for
+    // = 42;
+
+    // if(numero = 42){
+    //     numero = 42;
+    //     alert("Parabéns!")
+    // }
+
+    resultado.innerHTML = 
+    `
+        Parabéns!
+    `;
+
+    // while - Enquanto tiver x caso, repete até completar o caso. 
+        // Logo, while é muito mais usado quando o número de repetições não é definido,
+
+    // For - Para x cenário, repete isso até x vezes.
+        // enquanto o FOR é mais usado quando o número de repetições é definido.
+</script>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 1 | 3. Frase Numerada</title>
+</head>
+
+<body>
+    <button onclick="frase_contador()">Diga algo sobre a matéria de Algoritmos</button>
+
+    <div id="resultado">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function frase_contador() {
+        let frase = ("Abacaxi é gostoso");
+        let contador = 0;
+
+        while (contador < 7) {
+            resultado.innerHTML +=
+            `
+            ${contador + 1}: ${frase}.<br>
+            `;
+            contador ++;
+        }
+    }
+</script>
