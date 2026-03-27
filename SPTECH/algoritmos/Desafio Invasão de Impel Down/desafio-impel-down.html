@@ -1,41 +1,43 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Desafio Impel Down</title>
+    <title>Desafio Impel Down by Caio Picciarelli</title>
 </head>
+
 <body>
-    <label>Insira a quantidade de batalhas do Luffy: </label>
-    <input type="text" id="ipt_batalhas"><br>
+    <label>Qquantidade de batalhas do Luffy: </label>
+    <input type="number" id="ipt_batalhas"><br>
 
-    <label>Insira a quantidade de marinheiros em cada batalha: </label>
-    <input type="text" id="ipt_marinheiros"><br>
+    <label>Quantidade de marinheiros: </label>
+    <input type="number" id="ipt_marinheiros"><br>
 
-    <label>Insira a quantidade de carnes disponíveis: </label>
-    <input type="text" id="ipt_carnes"><br>
+    <label>Quantidade de carnes: </label>
+    <input type="Number" id="ipt_carnes"><br>
 
-    <button onclick="iniciar()">Iniciar Simulação</button><br><br>
+    <button onclick="luffy_simples()">Luffy</button><br><br>
 
-    <div id="div_resultado"></div>
+    <div id="resultado"></div>
 </body>
 <script>
-    function iniciar() {
-        let energiaLuffy = 100
+    function luffy_simples() {
+        let energiaLuffy = 100;
         let batalhas = Number(ipt_batalhas.value);
         let marinheiros = Number(ipt_marinheiros.value);
         let carnes = Number(ipt_carnes.value);
 
-        div_resultado.innerHTML = "";
+        resultado.innerHTML = "";
         let mensagem_final = "";
 
-        for(let i = 0; i < batalhas; i++) {
+        for (let i = 0; i < batalhas; i++) {
             if (energiaLuffy > 0 || carnes > 0) {
                 // Começando uma batalha
                 let marinheirosRestantes = marinheiros;
 
                 mensagem_final += `
-                    ${i+1}° Batalha Iniciada: <br>
+                    ${i + 1}° Batalha Iniciada: <br>
                     Quantidade de Energia: ${energiaLuffy} <br>
                 `;
 
@@ -50,34 +52,18 @@
                     let derrotando = energiaLuffy / 5;
                     marinheirosRestantes -= derrotando;
                     energiaLuffy = 0;
-                    
+
                     // Comer a carne
                     if (carnes > 0) {
                         energiaNecessaria = marinheirosRestantes * 5;
                         energiaLuffy = 100;
                         carnes -= 1;
-                        
+
                         // Terminar de derrotar
                         energiaLuffy -= energiaNecessaria;
                         marinheirosRestantes = 0;
                     }
                 }
-
-
-                // for(let j = 0; j <= marinheiros; j++) {
-
-                //     // Derrotando um marinheiro
-                //     if (energiaLuffy >= 5) {
-                //         marinheirosRestantes --
-                //         energiaLuffy -= 5
-                //     }
-                //     else {
-                //         if (carnes > 0) {
-                //             energiaLuffy = 100
-                //             carnes -= 1
-                //         }
-                //     }
-                // }
 
                 if (marinheirosRestantes <= 0) {
                     mensagem_final += `Resultado: Luffy saiu vitorioso, derrotando ${marinheiros} marinheiro(s)<br>`;
@@ -93,13 +79,14 @@
                 energiaLuffy -= 10
             }
             else {
-                mensagem_final += `🛞 Não é possível iniciar a ${i+1}º batalha, acabou a carne e a energia.<br>`;
+                mensagem_final += `🛞 Não é possível iniciar a ${i + 1}º batalha, acabou a carne e a energia.<br>`;
             }
 
             mensagem_final += "<br>";
         }
 
-        div_resultado.innerHTML = mensagem_final;
+        resultado.innerHTML = mensagem_final;
     }
 </script>
+
 </html>
