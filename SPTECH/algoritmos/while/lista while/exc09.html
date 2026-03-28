@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 1 | 9. Pares no Intervalo</title>
+</head>
+
+<body>
+    <label for="ipt_num_01">Digite o primeiro número do intervalo crescente:</label>
+    <input type="number" id="ipt_num_01">
+    <label for="ipt_num_02">Digite o segundo número do intervalo crescente:</label>
+    <input type="number" id="ipt_num_02">
+    <button onclick="pares_intervalo()">S2 Pares</button>
+
+    <div id="resultado">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function pares_intervalo() {
+        let num01 = Number(ipt_num_01.value);
+        let num02 = Number(ipt_num_02.value);
+        let contador = num01;
+        resultado.innerHTML = ``;
+
+        if ((num01 > num02) || (num01 == num02)) {
+            alert("Digite um intervalo válido! Exemplo: 20 e 40");
+        } else if (num02 - num01 == 1) {
+            alert("Digite um intervalo maior que 1! Exemplo: 20 e 22.");
+        } else {
+            while (contador <= num02) {
+                if (contador % 2 == 0) {
+                    resultado.innerHTML +=
+                    `
+                        ${contador}. <br>
+                    `;
+                }
+                contador++;
+            }
+        }
+    }
+</script>

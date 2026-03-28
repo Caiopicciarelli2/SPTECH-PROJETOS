@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 1 | 10. Corrida de Voltas</title>
+</head>
+
+<body>
+    <label for="ipt_qtd_voltas">Digite o número de voltas por corrida:</label>
+    <input type="number" id="ipt_qtd_voltas">
+    <button onclick="Corrida()">Iniciar corrida!</button>
+
+    <div id="resultado">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function Corrida() {
+        let voltas = Number(ipt_qtd_voltas.value);
+        let contador = 1;
+        resultado.innerHTML = ``;
+
+        if(voltas <= 0){
+            alert("Digite um número de voltas válido!")
+        }else{
+            while(voltas >= contador){
+                if(voltas > contador){
+                    resultado.innerHTML += `Carro dando a ${contador}ª volta.`;
+                }else{
+                    resultado.innerHTML += 
+                    `
+                        Carro dando a ${contador}ª volta.<br>
+                        Corrida finalizada
+                    `;
+                }
+                contador ++;
+            }
+        }
+    }
+</script>

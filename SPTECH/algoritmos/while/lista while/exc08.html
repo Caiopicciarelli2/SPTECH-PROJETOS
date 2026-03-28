@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 1 | 8. Papagaio Falante</title>
+</head>
+
+<body>
+    <label for="ipt_rep">Digite o número de repetições:</label>
+    <input type="number" id="ipt_rep">
+    <label for="ipt_frase">Digite a frase:</label>
+    <input type="text" id="ipt_frase">
+    <button onclick="papagaio()">Papagaio</button>
+
+    <div id="resultado">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function papagaio() {
+        let repeticao = Number(ipt_rep.value);
+        let frase = (ipt_frase.value);
+        let contador = 1;
+        resultado.innerHTML = ``;
+
+        while(contador < repeticao){
+            alert(frase);
+            contador++;
+        }
+    }
+</script>

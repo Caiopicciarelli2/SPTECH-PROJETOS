@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parte 1 | 11. Tabuada Colorida</title>
+</head>
+
+<body>
+    <select name="select_tabuada" id="slct_tabuada">
+        <option value="Default">Selecione:</option>
+        <option value="2">Tabuada 2</option>
+        <option value="3">Tabuada 3</option>
+        <option value="4">Tabuada 4</option>
+        <option value="5">Tabuada 5</option>
+        <option value="6">Tabuada 6</option>
+        <option value="7">Tabuada 7</option>
+        <option value="8">Tabuada 8</option>
+        <option value="9">Tabuada 9</option>
+    </select>
+    <label for="ipt_qtd_tabuada">Até que número você quer multiplicar:</label>
+    <input type="number" id="ipt_qtd_tabuada" placeholder="Exp: 12">
+    <button onclick="tabuada()">Ver Tabuada</button>
+
+    <div id="resultado">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function tabuada() {
+        let tabuada = (slct_tabuada.value);
+        let num_mult = Number(ipt_qtd_tabuada.value);
+        let contador = 0;
+        let mensagem = ``;
+        resultado.innerHTML = ``;
+
+        if((tabuada == 'Default') || (num_mult <= 0)){
+            alert("Preencha os campos corretamente!");
+        }else{
+            while(contador <= num_mult){
+                    let cor = (contador % 2 == 0) ? "blue" : "red"; 
+                    // ideia do if ternário na Cor, foi baseado numa referência de otimização de código em IA,
+                    // achei bem interresante, porque queria formas de otimizar o código
+                    // para não ter que ficar fazendo 9 (if)s
+
+                    mensagem += 
+                    `
+                        <p style="color: ${cor};">
+                            ${tabuada} x ${contador} = ${tabuada * contador}
+                        </p>
+                    `;
+
+                contador ++;
+            }
+            resultado.innerHTML = mensagem;
+        }
+    }
+</script>
