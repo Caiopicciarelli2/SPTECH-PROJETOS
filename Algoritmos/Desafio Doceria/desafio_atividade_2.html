@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 2</title>
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="container-title">
+            <h1>Pedido Doceria:</h1>
+        </div>
+        <div class="content">
+            <div class="cntent-row">
+                <label for="">Quantidade de Macarrons:</label>
+                <input type="number" name="" id="ipt_qtd_macarrons">
+
+                <label for="">Quantidade de Brigadeiros:</label>
+                <input type="number" name="" id="ipt_qtd_brigadeiros"><br><br>
+
+                <label for="">Quantidade de Cupcakes:</label>
+                <input type="number" name="" id="ipt_qtd_cupcakes">
+
+                <label for="">Quantidade de Cheesecakes</label>
+                <input type="number" name="" id="ipt_qtd_cheesecakes">
+            </div>
+
+            <div class="content-row">
+                <label for="">Preço Unitario dos Macarrons:</label>
+                <input type="number" name="" id="ipt_preco_macarrons">
+
+                <label for="">Preço Unitario dos Brigadeiros:</label>
+                <input type="number" name="" id="ipt_preco_brigadeiros"><br><br>
+
+                <label for="">Preço Unitario dos Cupcakes:</label>
+                <input type="number" name="" id="ipt_preco_cupcakes">
+
+                <label for="">Preço Unitario dos Cheesecakes</label>
+                <input type="number" name="" id="ipt_preco_cheesecakes">
+            </div>
+
+            <div class="content-row-button">
+                <button onclick="pedido()">
+                    Verificar Vendas
+                </button>
+            </div>
+
+            <div class="resultado">
+                <h1 id="resultado_final">
+
+                </h1>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<style>
+    *{
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 1rem;
+    }
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 95vh;
+        width: 100%;
+    }
+
+    .container-title {
+        display: flex;
+        justify-content: flex-start;
+        width: 90%;
+        height: 15%;
+    }
+
+    .content {
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        flex-direction: column;
+        height: 85%;
+        width: 90%;
+    }
+
+    .content-row {
+        height: 10%;
+    }
+</style>
+
+<script>
+    function pedido() {
+        // entrada
+
+        // quantidade
+        let qtd_macarrons = Number(ipt_qtd_macarrons.value);
+        let qtd_brigadeiros = Number(ipt_qtd_brigadeiros.value);
+        let qtd_cupcakes = Number(ipt_qtd_cupcakes.value);
+        let qtd_cheesecakes = Number(ipt_qtd_cheesecakes.value);
+
+        // preço
+        let preco_macarrons = Number(ipt_preco_macarrons.value);
+        let preco_brigadeiros = Number(ipt_preco_brigadeiros.value);
+        let preco_cupcakes = Number(ipt_preco_cupcakes.value);
+        let preco_cheesecakes = Number(ipt_preco_cheesecakes.value);
+
+        // imagens 
+
+        let img_macarrons = `<img src="./images/macarrons.jpeg" style="height: 50px;" alt="">`;
+        let img_brigadeiros = `<img src="./images/brigadeiros.jpeg" style="height: 50px;" alt="">`;
+        let img_cupcakes = `<img src="./images/cupcakes.jpeg" style="height: 50px;" alt="">`;
+        let img_chessecakes = `<img src="./images/chessecakes.jpeg" style="height: 50px;" alt="">`;
+
+        // reset mensagem
+        resultado_final.innerHTML = ``;
+
+        // condicional que verifica se os campos foram preenchidos corretamente.
+        if ((qtd_macarrons < 0 || qtd_brigadeiros < 0 || qtd_cupcakes < 0 || qtd_cheesecakes < 0) || (preco_macarrons < 0 || preco_brigadeiros < 0 || preco_cupcakes < 0 || preco_cheesecakes < 0)) {
+            alert('Preencha os campos corretamente, de forma que todos os números sejam maior ou igual a zero!');
+        } else {
+            let preco_final = 0;
+
+            // contadores
+            let contador_vendas = 0;
+            let contador_m = 0;
+            let contador_b = 0;
+            let contador_cup = 0;
+            let contador_ches = 0;
+
+            if (qtd_macarrons == 0) {
+
+            } else {
+                for (let i = 0; i < qtd_macarrons; i++) {
+                    contador_vendas++;
+
+                    resultado_final.innerHTML +=
+                        `
+                        Venda ${contador_vendas} - ${img_macarrons} - R$:${preco_macarrons}. <br>
+                    `;
+                    contador_m++;
+                }
+            }
+
+            if (ipt_qtd_brigadeiros == 0) {
+
+            } else {
+                for (let i = 0; i < qtd_brigadeiros; i++) {
+                    contador_vendas++;
+
+                    resultado_final.innerHTML +=
+                        `
+                        Venda ${contador_vendas} - ${img_brigadeiros} - R$:${preco_brigadeiros}. <br>
+                    `;
+                    contador_b++;
+                }
+            }
+
+            if (qtd_cupcakes == 0) {
+
+            } else {
+                for (let i = 0; i < qtd_cupcakes; i++) {
+                    contador_vendas++;
+
+                    resultado_final.innerHTML +=
+                        `
+                        Venda ${contador_vendas} - ${img_cupcakes} - R$:${preco_cupcakes}. <br>
+                    `;
+                    contador_cup++;
+                }
+            }
+
+            if (qtd_cheesecakes == 0) {
+
+            } else {
+                for (let i = 0; i < qtd_cheesecakes; i++) {
+                    contador_vendas++;
+
+                    resultado_final.innerHTML +=
+                        `
+                        Venda ${contador_vendas} - ${img_chessecakes} - R$:${preco_cheesecakes}. <br><br>
+                    `;
+                    contador_ches++;
+                }
+            }
+
+            // calculando preco final
+            preco_final += preco_macarrons * contador_m;
+            preco_final += preco_brigadeiros * contador_b;
+            preco_final += preco_cupcakes * contador_cup;
+            preco_final += preco_cheesecakes * contador_ches;
+
+            if (qtd_macarrons == 0 && qtd_brigadeiros == 0 && qtd_cupcakes == 0 && qtd_cheesecakes ==0) {
+                alert(`Selecione pelo menos uma unidade de algum item!`);
+            } else {
+                resultado_final.innerHTML +=
+                    `
+               Com a quantidade de ${qtd_macarrons} Macarons, ${qtd_brigadeiros} Brigadeiros,
+                ${qtd_cupcakes} Cupcakes e ${qtd_cheesecakes} Cheesecakes, a venda totalizará R$${preco_final}.
+            `;
+            }
+
+
+        }
+    }
+
+</script>
