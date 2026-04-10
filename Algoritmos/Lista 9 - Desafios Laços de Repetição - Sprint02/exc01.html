@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. Encontrar elementos duplicados</title>
+</head>
+
+<body>
+    <input type="text" id="ipt_elemento">
+    <button onclick="adicionar_elemento()">Adicionar elemento</button><br><br>
+
+    <button onclick="buscar_duplicados()">Exibir Duplicados</button><br><br>
+
+    <h1 id="resultado">
+
+    </h1>
+</body>
+
+</html>
+
+<script>
+    // lista global
+    let lista_geral = [];
+
+    function adicionar_elemento() {
+        // entrada
+        let add_elemento = (ipt_elemento.value);
+        resultado.innerHTML = ``;
+
+        //adicionando elementos 
+        lista_geral.push(add_elemento);
+
+        resultado.innerHTML =
+            `
+            O valor ${add_elemento} foi adicionado em sua lista! <br>
+            Sua lista: ${lista_geral.join(", ")}.
+        `;
+    }
+
+    function buscar_duplicados() {
+        // reset de texto
+        resultado.innerHTML = ``;
+
+        // lista de duplicadas
+        let lista_duplicada = [];
+
+        // calcular tamanho da lista
+        let tamanho_lista = lista_geral.length;
+
+        // percorre todos os itens da lista
+        for (let i = 0; i < tamanho_lista; i++) {
+            let contador = 0;
+            // lista que guarda elementos duplicados
+            for (let j = 0; j < tamanho_lista; j++) {
+
+                // verifica se: valor [0] da lista geral = valor [0] da lista geral
+                // Depois se: valor [0] da lista geral = valor[1] da lista geral
+                // adicionando um contador para cada vez que 1 valor se repete
+                if (lista_geral[i] == lista_geral[j]) {
+                    contador++;
+                }
+            }
+            // se o contador for maior que 1, ou seja, algum item duplicado enquanto
+            // o primeiro for está percorrendo, ou seja, ta verficando a duplicidade
+            // de x valor da lista geral && se ele já esta na nova lista que recebe
+            // os valores duplicados se não tiver, ele inclui esse valor a lista
+            if ((contador > 1) && (!lista_duplicada.includes(lista_geral[i]))) {
+                lista_duplicada.push(lista_geral[i]);
+            }
+        }
+
+        if (lista_duplicada.length > 0) {
+            resultado.innerHTML =
+            `
+                Sua lista tem esses valores duplicados:<br>
+                ${lista_duplicada}.
+            `;
+        }else{
+            resultado.innerHTML =
+            `
+                Sua lista não tem itens duplicados!
+            `;
+        }
+    }
+
+</script>

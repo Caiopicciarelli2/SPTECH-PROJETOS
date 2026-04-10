@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2. Inverter texto</title>
+</head>
+
+<body>
+    <label for="ipt_texto">Texto que deseja inverter:</label>
+    <input type="text" id="ipt_texto">
+    <button onclick="inverter_texto()">Inverter texto</button><br><br>
+
+    <h1 id="resultado">
+
+    </h1>
+</body>
+
+</html>
+
+<script>
+    function inverter_texto() {
+        // entradas
+        let texto = (ipt_texto.value);
+
+        // reset de texto
+        resultado.innerHTML = ``;
+
+        // colocando o texto em array separado por cada caracter
+        let lista_texto = texto.split("");
+
+        // lista revertida
+        lista_revert = [];
+
+        // calculando o tamamnho do texto
+        let tamanho_lista = lista_texto.length;
+
+        for (let i = tamanho_lista - 1; i >= 0; i--) {
+            lista_revert.push(lista_texto[i]);
+        }
+
+        resultado.innerHTML = 
+        `
+            Sua lista normal: ${lista_texto.join("")}.<br>
+            Sua lista invertida: ${lista_revert.join("")}.
+        `;
+    }
+</script>

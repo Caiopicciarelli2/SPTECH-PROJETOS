@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. Palíndromo</title>
+</head>
+
+<body>
+    <label for="ipt_texto">Digite uma palavra:</label>
+    <input type="text" id="ipt_texto">
+    <button onclick="palindromo()">Validar Palíndromo</button><br><br>
+
+    <h1 id="resultado">
+
+    </h1>
+</body>
+
+</html>
+
+<script>
+    function palindromo() {
+        // entradas
+        let texto = (ipt_texto.value);
+
+        // reset de texto
+        resultado.innerHTML = ``;
+
+        // colocando o texto em array separado por cada caracter
+        let lista_texto = texto.split("");
+
+        // lista revertida
+        lista_revert = [];
+
+        // calculando o tamamnho do texto
+        let tamanho_lista = lista_texto.length;
+
+        for (let i = tamanho_lista - 1; i >= 0; i--) {
+            lista_revert.push(lista_texto[i]);
+        }
+
+        if(lista_texto.join("") == lista_revert.join("")){
+            resultado.innerHTML = 
+            `
+                Sua palavra é um palindromo: <br>
+                Palavra: ${texto}, Palavra Invertida: ${lista_revert.join("")} 
+            `;
+        }else{
+            resultado.innerHTML = 
+            `
+                Sua palavra não é um palindromo: <br>
+                Palavra: ${texto}, Palavra Invertida: ${lista_revert.join("")} 
+            `;
+        }
+    }
+</script>

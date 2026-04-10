@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poupança</title>
+</head>
+
+<body>
+    <h2>Poupança</h2>
+    Entre com o valor mensal de depósito: <input id="ipt_deposito" type="number"> <br><br>
+    Entre com a quantidade de meses: <input id="ipt_meses" type="number"> <br><br>
+    Entre com o percentual de juros: <input id="ipt_juros" type="number"> <br><br>
+    Qual é o seu sonho: <input id="ipt_sonho"> <br><br>
+    Qual o valor do seu sonho: <input id="ipt_valor_sonho" type="number">
+    <button onclick="projetar()">Projetar</button><br><br>
+    <div id="resultado"></div>
+</body>
+<script>
+    function projetar() {
+        // entrada
+        let valor_dep = Number(ipt_deposito.value);
+        let qtd_meses = Number(ipt_meses.value);
+        let percent_juros = Number(ipt_juros.value) / 100;
+        let sonho = ipt_sonho.value;
+        let valor_sonho = Number(ipt_valor_sonho.value);
+
+        let valor_inicial = 0;
+        let valor_final = 0;
+        let valor_juros = 0;
+
+        resultado.innerHTML = ``;
+
+        // validação correta
+        if (
+            valor_dep > 0 && Number.isInteger(qtd_meses) && qtd_meses > 0 && percent_juros > 0 && percent_juros < 0.10 && sonho.length >= 3 && valor_sonho > 0 && valor_sonho > valor_dep) {
+
+            for (let i = 1; i <= qtd_meses; i++) {
+
+                valor_juros = valor_inicial * percent_juros;
+                valor_final = valor_inicial + valor_juros + valor_dep;
+
+                resultado.innerHTML += 
+                `
+                    Mês = ${i} 
+                    Valor Inicial = R$ ${valor_inicial.toFixed(2)} 
+                    Juros = R$ ${valor_juros.toFixed(2)} 
+                    Depósito = R$ ${valor_dep.toFixed(2)} 
+                    Valor Final = R$ ${valor_final.toFixed(2)} <br>
+                `;
+                valor_inicial = valor_final;
+            }
+
+            let diferenca = valor_final - valor_sonho;
+
+            if (valor_final >= valor_sonho) {
+                resultado.innerHTML += 
+                `
+                    <br>Parabéns você é um POUPADOR, além do seu sonho de ${sonho} 
+                    ainda sobrou R$ ${diferenca.toFixed(2)} para outras aquisições
+                `;
+            } else {
+                resultado.innerHTML += 
+                `
+                    <br>Você precisa poupar um pouco mais. Para o sonho de ${sonho} 
+                    ainda falta R$ ${Math.abs(diferenca).toFixed(2)}
+                `;
+            }
+
+        } else {
+            resultado.innerHTML = "Preencha os campos corretamente!";
+        }
+    }
+</script>
+
+</html>
