@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>4. Crie um programa o qual: </title>
+</head>
+
+<body>
+    <button onclick="nota()">Sortear Nota para aluno</button>
+    <br>
+    <br>
+    <hr>
+    <div id="resultado">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function nota() {
+        resultado.innerHTML = ``;
+        let min = 1;
+        let max = 10;
+        let aleatorio2 = Math.random();
+
+        let sorteio = (aleatorio2 * (max - min + 1) + min);
+        console.log(sorteio)
+
+        resultado.innerHTML =
+            `
+            <div>
+                <h1>
+                    ${sorteio.toFixed(1)}    
+                </h1>
+            </div>
+        `;
+    }
+</script>

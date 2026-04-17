@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>5. Simulação</title>
+</head>
+
+<body>
+
+    <body>
+        <button onclick="escolha()">Jogar</button>
+        <br>
+        <br>
+        <hr>
+
+        <div class="container-off" id="container">
+            <select name="select_jokenpo" id="select_jokenpo">
+                <option value="default">Selecione:</option>
+                <option value="tesoura">Tesoura</option>
+                <option value="papel">Papel</option>
+                <option value="pedra">Pedra</option>
+            </select>
+            <button onclick="jokenpo()">Começar!</button>
+        </div>
+        <br>
+        <br>
+        <hr>
+        <div id="resultado">
+
+        </div>
+    </body>
+
+</html>
+
+<script>
+    // função que faz a opção de escolher ação aparecer
+    function escolha(){
+        let container = document.getElementById('container');
+
+        container.style.display = 'flex';
+    }
+
+    // váriavies globais
+
+    // cont jogador 01
+    let wins_jogador01 = 0;
+    let loss_jogador01 = 0;
+
+    // cont pc
+    let wins_pc = 0;
+    let loss_pc = 0;
+
+    //empates
+    let empates = 0;
+
+    function jokenpo() {
+        // entradas
+        let select = select_jokenpo.value;
+
+        // reset de resultado
+        resultado.innerHTML = ``;
+
+        // geração dos números
+        let min = 1;
+        let max = 3;
+        let aleatorio2 = Math.random();
+        let sorteio = parseInt(aleatorio2 * (max - min + 1) + min);
+
+        // padrões:
+
+        // sorteio = 1 -- Papel
+        // sorteio = 2 -- Pedra
+        // sorteio = 3 -- tesoura
+
+        if(select == 'default'){
+            alert(`Preencha o campo da sua jogada!`);
+        }else{
+            if(select == 'papel'){
+                if(sorteio == 1){
+                    // atribuições de vitória
+                    empates++
+
+                    resultado.innerHTML = 
+                    `
+                        <div class="container-resposta">
+                            <div class="title-container">
+                                <h3>
+                                    Resultado da Partida: <b>Empate!</b>  
+                                </h3>
+                            </div>
+                            <div class="content-resultado">
+                                <div class="content-jogador">
+                                    <h4>
+                                        Jogada do Jogador 01:    
+                                    </h4>
+                                    <img src="./images/papel.png">
+                                </div>
+                                <div class="content-pc">
+                                    <h4>
+                                        Jogada do PC:    
+                                    </h4>
+                                    <img src="./images/papel.png">
+                                <div>
+                            </div>
+                        </div>
+
+                        <div class="container-historico">
+                            <div class="title-historico">
+                                <h3>
+                                    <b>Placar:<b>  
+                                </h3>
+                            </div>
+                            <div class="content-historico">
+                                <h3>
+                                    Número de partidas: ${wins_jogador01 + loss_jogador01 + empates}.<br>
+                                    Número de vitórias do jogador: ${wins_pc} | Número de derrotas do jogador 01: ${loss_jogador01}. <br> 
+                                    Número de vitórias do PC: ${wins_pc} | Número de derrotas do PC: ${loss_pc}. <br>     
+                                    Número de Empates: ${empates}.  
+                                </h3>
+                            </div>
+                        </div>
+                    `;
+                }else if(sorteio == 2){
+                    wins_jogador01++
+                    loss_pc++
+
+                    resultado.innerHTML = 
+                    `
+                        <div class="container-resposta">
+                            <div class="title-container">
+                                <h3>
+                                    Resultado da Partida: <b>Vitória do Jogador 01!</b>  
+                                </h3>
+                            </div>
+                            <div class="content-resultado">
+                                <div class="content-jogador">
+                                    <h4>
+                                        Jogada do Jogador 01:    
+                                    </h4>
+                                    <img src="./images/papel.png">
+                                </div>
+                                <div class="content-pc">
+                                    <h4>
+                                        Jogada do PC:    
+                                    </h4>
+                                    <img src="./images/pedra.png">
+                                <div>
+                            </div>
+                        </div>
+
+                        <div class="container-historico">
+                            <div class="title-historico">
+                                <h3>
+                                    <b>Placar:<b>  
+                                </h3>
+                            </div>
+                            <div class="content-historico">
+                                <h3>
+                                    Número de partidas: ${wins_jogador01 + loss_jogador01 + empates}.<br>
+                                    Número de vitórias do jogador: ${wins_pc} | Número de derrotas do jogador 01: ${loss_jogador01}. <br> 
+                                    Número de vitórias do PC: ${wins_pc} | Número de derrotas do PC: ${loss_pc}. <br>     
+                                    Número de Empates: ${empates}.  
+                                </h3>
+                            </div>
+                        </div>
+                    `;
+
+                }else{
+                    wins_pc++
+                    loss_jogador01++
+
+                    resultado.innerHTML = 
+                    `
+                        <div class="container-resposta">
+                            <div class="title-container">
+                                <h3>
+                                    Resultado da Partida: <b>Vitória do PC!</b>  
+                                </h3>
+                            </div>
+                            <div class="content-resultado">
+                                <div class="content-jogador">
+                                    <h4>
+                                        Jogada do Jogador 01:    
+                                    </h4>
+                                    <img src="./images/papel.png">
+                                </div>
+                                <div class="content-pc">
+                                    <h4>
+                                        Jogada do PC:    
+                                    </h4>
+                                    <img src="./images/tesoura.png">
+                                <div>
+                            </div>
+                        </div>
+
+                        <div class="container-historico">
+                            <div class="title-historico">
+                                <h3>
+                                    <b>Placar:<b>  
+                                </h3>
+                            </div>
+                            <div class="content-historico">
+                                <h3>
+                                    Número de partidas: ${wins_jogador01 + loss_jogador01 + empates}.<br>
+                                    Número de vitórias do jogador: ${wins_pc} | Número de derrotas do jogador 01: ${loss_jogador01}. <br> 
+                                    Número de vitórias do PC: ${wins_pc} | Número de derrotas do PC: ${loss_pc}. <br>     
+                                    Número de Empates: ${empates}.  
+                                </h3>
+                            </div>
+                        </div>
+                    `;
+
+                }
+            }else if(select == 'pedra'){
+                if(sorteio == 1){
+                    // atribuições de vitória
+                    wins_pc++
+                    loss_jogador01++
+
+                    resultado.innerHTML = 
+                    `
+                        <div class="container-resposta">
+                            <div class="title-container">
+                                <h3>
+                                    Resultado da Partida: <b>Vitória do PC!</b>  
+                                </h3>
+                            </div>
+                            <div class="content-resultado">
+                                <div class="content-jogador">
+                                    <h4>
+                                        Jogada do Jogador 01:    
+                                    </h4>
+                                    <img src="./images/pedra.png">
+                                </div>
+                                <div class="content-pc">
+                                    <h4>
+                                        Jogada do PC:    
+                                    </h4>
+                                    <img src="./images/papel.png">
+                                <div>
+                            </div>
+                        </div>
+
+                        <div class="container-historico">
+                            <div class="title-historico">
+                                <h3>
+                                    <b>Placar:<b>  
+                                </h3>
+                            </div>
+                            <div class="content-historico">
+                                <h3>
+                                    Número de partidas: ${wins_jogador01 + loss_jogador01 + empates}.<br>
+                                    Número de vitórias do jogador: ${wins_pc} | Número de derrotas do jogador 01: ${loss_jogador01}. <br> 
+                                    Número de vitórias do PC: ${wins_pc} | Número de derrotas do PC: ${loss_pc}. <br>     
+                                    Número de Empates: ${empates}.  
+                                </h3>
+                            </div>
+                        </div>
+                    `;
+                }else if(sorteio == 2){
+                    empates++
+                    resultado.innerHTML = 
+                    `
+                        <div class="container-resposta">
+                            <div class="title-container">
+                                <h3>
+                                    Resultado da Partida: <b>Empate!</b>  
+                                </h3>
+                            </div>
+                            <div class="content-resultado">
+                                <div class="content-jogador">
+                                    <h4>
+                                        Jogada do Jogador 01:    
+                                    </h4>
+                                    <img src="./images/pedra.png">
+                                </div>
+                                <div class="content-pc">
+                                    <h4>
+                                        Jogada do PC:    
+                                    </h4>
+                                    <img src="./images/pedra.png">
+                                <div>
+                            </div>
+                        </div>
+
+                        <div class="container-historico">
+                            <div class="title-historico">
+                                <h3>
+                                    <b>Placar:<b>  
+                                </h3>
+                            </div>
+                            <div class="content-historico">
+                                <h3>
+                                    Número de partidas: ${wins_jogador01 + loss_jogador01 + empates}.<br>
+                                    Número de vitórias do jogador: ${wins_pc} | Número de derrotas do jogador 01: ${loss_jogador01}. <br> 
+                                    Número de vitórias do PC: ${wins_pc} | Número de derrotas do PC: ${loss_pc}. <br>     
+                                    Número de Empates: ${empates}.  
+                                </h3>
+                            </div>
+                        </div>
+                    `;
+
+                }else{
+                    wins_jogador01++
+                    loss_pc++
+
+                    resultado.innerHTML = 
+                    `
+                        <div class="container-resposta">
+                            <div class="title-container">
+                                <h3>
+                                    Resultado da Partida: <b>Vitória do Jogador 01!</b>  
+                                </h3>
+                            </div>
+                            <div class="content-resultado">
+                                <div class="content-jogador">
+                                    <h4>
+                                        Jogada do Jogador 01:    
+                                    </h4>
+                                    <img src="./images/pedra.png">
+                                </div>
+                                <div class="content-pc">
+                                    <h4>
+                                        Jogada do PC:    
+                                    </h4>
+                                    <img src="./images/tesoura.png">
+                                <div>
+                            </div>
+                        </div>
+
+                        <div class="container-historico">
+                            <div class="title-historico">
+                                <h3>
+                                    <b>Placar:<b>  
+                                </h3>
+                            </div>
+                            <div class="content-historico">
+                                <h3>
+                                    Número de partidas: ${wins_jogador01 + loss_jogador01 + empates}.<br>
+                                    Número de vitórias do jogador: ${wins_pc} | Número de derrotas do jogador 01: ${loss_jogador01}. <br> 
+                                    Número de vitórias do PC: ${wins_pc} | Número de derrotas do PC: ${loss_pc}. <br>     
+                                    Número de Empates: ${empates}.  
+                                </h3>
+                            </div>
+                        </div>
+                    `;
+
+                }
+
+            }else if(select == 'tesoura'){
+                if(sorteio == 1){
+                    // atribuições de vitória
+                    wins_jogador01++
+                    loss_pc++
+
+                    resultado.innerHTML = 
+                    `
+                        <div class="container-resposta">
+                            <div class="title-container">
+                                <h3>
+                                    Resultado da Partida: <b>Vitória do Jogador 01!</b>  
+                                </h3>
+                            </div>
+                            <div class="content-resultado">
+                                <div class="content-jogador">
+                                    <h4>
+                                        Jogada do Jogador 01:    
+                                    </h4>
+                                    <img src="./images/tesoura.png">
+                                </div>
+                                <div class="content-pc">
+                                    <h4>
+                                        Jogada do PC:    
+                                    </h4>
+                                    <img src="./images/papel.png">
+                                <div>
+                            </div>
+                        </div>
+
+                        <div class="container-historico">
+                            <div class="title-historico">
+                                <h3>
+                                    <b>Placar:<b>  
+                                </h3>
+                            </div>
+                            <div class="content-historico">
+                                <h3>
+                                    Número de partidas: ${wins_jogador01 + loss_jogador01 + empates}.<br>
+                                    Número de vitórias do jogador: ${wins_pc} | Número de derrotas do jogador 01: ${loss_jogador01}. <br> 
+                                    Número de vitórias do PC: ${wins_pc} | Número de derrotas do PC: ${loss_pc}. <br>     
+                                    Número de Empates: ${empates}.  
+                                </h3>
+                            </div>
+                        </div>
+                    `;
+                }else if(sorteio == 2){
+                    wins_pc++
+                    loss_jogador01++
+
+                    resultado.innerHTML = 
+                    `
+                        <div class="container-resposta">
+                            <div class="title-container">
+                                <h3>
+                                    Resultado da Partida: <b>Vitória do PC!</b>  
+                                </h3>
+                            </div>
+                            <div class="content-resultado">
+                                <div class="content-jogador">
+                                    <h4>
+                                        Jogada do Jogador 01:    
+                                    </h4>
+                                    <img src="./images/tesoura.png">
+                                </div>
+                                <div class="content-pc">
+                                    <h4>
+                                        Jogada do PC:    
+                                    </h4>
+                                    <img src="./images/pedra.png">
+                                <div>
+                            </div>
+                        </div>
+
+                        <div class="container-historico">
+                            <div class="title-historico">
+                                <h3>
+                                    <b>Placar:<b>  
+                                </h3>
+                            </div>
+                            <div class="content-historico">
+                                <h3>
+                                    Número de partidas: ${wins_jogador01 + loss_jogador01 + empates}.<br>
+                                    Número de vitórias do jogador: ${wins_pc} | Número de derrotas do jogador 01: ${loss_jogador01}. <br> 
+                                    Número de vitórias do PC: ${wins_pc} | Número de derrotas do PC: ${loss_pc}. <br>     
+                                    Número de Empates: ${empates}.  
+                                </h3>
+                            </div>
+                        </div>
+                    `;
+
+                }else{
+                    empates++
+
+                    resultado.innerHTML = 
+                    `
+                        <div class="container-resposta">
+                            <div class="title-container">
+                                <h3>
+                                    Resultado da Partida: <b>Empate!</b>  
+                                </h3>
+                            </div>
+                            <div class="content-resultado">
+                                <div class="content-jogador">
+                                    <h4>
+                                        Jogada do Jogador 01:    
+                                    </h4>
+                                    <img src="./images/tesoura.png">
+                                </div>
+                                <div class="content-pc">
+                                    <h4>
+                                        Jogada do PC:    
+                                    </h4>
+                                    <img src="./images/tesoura.png">
+                                <div>
+                            </div>
+                        </div>
+
+                        <div class="container-historico">
+                            <div class="title-historico">
+                                <h3>
+                                    <b>Placar:<b>  
+                                </h3>
+                            </div>
+                            <div class="content-historico">
+                                <h3>
+                                    Número de partidas: ${wins_jogador01 + loss_jogador01 + empates}.<br>
+                                    Número de vitórias do jogador: ${wins_pc} | Número de derrotas do jogador 01: ${loss_jogador01}. <br> 
+                                    Número de vitórias do PC: ${wins_pc} | Número de derrotas do PC: ${loss_pc}. <br>     
+                                    Número de Empates: ${empates}.  
+                                </h3>
+                            </div>
+                        </div>
+                    `;
+
+                }
+
+            }else{
+                alert(`Erro!`);
+            }
+        }
+    }
+</script>
+
+<style>
+    .container-off{
+        display: none;
+        gap: 1vw;
+    }
+
+    #resultado{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 70vh;
+        width: 100%;
+        border: 1px solid black;
+    }
+
+    .container-resposta, .container-historico{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 50%;
+        width: 95%;
+    }
+
+    .title-container{
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        height: 20%;
+        width: 100%;
+    }
+
+    .content-resultado{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        height: 80%;
+        width: 100%;
+    }
+
+    .content-jogador, .content-pc{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        height: 90%;
+        width: 40%;
+    }
+
+    .content-jogador h4, .content-pc h4{
+        text-align: center;
+    }
+
+    .content-jogador img, .content-pc img{
+        height: fit-content;
+    }
+
+    .container-historico{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+</style>

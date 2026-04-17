@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números Random</title>
+</head>
+<body>
+    <!--pseudo aleatorio--> <!--o andar do bebedo-->
+    <!--askeladd site projeto individual images-->
+
+
+</body>
+</html>
+
+<script>
+    let aleatorio1 = Math.random();
+    console.log(`Número aleatório: ${aleatorio1}`);
+
+    // 0 á 1, 0 até 0.999999999999999
+
+
+    // 0 á 9.9999999
+    let aleatorio2 = Math.random() * 10;
+    console.log(`Número aleatório: ${aleatorio2.toFixed(2)}`);
+
+    // em um intervalo
+    let min = 1;
+    let max = 10;
+
+    // num inteiro
+    let aleatorio_intervalo = (aleatorio1 * (max - min) + min);
+    console.log(`Número aleatório com intervalo: ${aleatorio_intervalo.toFixed(0)}`);
+
+    // arredondar
+    let aleatorio_intervalo_arr = Math.round( aleatorio1 * (max - min) + min)
+    // virgula, casas tipo toFixed
+    console.log(aleatorio_intervalo_arr);
+
+    // ou
+    let aleatorio_intervalo_parse = parseInt( aleatorio1 * (max - min) + min);
+    console.log(aleatorio_intervalo_parse)
+    // virgula, casas tipo toFixed
+
+    // para conseguir exibir de um intervalo de 1 á 5, quando sair 4.9, exibir o 5
+    let aleatorio_intervalo_parses = parseInt( aleatorio1 * (max - min + 1) + min);
+    console.log(aleatorio_intervalo_parses)
+
+
+    let sorteiro = (aleatorio_intervalo_parse);
+    while(aleatorio_intervalo != 7){
+        console.log(`Erro, o num sorteado foi ${aleatorio_intervalo_parse}, e ele deve ser 7`);
+            let sorteiro = (aleatorio_intervalo_parse);
+    }
+</script>

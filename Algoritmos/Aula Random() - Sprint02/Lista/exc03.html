@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3. Crie um programa o qual: </title>
+</head>
+
+<body>
+    <button onclick="dado()">Jogar dado</button>
+    <br>
+    <br>
+    <hr>
+    <div id="resultado">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function dado() {
+        resultado.innerHTML = ``;
+        let min = 1;
+        let max = 20;
+        let aleatorio2 = Math.random();
+
+        let sorteio = parseInt(aleatorio2 * (max - min + 1) + min);
+        console.log(sorteio)
+
+        resultado.innerHTML =
+            `
+            <div class="dado_lado">
+                <h1>
+                    ${sorteio}    
+                </h1>
+            </div>
+        `;
+    }
+</script>
+
+<style>
+    .dado_lado {
+        display: flex;
+        align-self: center;
+        justify-content: center;
+        background-color: black;
+        padding: 2rem;
+        width: 100px;
+        border-radius: 0.3rem;
+        border: 4px solid rgb(131, 30, 30);
+    }
+
+    .dado_lado h1 {
+        color: white;
+    }
+</style>
