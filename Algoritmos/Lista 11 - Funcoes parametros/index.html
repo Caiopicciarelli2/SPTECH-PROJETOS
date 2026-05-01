@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista 11 - Funções com Parâmetros</title>
+</head>
+<body>
+    <h1>Função de Soma:</h1> <br>
+    <label for="ipt_number_1">Digite o número 01:</label>
+    <input type="number" id="ipt_number_1">
+    <br>
+    <label for="ipt_number_2">Digite o número 02:</label>
+    <input type="number" id="ipt_number_2">
+    <br>
+    <br>
+    <button onclick="somar((ipt_number_1.value), (ipt_number_2.value))">Somar</button>
+    <br>
+    <h6 id="resultado_soma">
+
+    </h6>
+    <hr>
+
+    <h1>Cálcular distância entre dois pontos</h1> <br>
+    <label for="ipt_ponto_1"> Ponto 1 (x1):</label>
+    <input type="number" id="ipt_ponto_x1">
+    <br>
+    <label for="ipt_ponto_2"> Ponto 2 (x2):</label>
+    <input type="number" id="ipt_ponto_x2">
+    <br>
+    <label for="ipt_ponto_3"> Ponto 3 (y1):</label>
+    <input type="number" id="ipt_ponto_y1">
+    <br>
+    <label for="ipt_ponto_4"> Ponto 4 (y2):</label>
+    <input type="number" id="ipt_ponto_y2">
+    <br>
+    <br>
+    <button onclick="calcularDistancia((ipt_ponto_x1.value), (ipt_ponto_x2.value), (ipt_ponto_y1.value), (ipt_ponto_y2.value))">Calcular Distância</button>
+    <br>
+    <h6 id="resultado_distancia">
+
+    </h6>
+    <hr>
+</body>
+</html>
+
+<script src="./matematica.js"></script>

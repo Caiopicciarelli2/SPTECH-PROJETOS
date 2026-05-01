@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8. Crie um programa o qual: </title>
+</head>
+
+<body>
+    <button onclick="sortear()">Gerar uma nota de aluno entre 0 e 10</button>
+    <br>
+    <br>
+    <hr>
+    <button onclick="sortear_2()">Gerar uma frequência de aluno entre 0 e 100</button>
+    <br>
+    <br>
+    <hr>
+    <button onclick="sortear_3()">Situação</button>
+    <br>
+    <br>
+    <hr>
+    <div id="resultado">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function sortear() {
+        resultado.innerHTML = ``;
+        let min = 0;
+        let max = 10;
+        let aleatorio2 = Math.random();
+
+        let sorteio = (aleatorio2 * (max - min + 1) + min);
+        console.log(sorteio);
+
+        resultado.innerHTML += `Nota: ${aleatorio2.toFixed(2)}`;
+    }
+
+    function sortear_2() {
+        resultado.innerHTML = ``;
+        let min_1 = 0;
+        let max_1 = 100;
+        let aleatorio1 = Math.random();
+
+        let sorteio1 = (aleatorio1 * (max_1 - min_1 + 1) + min_1);
+        console.log(sorteio1)
+
+        resultado.innerHTML += `Frequencia: ${aleatorio1.toFixed(2)}`;
+    }
+
+    function sortear_3(){
+        alert("Cursando")
+    }
+</script>

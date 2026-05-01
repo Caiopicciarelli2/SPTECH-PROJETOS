@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste das Funções Matemáticas</title>
+    <script src="./matematica.js" defer></script>
+</head>
+<body>
+    <h2>Painel de Testes - matematica.js</h2>
+
+    <section>
+        <h3>1. Somar</h3>
+        <input type="number" id="soma_n1" placeholder="Número 1">
+        <input type="number" id="soma_n2" placeholder="Número 2">
+        <button onclick="testeSomar()">Somar</button>
+        <div id="res_somar" class="resultado"></div>
+    </section>
+
+    <section>
+        <h3>2. Calcular Distância</h3>
+        <div>
+            Ponto 1: <input type="number" id="dist_x1" placeholder="x1"> <input type="number" id="dist_y1" placeholder="y1">
+        </div>
+        <div>
+            Ponto 2: <input type="number" id="dist_x2" placeholder="x2"> <input type="number" id="dist_y2" placeholder="y2">
+        </div>
+        <button onclick="testeDistancia()">Calcular Distância</button>
+        <div id="res_distancia" class="resultado"></div>
+    </section>
+
+    <section>
+        <h3>3. Converter Segundos (HH:MM:SS)</h3>
+        <input type="number" id="tempo_seg" placeholder="Total de segundos">
+        <button onclick="testeTempo()">Converter</button>
+        <div id="res_tempo" class="resultado"></div>
+    </section>
+
+    <section>
+        <h3>4. Verificar se é Primo</h3>
+        <input type="number" id="primo_n" placeholder="Digite um número">
+        <button onclick="testePrimo()">Verificar</button>
+        <div id="res_primo" class="resultado"></div>
+    </section>
+
+    <section>
+        <h3>5. Calcular Fatorial</h3>
+        <input type="number" id="fat_n" placeholder="Digite um número">
+        <button onclick="testeFatorial()">Calcular</button>
+        <div id="res_fatorial" class="resultado"></div>
+    </section>
+
+    <section>
+        <h3>6. Média Simples (Vetor)</h3>
+        <input type="number" id="med_val" placeholder="Valor">
+        <button class="btn-add" onclick="adicionarAoVetorSimples()">Adicionar ao Vetor</button>
+        <button onclick="testeMediaSimples()">Calcular Média Final</button>
+        <div id="status_vetor_simples" class="vetor-status">Itens no vetor: []</div>
+        <div id="res_media" class="resultado"></div>
+    </section>
+
+    <section>
+        <h3>7. Média Ponderada (Vetores)</h3>
+        <input type="number" id="pond_val" placeholder="Valor">
+        <input type="number" id="pond_peso" placeholder="Peso (ex: 0.5)">
+        <button class="btn-add" onclick="adicionarAoVetorPonderado()">Adicionar Par</button>
+        <button onclick="testeMediaPonderada()">Calcular Média Ponderada</button>
+        <div id="status_vetor_pond" class="vetor-status">Valores: [] | Pesos: []</div>
+        <div id="res_ponderada" class="resultado">(Lembre-se: soma dos pesos deve ser 1)</div>
+    </section>
+
+    <script>
+        let vetorSimples = [];
+        let vetorPondMedias = [];
+        let vetorPondPesos = [];
+
+        function testeSomar() {
+            const v1 = Number(document.getElementById('soma_n1').value);
+            const v2 = Number(document.getElementById('soma_n2').value);
+            const result = somar(v1, v2);
+            document.getElementById('res_somar').innerText = "Resultado: " + (result !== undefined ? result : "Erro (ver console)");
+        }
+
+        function testeDistancia() {
+            const x1 = Number(document.getElementById('dist_x1').value);
+            const y1 = Number(document.getElementById('dist_y1').value);
+            const x2 = Number(document.getElementById('dist_x2').value);
+            const y2 = Number(document.getElementById('dist_y2').value);
+            const result = calcularDistancia(x1, y1, x2, y2);
+            document.getElementById('res_distancia').innerText = "Distância: " + (result !== undefined ? result.toFixed(4) : "Erro");
+        }
+
+        function testeTempo() {
+            const seconds = Number(document.getElementById('tempo_seg').value);
+            const result = converterParaHoraMinutoSegundo(seconds);
+            document.getElementById('res_tempo').innerText = "Tempo: " + (result || "Erro");
+        }
+
+        function testePrimo() {
+            const number = Number(document.getElementById('primo_n').value);
+            const result = ePrimo(number);
+            document.getElementById('res_primo').innerText = "É primo? " + (result === true ? "Sim" : result === false ? "Não" : "Erro");
+        }
+
+        function testeFatorial() {
+            const number = Number(document.getElementById('fat_n').value);
+            const result = calcularFatorial(number);
+            document.getElementById('res_fatorial').innerText = "Fatorial: " + (result !== undefined ? result : "Erro");
+        }
+
+        function adicionarAoVetorSimples() {
+            const input = document.getElementById('med_val');
+            if (input.value !== "") {
+                vetorSimples.push(Number(input.value));
+                document.getElementById('status_vetor_simples').innerText = "Itens no vetor: [" + vetorSimples.join(", ") + "]";
+                input.value = "";
+                input.focus();
+            }
+        }
+
+        function testeMediaSimples() {
+            const result = calcularMedia(vetorSimples);
+            document.getElementById('res_media').innerText = "Média: " + (result !== undefined ? result : "Erro");
+            vetorSimples = []; // Limpa para o próximo teste
+            document.getElementById('status_vetor_simples').innerText = "Itens no vetor: []";
+        }
+
+        function adicionarAoVetorPonderado() {
+            const inputValor = document.getElementById('pond_val');
+            const inputPeso = document.getElementById('pond_peso');
+            
+            if (inputValor.value !== "" && inputPeso.value !== "") {
+                vetorPondMedias.push(Number(inputValor.value));
+                vetorPondPesos.push(Number(inputPeso.value));
+                
+                document.getElementById('status_vetor_pond').innerText = 
+                    "Valores: [" + vetorPondMedias.join(", ") + "] | Pesos: [" + vetorPondPesos.join(", ") + "]";
+                
+                inputValor.value = "";
+                inputPeso.value = "";
+                inputValor.focus();
+            }
+        }
+
+        function testeMediaPonderada() {
+            const result = calcularMediaPonderada(vetorPondMedias, vetorPondPesos);
+            document.getElementById('res_ponderada').innerText = "Média Ponderada: " + (result !== undefined ? result : "Erro (Soma pesos deve ser 1)");
+            
+            vetorPondMedias = [];
+            vetorPondPesos = [];
+            document.getElementById('status_vetor_pond').innerText = "Valores: [] | Pesos: []";
+        }
+    </script>
+</body>
+</html>

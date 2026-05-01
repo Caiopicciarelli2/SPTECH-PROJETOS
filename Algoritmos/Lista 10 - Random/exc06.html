@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>6. Crie um programa o qual:  </title>
+</head>
+<body>
+    <button onclick="sortear()">Sortear momento do dia</button>
+    <br>
+    <br>
+    <hr>
+    <div id="resultado">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function sortear() {
+        resultado.innerHTML = ``;
+        let min = 1;
+        let max = 23;
+        let aleatorio2 = Math.random();
+
+        let sorteio = (aleatorio2 * (max - min + 1) + min);
+        console.log(sorteio)
+
+        if(sorteio <= 11){
+            resultado.innerHTML =
+            `
+            <div>
+                <h1>
+                    Bom dia, flor do dia, são ${sorteio.toFixed(0)}h!    
+                </h1>
+            </div>
+            `;
+        }else if(sorteio <= 17){
+            resultado.innerHTML =
+            `
+            <div>
+                <h1>
+                    Boa tarde, já vai tarde! São ${sorteio.toFixed(0)}h!    
+                </h1>
+            </div>
+            `;
+        }else{
+            resultado.innerHTML =
+            `
+            <div>
+                <h1>
+                     "Boa noite, durma bem! São ${sorteio.toFixed(0)}h!    
+                </h1>
+            </div>
+            `;
+        }
+    }
+</script>

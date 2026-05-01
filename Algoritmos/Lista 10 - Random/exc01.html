@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>1. Crie um programa o qual: </title>
+</head>
+
+<body>
+    <button onclick="sortear()">Sortear</button>
+    <br>
+    <br>
+    <hr>
+    <div id="resultado">
+
+    </div>
+</body>
+
+</html>
+
+<script>
+    function sortear() {
+        resultado.innerHTML = ``;
+        let aleatorio1 = Math.random();
+
+        if (aleatorio1 > 0.5) {
+            resultado.innerHTML = `Número: ${aleatorio1.toFixed(4)}! Eu arredondaria para 1`;
+        } else {
+            resultado.innerHTML = `Número: ${aleatorio1.toFixed(4)}! Eu arredondaria para 0`;
+        }
+    }   
+</script>

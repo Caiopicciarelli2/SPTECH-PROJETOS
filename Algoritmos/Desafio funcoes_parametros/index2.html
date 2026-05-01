@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desafio</title>
+</head>
+
+<body>
+    <h1>Exc 01: adicionarNoFinal</h1>
+    <br>
+    <label for="ipt_frase_final">Digite a Frase:</label>
+    <input type="text" id="ipt_frase_final">
+    <br>
+    <button onclick="add_final(ipt_frase_final.value)">Adicionar</button>
+    <br>
+    <hr>
+    <h4 id="resultado1"></h4>
+    <hr>
+
+
+    <h1>Exc 02: removerNoFinal</h1>
+    <br>
+    <button onclick="rmv_final()">Remover</button>
+    <br>
+    <hr>
+    <h4 id="resultado2"></h4>
+    <hr>
+
+
+    <h1>Exc 03: removerNoInicio</h1>
+    <br>
+    <button onclick="rmv_inicio()">Remover</button>
+    <br>
+    <hr>
+    <h4 id="resultado3"></h4>
+    <hr>
+
+
+    <h1>Exc 04: adicionarNoInicio</h1>
+    <br>
+    <label for="ipt_frase_inicio">Digite a Frase:</label>
+    <input type="text" id="ipt_frase_inicio">
+    <br>
+    <button onclick="add_inicio(ipt_frase_inicio.value)">Adicionar</button>
+    <br>
+    <hr>
+    <h4 id="resultado4"></h4>
+    <hr>
+
+    <h1>Exc 05: AlterarLista</h1>
+    <br>
+    <label for="ipt_indice">Qual índice:</label>
+    <input type="text" id="ipt_indice">
+    <br>
+    <label for="ipt_elemento">Novo Elemento:</label>
+    <input type="text" id="ipt_elemento">
+    <br>
+    <br>
+    <label for="ipt_qtd_remover">Quantidade Removidos:</label>
+    <input type="text" id="ipt_qtd_remover">
+    <br>
+    <button onclick="alt_lista(ipt_indice.value, ipt_elemento.value, ipt_qtd_remover.value)">Remover</button>
+    <br>
+    <hr>
+    <h4 id="resultado5"></h4>
+    <hr>
+</body>
+
+</html>
+
+<script src="./index2.js"></script>
+
+<script>
+    let lista_alunos = ['Caio', 'Luiz', 'Marquinho', 'Guilherme'];
+
+    function add_final(frase) {
+        let lista_nova = adicionar_final(frase);
+
+        resultado1.innerHTML = `${lista_nova}`;
+    }
+    function rmv_final() {
+        let lista_nova = remover_final();
+
+        resultado2.innerHTML = `${lista_nova}`;
+    }
+
+    function rmv_inicio() {
+        let lista_nova = remover_inicio();
+
+        resultado3.innerHTML = `${lista_nova}`;
+    }
+
+    function add_inicio(frase3) {
+        let lista_nova = adicionar_inicio(frase3);
+
+        resultado4.innerHTML = `${lista_nova}`;
+    }
+
+    function alt_lista(indice, quantidade){
+        let lista_nova = alterar_lista(indice, quantidade);
+
+        resultado5.innerHTML = `${lista_nova}`;
+    }
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7. Crie um programa o qual:  </title>
+</head>
+<body>
+    <button onclick="sortear()">Quero um número cabalístico!</button>
+    <br>
+    <br>
+    <hr>
+    <div id="resultado">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function sortear() {
+        resultado.innerHTML = ``;
+        let min = 1;
+        let max = 15;
+        let aleatorio2 = Math.random();
+
+        let sorteio = (aleatorio2 * (max - min + 1) + min);
+        console.log(sorteio)
+
+        let sorteio_tratado = sorteio.toFixed(0);
+
+        if(sorteio_tratado == 3 || sorteio_tratado == 4 || sorteio_tratado == 7 || sorteio_tratado == 10 || sorteio_tratado == 12){
+            resultado.innerHTML = `Eu S2 números cabalísticos! ${sorteio_tratado}`;
+        }else{
+            resultado.innerHTML = `Ah, me dá um número bom na próxima! ${sorteio_tratado}`;
+        }
+    }
+</script>
