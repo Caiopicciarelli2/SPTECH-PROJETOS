@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h2>Buscar Filmes:</h2>
+
+    <span>Nome:</span>
+    <input type="text" id="ipt_nome">
+    <button onclick="pesquisarNome()">Pesquisar</button>
+
+    <span>Diretor:</span>
+    <input type="text" id="ipt_diretor">
+    <button onclick="pesquisarDiretor()">Pesquisar</button>
+
+    <span>Ano:</span>
+    <select id="ipt_ano_parametro">
+        <option value="maior_igual">&gt;=</option>
+        <option value="igual">==</option>
+        <option value="menor_igual">&lt;=</option>
+    </select>
+    <input type="number" id="ipt_ano">
+    <button onclick="pesquisarAno()">Pesquisar</button><br><br>
+
+    <span>Gênero:</span>
+    <input type="text" id="ipt_genero">
+    <button onclick="pesquisarGenero()">Pesquisar</button>
+
+    <span>Média:</span>
+    <select id="ipt_media_parametro">
+        <option value="maior_igual">&gt;=</option>
+        <option value="igual">==</option>
+        <option value="menor_igual">&lt;=</option>
+    </select>
+    <input type="text" id="ipt_media">
+    <button onclick="pesquisarMedia()">Pesquisar</button><br><br>
+
+    <button onclick="pesquisar()">Mostrar Todos</button>
+
+    <div id="div_resultado"></div>
+</body>
+
+</html>
+<script src="dados.js"></script>
+<script>
+
+    function pesquisarNome() {
+        div_resultado.innerHTML = ``;
+        let resultado_alunos = "";
+        let filmes_nome_pesquisa = [];
+        let nome_pesq = (ipt_nome.value).toUpperCase();
+
+        for (let i = 0; i < filmes.length; i++) {
+            let nome_filme = filmes[i].nome.toUpperCase();
+            if (nome_filme.includes(nome_pesq)) {
+                filmes_nome_pesquisa.push(filmes[i]);
+            } else {
+                continue;
+            }
+        }
+
+        for (let i = 0; i < filmes_nome_pesquisa.length; i++) {
+
+            resultado_alunos +=
+                `
+                Nome: ${filmes_nome_pesquisa[i].nome} | Diretor: ${filmes_nome_pesquisa[i].diretor} | Ano: ${filmes_nome_pesquisa[i].ano} | Média: <br>
+            `;
+        }
+
+        div_resultado.innerHTML = `${resultado_alunos}`;
+    }
+
+    function pesquisarDiretor() {
+        div_resultado.innerHTML = ``;
+        let resultado_alunos = "";
+        let filmes_diretor_pesquisa = [];
+        let deitor_pesq = (ipt_diretor.value).toUpperCase();
+
+        for (let i = 0; i < filmes.length; i++) {
+            let diretor_filme = filmes[i].diretor.toUpperCase();
+            if (diretor_filme.includes(deitor_pesq)) {
+                filmes_diretor_pesquisa.push(filmes[i]);
+            } else {
+                continue;
+            }
+        }
+
+        for (let i = 0; i < filmes_diretor_pesquisa.length; i++) {
+
+            resultado_alunos +=
+                `
+                Nome: ${filmes_diretor_pesquisa[i].nome} | Diretor: ${filmes_diretor_pesquisa[i].diretor} | Ano: ${filmes_diretor_pesquisa[i].ano} | Média: <br>
+            `;
+        }
+
+        div_resultado.innerHTML = `${resultado_alunos}`;
+    }
+
+    function pesquisarAno() {
+        div_resultado.innerHTML = ``;
+        let resultado_alunos = "";
+        let filmes_ano_pesquisa = [];
+        let ano_pesq = Number(ipt_ano.value);
+        let select_operador = ipt_media_parametro.value;
+
+
+        for (let i = 0; i < filmes.length; i++) {
+            let ano_filme = filmes[i].ano;
+
+            if (select_operador == "maior_igual") {
+                if (ano_pesq <= ano_filme) {
+                    filmes_ano_pesquisa.push(filmes[i]);
+                }
+            } else if (select_operador == "igual") {
+                if (ano_pesq == ano_filme) {
+                    filmes_ano_pesquisa.push(filmes[i]);
+                }
+            } else {
+                if (ano_pesq >= ano_filme) {
+                    filmes_ano_pesquisa.push(filmes[i]);
+                }
+            }
+        }
+
+        for (let i = 0; i < filmes_ano_pesquisa.length; i++) {
+
+            resultado_alunos +=
+                `
+                Nome: ${filmes_ano_pesquisa[i].nome} | Diretor: ${filmes_ano_pesquisa[i].diretor} | Ano: ${filmes_ano_pesquisa[i].ano} | Média: <br>
+            `;
+        }
+
+        div_resultado.innerHTML = `${resultado_alunos}`;
+    }
+
+    function pesquisarGenero() {
+        
+    }
+
+    function pesquisar(){
+        div_resultado.innerHTML = ``;
+        let resultado_alunos = "";
+        
+        for (let i = 0; i < filmes.length; i++) {
+
+            resultado_alunos +=
+                `
+                Nome: ${filmes[i].nome} | Diretor: ${filmes[i].diretor} | Ano: ${filmes[i].ano} | Média: <br>
+            `;
+        }
+
+        div_resultado.innerHTML = `${resultado_alunos}`;
+    }
+</script>
