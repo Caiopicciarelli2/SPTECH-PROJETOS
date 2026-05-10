@@ -94,7 +94,7 @@ function remover_musica(nome_musica) {
             `
             A música de título : "${lista_musicas[index_musica_encontrada].titulo}" Foi removida!
         `;
-        lista_musicas.splice(index_musica_encontrada - 1, 1);
+        lista_musicas.splice(index_musica_encontrada, 1);
 
     } else {
         resultado_remover.innerHTML =
