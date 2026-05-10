@@ -113,8 +113,6 @@ function atualizar_ano(nome_musica, novo_ano) {
         if (lista_musicas[i].titulo == nome_musica) {
             contador++;
             index_musica_encontrada = i;
-        } else {
-            continue;
         }
     }
 
@@ -148,9 +146,7 @@ function calc_media(nome_musica){
             }
 
         media = soma / lista_musicas[i].avaliacoes.length;
-            
-        } else {
-            continue;
+        
         }
     }
 
