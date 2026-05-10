@@ -39,7 +39,7 @@ function adicionar_musica(titulo, banda, duracao, ano, avaliacoes, integrantes) 
         let lista_add = {
             "titulo": titulo,
             "banda": banda,
-            "duracao": duracao.toFixed(),
+            "duracao": duracao.toFixed(2),
             "anoLancamento": ano,
             "avaliacoes": avaliacoes,
             "integrantes": integrantes
@@ -58,8 +58,6 @@ function adicionar_musica(titulo, banda, duracao, ano, avaliacoes, integrantes) 
             Integrantes: ${integrantes}.
         `;
     }
-
-    console.log(lista_musicas);
 }
 
 function listar_musicas() {
@@ -88,8 +86,6 @@ function remover_musica(nome_musica) {
         if (lista_musicas[i].titulo == nome_musica) {
             contador++;
             index_musica_encontrada = i;
-        } else {
-            continue;
         }
     }
 
