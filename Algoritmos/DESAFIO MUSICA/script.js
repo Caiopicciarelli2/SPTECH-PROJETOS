@@ -110,7 +110,7 @@ function atualizar_ano(nome_musica, novo_ano) {
     let index_musica_encontrada = 0;
 
     for (let i = 0; i < lista_musicas.length; i++) {
-        if (lista_musicas[i].titulo == nome_musica) {
+        if (lista_musicas[i].titulo.toUpperCase() == nome_musica.toUpperCase()) {
             contador++;
             index_musica_encontrada = i;
         }
@@ -133,27 +133,36 @@ function atualizar_ano(nome_musica, novo_ano) {
     }
 }
 
-function calc_media(nome_musica){
+function calc_media(nome_musica) {
     resultado_media.innerHTML = ``;
 
     let soma = 0;
     let media = 0;
+    let contador = 0;
+    let frase = "";
 
     for (let i = 0; i < lista_musicas.length; i++) {
-        if (lista_musicas[i].titulo == nome_musica) {
+        if (lista_musicas[i].titulo.toUpperCase() == nome_musica.toUpperCase()) {
+            contador++;
             for (let n = 0; n < lista_musicas[i].avaliacoes.length; n++) {
                 soma += Number(lista_musicas[i].avaliacoes[n]);
             }
-
-        media = soma / lista_musicas[i].avaliacoes.length;
-        
+            console.log(soma)
+            console.log(media)
+            console.log(lista_musicas[i].avaliacoes.length)
+            media = soma / lista_musicas[i].avaliacoes.length;
         }
     }
 
-    resultado_media.innerHTML = 
-    `
-        A média de avaliação do filme "${nome_musica}" é: ${media}.
-    `;
+    if(contador <= 0){
+        frase = `Música não encontrada`;
+    }else{
+        frase = `
+                A média de avaliação do filme "${nome_musica}" é: ${media}.
+            `;
+    }
+
+    resultado_media.innerHTML = frase;
 }
 
 function buscar_banda(nome_integrante) {
@@ -178,13 +187,13 @@ function buscar_banda(nome_integrante) {
 
     if (bandas.length > 0) {
         resultado_banda.innerHTML =
-        `
+            `
             O integrante "${nome_integrante}" participa da(s) banda(s): <br>
             ${bandas.join(", ")}
         `;
     } else {
         resultado_banda.innerHTML =
-        `
+            `
             Nenhuma banda encontrada para o integrante "${nome_integrante}".
         `;
     }
