@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="" type="image/x-icon">
+    <title>API PokeApi</title>
+</head>
+
+<body onload="buscarDadosPokeAPI()">
+    <div class="container-pokemon">
+        <div class="container-pokemon-title">
+            <h1>
+                Poke
+                <span>
+                    Api
+                </span>
+            </h1>
+        </div>
+        <div class="content-pokemon">
+            <div class="content-row-pokemon-1">
+
+            </div>
+            <div class="content-row-pokemon-2">
+                <div class="box-pokemon" id="box-principal">
+
+                </div>
+                <div class="box-pokemon" id="box-shine">
+
+                </div>
+                <div class="box-pokemon" id="box-dream-world">
+
+                </div>
+                <div class="box-pokemon" id="box-home">
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+    async function buscarDadosPokeAPI() {
+
+        let retornoAPI =
+            await fetch(`https://pokeapi.co/api/v2/pokemon/1`); // retorna a req com await
+
+        let res = await retornoAPI.json() // retorna o json do retorno API
+
+        let retornoAPI2 =
+            await fetch(`https://pokeapi.co/api/v2/pokemon/6`); // retorna a req com await
+
+        let res2 = await retornoAPI2.json() // retorna o json do retorno API
+
+        // estilos
+            //balbasaur
+        let box_principal_img = res.sprites.front_default;
+        let box_shine_img = res.sprites.front_shiny; 
+        let box_dream_img = res.sprites.other.dream_world.front_default;
+        let box_home_img = res.sprites.other.home.front_default;
+
+            //charizard
+        let box_principal2_img = res2.sprites.front_default;
+        let box_shine2_img = res2.sprites.front_shiny; 
+        let box_dream2_img = res2.sprites.other.dream_world.front_default;
+        let box_home2_img = res2.sprites.other.home.front_default;
+
+
+        // content
+
+        let content_row_1 = document.querySelector('.content-row-pokemon-1');
+        let content_row_2 = document.querySelector('.content-row-pokemon-2');
+
+        content_row_1.innerHTML = 
+        `   <h1 id="title-row">Bulbasaur</h1>
+            <div class="box-pokemon" id="box-principal" style="background-image: url('${box_principal_img}'); background-size: 100% 100%; background-position: center; background-repeat: no-repeat;")>
+                
+            </div>
+            <div class="box-pokemon" id="box-shine" style="background-image: url('${box_shine_img}'); background-size: 100% 100%; background-position: center; background-repeat: no-repeat;">
+
+            </div>
+            <div class="box-pokemon" id="box-dream-world" style="background-image: url('${box_dream_img}'); background-size: 80% 80%; background-position: center; background-repeat: no-repeat;">
+
+            </div>
+            <div class="box-pokemon" id="box-home" style="background-image: url('${box_home_img}'); background-size: 80% 80%; background-position: center; background-repeat: no-repeat;">
+
+            </div>
+        `;
+
+        content_row_2.innerHTML = 
+        `   <h1 id="title-row">Charizard</h1>
+            <div class="box-pokemon" id="box-principal" style="background-image: url('${box_principal2_img}'); background-size: 80% 80%; background-position: center; background-repeat: no-repeat;">
+
+            </div>
+            <div class="box-pokemon" id="box-shine" style="background-image: url('${box_shine2_img}'); background-size: 80% 80%; background-position: center; background-repeat: no-repeat;">
+
+            </div>
+            <div class="box-pokemon" id="box-dream-world" style="background-image: url('${box_dream2_img}'); background-size: 80% 80%; background-position: center; background-repeat: no-repeat;">
+
+            </div>
+            <div class="box-pokemon" id="box-home" style="background-image: url('${box_home2_img}'); background-size: 80% 80%; background-position: center; background-repeat: no-repeat;">
+
+            </div>
+        `;
+    }
+</script>
+
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Google+Sans+Flex:opsz,wght@6..144,1..1000&display=swap');
+
+    * {
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;        
+    }
+
+    .container-pokemon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        height: 100vh;
+        width: 100%;
+
+        gap: 2vh;
+
+        background-color: black;
+    }
+
+    .container-pokemon-title {
+        height: 10%;
+    }
+
+    .container-pokemon-title h1 {
+        font-size: 3rem;
+        font-weight: 600;
+        color: white;
+
+        -webkit-text-stroke-color: blue;
+        -webkit-text-stroke-width: 1px;
+    }
+
+    .container-pokemon-title h1 span{
+        color: rgb(179, 179, 8);
+    }
+
+    .content-pokemon{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+
+        width: 80%;
+        height: 70%;
+
+        gap: 3rem;
+
+        background-color: white;
+        border: 2px solid blue;
+        border-radius: 10px;
+
+
+        padding: 1rem;
+    }
+
+    .content-row-pokemon-1,
+    .content-row-pokemon-2{
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        position: relative;
+        
+        width: 90%;
+        height: 40%;
+    }
+
+    .box-pokemon{
+        height: 80%;
+        width: 22%;
+
+        border: 1px solid black;
+        border-radius: 10px;
+
+        color: white;
+
+        cursor: pointer;
+        transition: 0.6s;
+    }
+
+    .box-pokemon:hover{
+        background-color:rgb(179, 179, 8);
+    }
+
+    #title-row{
+        position: absolute;
+        top: -15%;
+        left: 0;
+        color: black;
+    }
+</style>

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 12 - JSON | Parte 01, exc 8: Cardápio de Restaurante</title>
+</head>
+
+<body>
+    <button onclick="pratos()">Exibir Pratos:</button>
+    <hr>
+    <p id="paragrafo">
+
+    </p>
+</body>
+
+</html>
+
+<script>
+
+    function pratos() {
+        let pratos = [
+            {
+                "nome": "Feijão com Farinha",
+                "tipo": "Principal",
+                "preco": 15.00
+            },
+            {
+                "nome": "Frango com Batata",
+                "tipo": "Entrada",
+                "preco": 20.00
+            },
+            {
+                "nome": "Feijoada",
+                "tipo": "Sobremesa",
+                "preco": 25.00
+            },
+            {
+                "nome": "Arroz e Feijão",
+                "tipo": "Principal",
+                "preco": 18.00
+            },
+            {
+                "nome": "Batata com Salada",
+                "tipo": "Entrada",
+                "preco": 19.00
+            },
+            {
+                "nome": "Batata com Salada",
+                "tipo": "Sobremesa",
+                "preco": 13.00
+            }
+        ]
+
+        let frase_entradas = "";
+        let frase_principal = "";
+        let frase_sobremesa = "";
+
+        for (let i = 0; i < pratos.length; i++) {
+            let tipo_pratos = pratos[i].tipo;
+            if (tipo_pratos == "Entrada") {
+                frase_entradas += 
+                `
+                    Prato: ${pratos[i].nome} | Tipo: ${pratos[i].tipo} | Preço: ${pratos[i].preco}. <br>
+                `;
+            } else if (tipo_pratos == "Principal") {
+               frase_principal += 
+                `
+                    Prato: ${pratos[i].nome} | Tipo: ${pratos[i].tipo} | Preço: ${pratos[i].preco}. <br>
+                `;
+            } else if (tipo_pratos == "Sobremesa") {
+                frase_sobremesa += 
+                `
+                    Prato: ${pratos[i].nome} | Tipo: ${pratos[i].tipo} | Preço: ${pratos[i].preco}. <br>
+                `;
+            } else {
+                alert(`Erro!, index_erro: ${i}`);
+            }
+        }
+
+        paragrafo.innerHTML = 
+        `
+            <b> Pratos de Entradas: </b> <br>
+            ${frase_entradas} <br>
+            <b> Pratos Principais: </b> <br>
+            ${frase_principal} <br>
+            <b> Pratos de Sobremesa: </b> <br>
+            ${frase_sobremesa} <br>
+        `;
+    }
+
+</script>

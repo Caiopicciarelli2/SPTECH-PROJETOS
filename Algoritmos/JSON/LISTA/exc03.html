@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 12 - JSON | Parte 01, exc 3: Objeto Aninhado (Endereço)</title>
+</head>
+
+<body>
+    <button onclick="obj()">
+        Objeto Aninhado
+    </button>
+    <hr>
+    <p id="paragrafo">
+
+    </p>
+</body>
+
+</html>
+
+<script>
+    function obj() {
+        let cliente = {
+            "nome": "Caderno",
+            "idade": 15.00
+        };
+
+        let endereco = {
+            "rua": "Rua João Lopes de Amorim, 176",
+            "numero": "176",
+            "cidade": "São Paulo"
+        }
+
+        paragrafo.innerHTML =
+            `
+        <b> Info Cliente: </b> <br>
+        Nome do Cliente: ${cliente.nome}, <br>
+        Idade do Cliente: ${cliente.idade}. 
+        <br><br>
+        <b> Info Endereço Cliente: </b> <br>
+        Rua Cliente: ${endereco.rua}, <br>
+        Número Cliente: ${endereco.numero}, <br>
+        Cidade Cliente: ${endereco.cidade}.
+    `;
+    }
+</script>

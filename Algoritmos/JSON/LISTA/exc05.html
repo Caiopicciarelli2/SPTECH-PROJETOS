@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 12 - JSON | Parte 01, exc 5: Lista de Contatos</title>
+</head>
+
+<body>
+    <button onclick="list()">
+        Lista telefônica
+    </button>
+    <hr>
+    <p id="paragrafo">
+
+    </p>
+</body>
+
+</html>
+
+<script>
+    function list() {
+
+        let conta = [
+            {
+                "nome": "Caio Picciarelli",
+                "telefone": "11984763941"
+            },
+            {
+                "nome": "MJ",
+                "telefone": "11984763921"
+            },
+            {
+                "nome": "VL",
+                "telefone": "11984763913"
+            },
+            {
+                "nome": "VL",
+                "telefone": "11984763925"
+            }
+        ]
+
+        for (let i = 0; i < conta.length; i++) {
+            paragrafo.innerHTML +=
+                `
+            Nome: ${conta[i].nome}, <br>
+            Telefone: ${conta[i].telefone}. <br><br>
+        `;
+        }
+    }
+
+</script>

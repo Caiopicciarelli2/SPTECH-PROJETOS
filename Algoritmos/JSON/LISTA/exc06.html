@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 12 - JSON | Parte 01, exc 6: Média de Alunos</title>
+</head>
+
+<body>
+    <button onclick="media()">Exibir Média dos Alunos:</button>
+    <hr>
+    <p id="paragrafo">
+
+    </p>
+</body>
+
+</html>
+
+<script>
+
+    function media() {
+        let alunos = [
+            {
+                "nome": "Caio Picciarelli",
+                "nota": 6
+            },
+            {
+                "nome": "MJ",
+                "nota": 7.5
+            },
+            {
+                "nome": "VL",
+                "nota": 8.3
+            },
+            {
+                "nome": "VK",
+                "nota": 9.1
+            },
+            {
+                "nome": "VT",
+                "nota": 5.3
+            }
+        ]
+
+        let tamanho_alunos = alunos.length;
+        let media = 0;
+        let notas = 0;
+        let maior_nota = 0;
+        let menor_nota = 0;
+        let index_melhor_aluno = 0;
+        let index_pior_aluno = 0;
+
+        // for média
+        for (let i = 0; i < tamanho_alunos; i++) {
+            notas += alunos[i].nota;
+        }
+
+        media = notas / tamanho_alunos;
+
+        // for melhor nota
+        for (let j = 0; j < tamanho_alunos; j++) {
+            if (j == 0) {
+                maior_nota = alunos[j].nota;
+                menor_nota = alunos[j].nota;
+            } else if (maior_nota < alunos[j].nota) {
+                maior_nota = alunos[j].nota;
+                index_melhor_aluno = j;
+            }
+
+            if (menor_nota > alunos[j].nota) {
+                menor_nota = alunos[j].nota;
+                index_pior_aluno = j;
+            }
+        }
+
+        paragrafo.innerHTML =
+            `
+            Média dos alunos: ${media.toFixed(1)}. <br>
+            Aluno com maior nota: ${alunos[index_melhor_aluno].nome} | Nota: ${maior_nota}. <br>
+            Aluno com a pior nota: ${alunos[index_pior_aluno].nome} | Nota: ${menor_nota}. <br>
+        `;
+    }
+
+</script>

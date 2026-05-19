@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 12 - JSON | Parte 01, exc 2: Produto no Carrinho</title>
+</head>
+
+<body>
+    <button onclick="produtos()">
+        Produtos no Carrinho
+    </button>
+    <hr>
+    <p id="paragrafo">
+
+    </p>
+</body>
+
+</html>
+
+<script>
+    function produtos() {
+        let produto = {
+            "nome": "Caderno",
+            "preco": 15.00,
+            "quantidade": 3
+        };
+
+        let total_preco = produto.preco * produto.quantidade;
+
+        paragrafo.innerHTML =
+            `
+        Produto: ${produto.nome} | Preço: R$ ${produto.preco} | Quantidade: ${produto.quantidade} | <b> Total: R$ ${total_preco.toFixed(2)}. <b> 
+    `;
+    }
+</script>

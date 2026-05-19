@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade Música</title>
+</head>
+
+<body>
+    <h1>Atividade: Música</h1>
+    <br>
+    <hr>
+    <input type="text" id="ipt_add_titulo" placeholder="Digite o nome da música:"> <br> <br>
+    <input type="text" id="ipt_add_banda" placeholder="Digite o nome da banda:"> <br> <br>
+    <input type="text" id="ipt_add_duracao" placeholder="Digite o tempo de duração (s):"> <br> <br>
+    <input type="text" id="ipt_add_anoLancamento" placeholder="Digite o ano de lançamento:"> <br> <br>
+    <input type="text" id="ipt_add_avaliacoes" placeholder="Digite a avaliação (0-5):"> <br> <br>
+    <input type="text" id="ipt_add_integrantes" placeholder="Digite o nome dos integrantes:"> <br> <br>
+    <button
+        onclick="adicionar_musica(ipt_add_titulo.value, ipt_add_banda.value, ipt_add_duracao.value, ipt_add_anoLancamento.value, ipt_add_avaliacoes.value, ipt_add_integrantes.value)">
+        Adicionar Música
+    </button>
+    <p>
+        <b>OBS:</b> TODOS OS CAMPOS QUE PODEM TER MAIS DE UM VALOR, DEVE-SE SEPARA-LOS POR VÍRGULA. <br>
+        <b>EXEMPLO:</b> caio, bruno, douglas...
+    </p>
+    <br>
+    <h6 id="resultado_adicionar"></h6>
+
+    <hr>
+    <button onclick="listar_musicas()">Listar Músicas</button>
+    <br>
+    <h6 id="resultado_listar"></h6>
+    <br>
+    <hr>
+
+    <input type="text" id="ipt_remove_musica" placeholder="Digite o nome da música:"> <br> <br>
+    <button onclick="remover_musica(ipt_remove_musica.value)">Remover Música Pelo Título</button>
+    <br>
+    <h6 id="resultado_remover"></h6>
+    <br>
+
+    <hr>
+    <input type="text" id="ipt_atualizar_titulo" placeholder="Digite o nome da música:"> <br> <br>
+    <input type="text" id="ipt_atualizar_ano" placeholder="Digite o novo ano de lançamento"> <br> <br>
+    <button onclick="atualizar_ano(ipt_atualizar_titulo.value, ipt_atualizar_ano.value)">Atualizar o ano de Lançamento Pelo Título</button>
+    <br>
+    <h6 id="resultado_atualizar_ano"></h6>
+    <br>
+    <hr>
+
+    <input type="text" id="ipt_media_titulo" placeholder="Digite o nome da música:"> <br> <br>
+    <button onclick="calc_media(ipt_media_titulo.value)">Calcular Média de avaliações da Música</button>
+    <br>
+    <h6 id="resultado_media"></h6>
+    <br>
+    <hr>
+
+    <input type="text" id="ipt_buscar_integrante" placeholder="Digite o nome do integrante:"> <br> <br>
+    <button onclick="buscar_banda(ipt_buscar_integrante.value)">Buscar a Banda por Nome de Integrante</button>
+    <br>
+    <h6 id="resultado_banda"></h6>
+    <br>
+    <hr>
+
+
+
+</body>
+</html>
+
+<script src="./script.js"></script>

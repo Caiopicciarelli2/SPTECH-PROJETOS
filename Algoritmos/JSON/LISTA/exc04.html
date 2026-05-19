@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 12 - JSON | Parte 01, exc 4: Atualizando Propriedades</title>
+</head>
+
+<body>
+    <input type="number" id="ipt_num_sacar">
+    <button onclick="sacar(Number(ipt_num_sacar.value))">Sacar</button>
+    <br>
+    <input type="number" id="ipt_num_depositar">
+    <button onclick="depositar(Number(ipt_num_depositar.value))">Depositar</button>
+    <hr>
+    <p id="paragrafo">
+
+    </p>
+</body>
+
+</html>
+
+<script>
+
+    let conta = {
+        "titular": "Caio Picciarelli",
+        "saldo": 0,
+        "banco": "Santander"
+    }
+
+    function sacar(valor_saque) {
+        paragrafo.innerHTML = ``;
+        if (conta.saldo < valor_saque) {
+            paragrafo.innerHTML = 
+            `
+                <b> Você não tem saldo suficiente! </b> <br>
+                Seu saldo: R$ ${conta.saldo}.
+            `;
+        }else if(valor_saque == 0){
+            paragrafo.innerHTML = 
+            `
+                <b> Você não pode sacar R$ 0,00! </b>
+            `;
+        } else {
+            conta.saldo -= valor_saque;
+
+            paragrafo.innerHTML =
+                `
+            <b>Saque Realizado!</b> <br>
+            <b>Extrato: </b> <br>
+            Valor Saque: R$ ${valor_saque} | Saldo: R$ ${conta.saldo}.
+        `;
+        }
+    }
+
+    function depositar(valor_deposito) {
+        if(valor_deposito == 0){
+            paragrafo.innerHTML = 
+            `
+                <b> Você não pode depositar R$ 0,00! </b>
+            `;
+        } else {
+            conta.saldo += valor_deposito;
+
+            paragrafo.innerHTML =
+                `
+            <b>Deposito Realizado!</b> <br>
+            <b>Extrato: </b> <br>
+            Valor Deposito: R$ ${valor_deposito} | Saldo: R$ ${conta.saldo}.
+        `;
+        }
+    }
+
+</script>

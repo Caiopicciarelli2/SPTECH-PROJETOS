@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VAR</title>
+</head>
+<body>
+    
+</body>
+</html>
+
+<script>
+    var numero = 42;
+    var numero = 10;
+
+    // Let avisa erro de mesmo nome de variável
+
+    if(numero == 10){
+        let frase = "passei no if!"
+    }
+
+    console.log(`O valor do número: ${numero}`);
+
+    // let funciona so dentro do {que foi criado}
+
+    const PI = 3.14; // não muda o valor da variável
+
+    // PI = 10; // impossivel
+    // console.log(PI)
+
+    const aluno = {
+        "nome": "bob da silva",
+        "nota": 8.7
+    }
+
+    aluno.nome = "tom"
+    console.log(aluno.nome)
+
+    // objeto const, você não pode altera-lo inteira, e as caracteristicas podem ser mudadas.
+    // escopo global
+</script>

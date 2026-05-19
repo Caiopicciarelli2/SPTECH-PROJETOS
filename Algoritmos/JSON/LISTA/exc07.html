@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 12 - JSON | Parte 01, exc 7: Filtro de Produtos</title>
+</head>
+
+<body>
+    <input type="text" id="ipt_categoria_pesquisar">
+    <button onclick="pesquisar(ipt_categoria_pesquisar.value)">Pesquisar Categoria:</button>
+    <hr>
+    <p id="paragrafo">
+
+    </p>
+</body>
+
+</html>
+
+<script>
+
+    function pesquisar(cat_pesquisada) {
+        let produtos = [
+            {
+                "nome": "Caio Picciarelli",
+                "categoria": "Eletrônico",
+                "preco": 8.99
+            },
+            {
+                "nome": "Picciarelli",
+                "categoria": "Doméstico",
+                "preco": 2.19
+            },
+            {
+                "nome": "Vitor",
+                "categoria": "Eletrônico",
+                "preco": 7.00
+            },
+            {
+                "nome": "Luiz",
+                "categoria": "Doméstico",
+                "preco": 5.49
+            },
+            {
+                "nome": "João",
+                "categoria": "Comida",
+                "preco": 19.99
+            },
+            {
+                "nome": "Pedro",
+                "categoria": "Comida",
+                "preco": 8.99
+            },
+            {
+                "nome": "Wiliiam",
+                "categoria": "teste",
+                "preco": 8.99
+            }
+        ]
+
+        let pesq_resposta_array = [];
+        let contador = 0;
+        let frase = "";
+
+        for (let i = 0; i < produtos.length; i++) {
+            if(produtos[i].categoria.toUpperCase() == cat_pesquisada.toUpperCase()){
+                pesq_resposta_array.push(produtos[i])
+                contador++;
+            }
+        }  
+        
+        let tamanho_resp_array = pesq_resposta_array.length;
+        
+        if(contador <= 0){
+            paragrafo.innerHTML = `Categoria: "${cat_pesquisada}" não existe!`;
+        }else if(tamanho_resp_array == 1){
+            paragrafo.innerHTML = 
+            `
+                Produto: ${pesq_resposta_array[0].nome} | Categoria: ${pesq_resposta_array[0].categoria} | Preço: ${pesq_resposta_array[0].preco}.
+            `;
+        }else{
+            for (let j = 0; j < tamanho_resp_array; j++) {
+                frase += 
+                `
+                    Produto: ${pesq_resposta_array[j].nome} | Categoria: ${pesq_resposta_array[j].categoria} | Preço: ${pesq_resposta_array[j].preco}.<br>
+                `;
+            }
+
+            paragrafo.innerHTML = `${frase}`;
+        }
+    }
+
+</script>

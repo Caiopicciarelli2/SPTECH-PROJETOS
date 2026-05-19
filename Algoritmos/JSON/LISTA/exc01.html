@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 12 - JSON | Parte 01, exc 1: Ficha de Aluno</title>
+</head>
+
+<body>
+    <button onclick="ficha()">
+        Ficha Aluno
+    </button>
+    <hr>
+    <p id="paragrafo">
+
+    </p>
+</body>
+
+</html>
+
+<script>
+    function ficha() {
+        let aluno = {
+            "nome": "Ana Silva",
+            "ra": "1234567",
+            "curso": "Ciência da Computação",
+            "semestre": 1
+        };
+
+        paragrafo.innerHTML =
+            `
+        Nome: ${aluno.nome}, <br>
+        RA: ${aluno.ra}, <br>
+        Curso: ${aluno.curso}, <br>
+        Semestre: ${aluno.semestre}.
+    `;
+    }
+</script>
